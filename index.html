@@ -253,30 +253,59 @@
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Diseño Metodológico</h2>
                 <div class="space-y-8">
-                    <div class="bg-slate-900 text-white p-6 rounded-lg">
-                        <h4 class="text-blue-400 font-bold text-xs uppercase mb-2">Tipo de Investigación</h4>
-                        <p class="text-lg">Cualitativa, de tipo histórico-interpretativo y basada en el estudio de caso.</p>
+                    <div class="bg-slate-900 text-white p-6 rounded-lg shadow-inner">
+                        <h4 class="text-blue-400 font-bold text-xs uppercase mb-2">Estrategia de Investigación</h4>
+                        <p class="text-lg">Cualitativa, de tipo histórico-interpretativo y basada en el estudio de caso profundo.</p>
                     </div>
 
-                    <div class="grid md:grid-cols-2 gap-8">
+                    <div class="grid md:grid-cols-2 gap-10">
                         <div>
-                            <h4 class="font-bold text-slate-800 mb-4 flex items-center gap-2">
-                                <i data-lucide="tool" class="w-4 h-4"></i> Técnicas Empleadas
+                            <h4 class="font-bold text-slate-800 mb-5 flex items-center gap-2 border-b border-slate-100 pb-2">
+                                <i data-lucide="settings-2" class="w-5 h-5 text-blue-600"></i> Técnicas Empleadas
                             </h4>
-                            <ul class="space-y-2 text-slate-600 text-sm">
-                                <li>Crítica de fuentes y análisis del discurso.</li>
-                                <li>Análisis de contenido.</li>
-                                <li><strong>Minería de datos:</strong> Técnica de Distancia de Levenshtein para la comparación de versiones del acuerdo.</li>
+                            <ul class="space-y-5 text-slate-600 text-sm">
+                                <li class="flex gap-3 items-start">
+                                    <span class="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0"></span>
+                                    <div>
+                                        <strong class="text-slate-800 block">Revisión documental</strong>
+                                        Examen sistemático de fuentes institucionales, bibliografía especializada y archivos del proceso.
+                                    </div>
+                                </li>
+                                <li class="flex gap-3 items-start">
+                                    <span class="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0"></span>
+                                    <div>
+                                        <strong class="text-slate-800 block">Análisis del discurso</strong>
+                                        Interpretación semántica y pragmática de las narrativas de los protagonistas clave y análisis de contenido.
+                                    </div>
+                                </li>
+                                <li class="flex gap-3 items-start">
+                                    <span class="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0"></span>
+                                    <div>
+                                        <strong class="text-slate-800 block">Minería de datos</strong>
+                                        Uso de herramientas algorítmicas, específicamente el método de <strong>"Distancia de Levenshtein"</strong>, para la comparación técnica de las versiones de los acuerdos.
+                                    </div>
+                                </li>
+                                <li class="flex gap-3 items-start">
+                                    <span class="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0"></span>
+                                    <div>
+                                        <strong class="text-slate-800 block">Método de crítica de fuentes</strong>
+                                        Aplicado de forma transversal para garantizar la veracidad y permitir el proceso de <strong>triangulación de información</strong>.
+                                    </div>
+                                </li>
                             </ul>
                         </div>
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-sm uppercase">Fuentes Intencionales</h4>
-                                <p class="text-xs text-slate-500">Memorias, discursos y autobiografías de Juan Manuel Santos, Humberto de la Calle y Enrique Santos.</p>
+                        <div class="space-y-6">
+                            <div class="p-5 bg-slate-50 rounded-lg border border-slate-100">
+                                <h4 class="font-bold text-slate-800 text-xs uppercase tracking-widest mb-3 text-blue-800">Fuentes Intencionales</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Memorias, discursos y autobiografías de protagonistas como Juan Manuel Santos, Humberto de la Calle y Enrique Santos.</p>
                             </div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-sm uppercase">Fuentes No Intencionales</h4>
-                                <p class="text-xs text-slate-500">Actas oficiales, comunicados conjuntos, registros de prensa y documentos de la OACP.</p>
+                            <div class="p-5 bg-slate-50 rounded-lg border border-slate-100">
+                                <h4 class="font-bold text-slate-800 text-xs uppercase tracking-widest mb-3 text-blue-800">Fuentes No Intencionales</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Actas oficiales, comunicados conjuntos, registros de prensa y documentos oficiales de la Oficina del Alto Comisionado para la Paz.</p>
+                            </div>
+                            <div class="p-4 bg-blue-50 rounded-lg text-center">
+                                <p class="text-[10px] text-blue-700 uppercase font-bold">Validación de datos</p>
+                                <p class="text-sm italic text-blue-900 font-medium">La triangulación asegura la validez y confiabilidad del análisis histórico.</p>
                             </div>
                         </div>
                     </div>
@@ -344,16 +373,16 @@
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Conclusiones</h2>
                 <div class="space-y-6">
                     <div class="grid md:grid-cols-2 gap-6">
-                        <div class="p-6 bg-green-50 rounded-lg">
+                        <div class="p-6 bg-green-50 rounded-lg shadow-sm">
                             <h4 class="font-bold text-green-900 mb-2">Validación de Supuestos</h4>
                             <p class="text-sm text-green-800">Se confirman los pilares del éxito: Agenda acotada (S1), Sede neutral (S2), Participación plural (S3) y Acompañamiento internacional (S4).</p>
                         </div>
-                        <div class="p-6 bg-slate-900 text-white rounded-lg">
+                        <div class="p-6 bg-slate-900 text-white rounded-lg shadow-md">
                             <h4 class="font-bold text-blue-300 mb-2">La Paz Imperfecta</h4>
                             <p class="text-sm">El acuerdo es su máxima expresión: un proceso dinámico donde la voluntad política fue el factor determinante.</p>
                         </div>
                     </div>
-                    <div class="prose prose-slate max-w-none text-slate-700">
+                    <div class="prose prose-slate max-w-none text-slate-700 text-lg">
                         <p>La transformación dialéctica de las partes permitió pasar del castigo punitivo al restaurativo, y de las armas a la política. Las lecciones aprendidas de este proceso histórico son transferibles a futuros diálogos con otros grupos.</p>
                     </div>
                 </div>
@@ -365,10 +394,10 @@
     <footer class="bg-[#003566] text-slate-300 py-16">
         <div class="max-w-6xl mx-auto px-6 text-center">
             <div class="mb-8">
-                <p class="text-white font-bold text-xl mb-2 italic">"De la guerra a la paz con ayuda de todos"</p>
-                <p class="text-sm opacity-80">Lisbeth Katherine Duarte Herrera | Universidad de Granada | 2026</p>
+                <p class="text-white font-bold text-xl mb-2 italic tracking-wide">"De la guerra a la paz con ayuda de todos"</p>
+                <p class="text-sm opacity-80 uppercase tracking-tighter">Lisbeth Katherine Duarte Herrera | Universidad de Granada | 2026</p>
             </div>
-            <div class="flex justify-center gap-8 text-[10px] uppercase tracking-widest border-t border-white/10 pt-8">
+            <div class="flex justify-center gap-8 text-[10px] uppercase tracking-[0.3em] border-t border-white/10 pt-8">
                 <a href="#" class="hover:text-white transition-colors">Repositorio UGR</a>
                 <a href="#" class="hover:text-white transition-colors">Acuerdo Final</a>
                 <a href="#" class="hover:text-white transition-colors">Bibliografía</a>
