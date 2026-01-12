@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesis Doctoral - Lisbeth Katherine Duarte Herrera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+        :root {
+            --ugr-blue: #003566;
+            --peace-blue: #0ea5e9;
+            --text-main: #1e293b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfcfc;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-active {
+            color: var(--peace-blue);
+            border-bottom: 2px solid var(--peace-blue);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .academic-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-item {
+            transition: all 0.2s;
+        }
+
+        .sidebar-item:hover {
+            background-color: #f1f5f9;
+            padding-left: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Branding -->
+    <div class="bg-[#003566] text-white py-3 px-6 text-sm flex justify-between items-center">
+        <div class="font-semibold tracking-wider">UNIVERSIDAD DE GRANADA</div>
+        <div class="hidden md:block">Programa de Doctorado en Ciencias Sociales</div>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="bg-white border-b border-slate-200 py-10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+                <div class="flex-1">
+                    <h1 class="serif-font text-3xl md:text-4xl lg:text-5xl text-slate-900 mb-4 leading-tight">
+                        De la guerra a la paz con ayuda de todos
+                    </h1>
+                    <p class="text-xl text-slate-500 font-light italic mb-6">
+                        Historia del proceso de negociación y los Acuerdos De Paz De La Habana (2012-2016)
+                    </p>
+                    <div class="flex flex-wrap gap-6 text-sm text-slate-600">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="user" class="w-4 h-4 text-blue-600"></i>
+                            <span class="font-bold">Doctoranda:</span> Lisbeth Katherine Duarte Herrera
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="graduation-cap" class="w-4 h-4 text-blue-600"></i>
+                            <span class="font-bold">Director:</span> Dr. Mario López Martínez
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="calendar" class="w-4 h-4 text-blue-600"></i>
+                            <span>Granada, 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 overflow-x-auto">
+            <div class="flex whitespace-nowrap gap-8 py-4 text-xs font-bold uppercase tracking-widest text-slate-400">
+                <button onclick="switchTab('intro')" id="nav-intro" class="nav-active pb-1">1. Introducción</button>
+                <button onclick="switchTab('paz')" id="nav-paz" class="pb-1">2. Investigación para la paz</button>
+                <button onclick="switchTab('metodo')" id="nav-metodo" class="pb-1">3. Diseño metodológico</button>
+                <button onclick="switchTab('fallidos')" id="nav-fallidos" class="pb-1">4. Procesos fallidos</button>
+                <button onclick="switchTab('resultados')" id="nav-resultados" class="pb-1">5. Resultados</button>
+                <button onclick="switchTab('conclusiones')" id="nav-conclusiones" class="pb-1">6. Conclusiones</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 py-12">
+        
+        <!-- Tab: Introducción -->
+        <section id="intro" class="tab-content active">
+            <div class="academic-card">
+                <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Introducción</h2>
+                <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+                    <p>
+                        Esta tesis doctoral analiza el tránsito de Colombia desde el conflicto armado hacia la construcción de paz, centrándose específicamente en la historia del proceso de negociación de La Habana.
+                    </p>
+                    <p>
+                        La investigación examina cómo la confluencia de factores nacionales e internacionales, bajo el lema "con ayuda de todos", permitió la culminación exitosa de un proceso que transformó la realidad política del país entre 2012 y 2016.
+                    </p>
+                    <div class="bg-slate-50 p-8 border-l-4 border-blue-900 mt-8 italic">
+                        "El objetivo es comprender la evolución histórica y la estructura de los acuerdos que pusieron fin a más de cincuenta años de confrontación armada con las FARC-EP."
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: Investigación para la paz -->
+        <section id="paz" class="tab-content">
+            <div class="academic-card">
+                <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">La Investigación para la paz</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-blue-700 font-bold uppercase tracking-tighter text-sm mb-4">Fundamentos Teóricos</h3>
+                        <p class="mb-4">Se aborda la evolución de la Investigación para la paz tanto a nivel global como en el contexto específico de Colombia:</p>
+                        <ul class="space-y-4">
+                            <li class="flex gap-3">
+                                <i data-lucide="chevron-right" class="w-5 h-5 text-blue-400"></i>
+                                <span><strong>Orígenes:</strong> Desde los estudios clásicos de Irenología hasta las corrientes contemporáneas.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i data-lucide="chevron-right" class="w-5 h-5 text-blue-400"></i>
+                                <span><strong>Contexto Nacional:</strong> Desarrollo de los estudios de paz en Colombia y sus principales centros de pensamiento.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h3 class="text-blue-700 font-bold uppercase tracking-tighter text-sm mb-4">Teorías y Fases</h3>
+                        <p class="text-sm text-blue-900 mb-4">La tesis se apoya en modelos de resolución de conflictos que explican:</p>
+                        <ul class="list-disc pl-5 text-sm text-blue-800 space-y-2">
+                            <li>La transformación de conflictos.</li>
+                            <li>Las fases críticas de un proceso de paz: fase secreta, exploratoria y de negociación pública.</li>
+                            <li>La transición de la paz negativa (ausencia de guerra) a la paz positiva.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: Diseño metodológico -->
+        <section id="metodo" class="tab-content">
+            <div class="academic-card">
+                <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Diseño Metodológico</h2>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6 border border-slate-100 rounded-xl">
+                        <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="search" class="text-blue-600"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Enfoque</h4>
+                        <p class="text-sm text-slate-600">Cualitativo de corte histórico-hermenéutico para la interpretación de los hechos.</p>
+                    </div>
+                    <div class="p-6 border border-slate-100 rounded-xl">
+                        <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="file-text" class="text-blue-600"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Técnicas</h4>
+                        <p class="text-sm text-slate-600">Análisis documental riguroso de fuentes primarias y bibliografía especializada.</p>
+                    </div>
+                    <div class="p-6 border border-slate-100 rounded-xl">
+                        <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="database" class="text-blue-600"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Fuentes</h4>
+                        <p class="text-sm text-slate-600">Acuerdos, borradores, comunicados oficiales y nubes de palabras (Anexo 7).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: Procesos fallidos -->
+        <section id="fallidos" class="tab-content">
+            <div class="academic-card">
+                <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Procesos de paz fallidos con las FARC-EP</h2>
+                <p class="text-slate-600 mb-8 italic">Antecedentes históricos necesarios para comprender la innovación de La Habana:</p>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-6 border-b pb-6">
+                        <span class="text-3xl font-serif text-slate-300">01</span>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Proceso de La Uribe (1984)</h4>
+                            <p class="text-slate-600">Primer acercamiento formal bajo el gobierno de Belisario Betancur y la tregua con las FARC.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-6 border-b pb-6">
+                        <span class="text-3xl font-serif text-slate-300">02</span>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Caracas y Tlaxcala (1991-1992)</h4>
+                            <p class="text-slate-600">Intentos de negociación en el marco de la Coordinadora Guerrillera Simón Bolívar.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-6">
+                        <span class="text-3xl font-serif text-slate-300">03</span>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Diálogos del Caguán (1998-2002)</h4>
+                            <p class="text-slate-600">La zona de distensión y la ruptura definitiva que dio paso a la Política de Seguridad Democrática.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: Resultados -->
+        <section id="resultados" class="tab-content">
+            <div class="academic-card">
+                <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Resultados de los Acuerdos</h2>
+                <p class="mb-8">Análisis comparativo de los puntos clave del acuerdo (Cartagena vs. Teatro Colón):</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="p-4 bg-slate-50 border rounded-lg text-sm"><strong>1. Reforma Rural Integral:</strong> Hacia un nuevo campo colombiano.</div>
+                    <div class="p-4 bg-slate-50 border rounded-lg text-sm"><strong>2. Participación Política:</strong> Apertura democrática.</div>
+                    <div class="p-4 bg-slate-50 border rounded-lg text-sm"><strong>3. Fin del Conflicto:</strong> Cese bilateral y dejación de armas.</div>
+                    <div class="p-4 bg-slate-50 border rounded-lg text-sm"><strong>4. Drogas Ilícitas:</strong> Sustitución y salud pública.</div>
+                    <div class="p-4 bg-slate-50 border rounded-lg text-sm"><strong>5. Víctimas:</strong> Sistema Integral de Verdad y Justicia.</div>
+                    <div class="p-4 bg-slate-50 border rounded-lg text-sm"><strong>6. Implementación:</strong> Seguimiento y verificación.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: Conclusiones -->
+        <section id="conclusiones" class="tab-content">
+            <div class="academic-card">
+                <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Conclusiones</h2>
+                <div class="prose prose-slate max-w-none text-slate-700">
+                    <p class="text-xl leading-relaxed mb-6">
+                        La tesis concluye que el proceso de La Habana representa un cambio de paradigma en la historia de Colombia:
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="text-green-600 w-6 h-6 mt-1"></i>
+                            <span>La importancia fundamental del acompañamiento internacional como garante de la continuidad del proceso.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="text-green-600 w-6 h-6 mt-1"></i>
+                            <span>El papel central de las víctimas en la legitimidad de lo acordado.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="text-green-600 w-6 h-6 mt-1"></i>
+                            <span>La transición de una historia de guerra hacia una posibilidad real de paz estable y duradera.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#003566] text-slate-300 py-16">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="mb-8">
+                <p class="text-white font-bold text-lg mb-2">Universidad de Granada</p>
+                <p class="text-sm opacity-75">Tesis Doctoral - Lisbeth Katherine Duarte Herrera</p>
+            </div>
+            <div class="flex justify-center gap-8 text-xs uppercase tracking-widest border-t border-white/10 pt-8">
+                <a href="#" class="hover:text-white transition-colors">Repositorio UGR</a>
+                <a href="#" class="hover:text-white transition-colors">Contacto</a>
+                <a href="#" class="hover:text-white transition-colors">Bibliografía</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        function switchTab(tabId) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Remove active style from nav
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('nav-active');
+                btn.classList.add('text-slate-400');
+            });
+
+            // Show selected content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Set active nav style
+            const activeBtn = document.getElementById('nav-' + tabId);
+            activeBtn.classList.add('nav-active');
+            activeBtn.classList.remove('text-slate-400');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
