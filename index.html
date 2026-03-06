@@ -112,13 +112,13 @@
 </head>
 <body>
 
-    <!-- Top Branding -->
+    <!-- Branding -->
     <div class="bg-[#003566] text-white py-3 px-6 text-sm flex justify-between items-center shadow-sm">
         <div class="font-semibold tracking-wider uppercase">Universidad de Granada</div>
-        <div class="hidden md:block opacity-80">Facultad de Ciencias Políticas y Sociología</div>
+        <div class="hidden md:block opacity-80 text-xs">Facultad de Ciencias Políticas y Sociología</div>
     </div>
 
-    <!-- Hero Header -->
+    <!-- Header -->
     <header class="hero-header border-b border-slate-200 py-12 md:py-20">
         <div class="hero-overlay"></div>
         <div class="hero-content max-w-5xl mx-auto px-6 text-center">
@@ -148,7 +148,7 @@
         </div>
     </header>
 
-    <!-- Navigation -->
+    <!-- Menu -->
     <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 overflow-x-auto">
             <div class="flex justify-center whitespace-nowrap gap-4 md:gap-8 py-4 text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-400">
@@ -165,7 +165,7 @@
 
     <main class="max-w-5xl mx-auto px-6 py-12">
         
-        <!-- Tabs 1-6 (Manteniendo contenido previo) -->
+        <!-- Tab: Introducción -->
         <section id="intro" class="tab-content active">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Introducción</h2>
@@ -202,6 +202,7 @@
             </div>
         </section>
 
+        <!-- Tab: Investigación para la paz -->
         <section id="paz" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">La Investigación para la paz</h2>
@@ -237,11 +238,12 @@
             </div>
         </section>
 
+        <!-- Tab: Diseño metodológico -->
         <section id="metodo" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Diseño Metodológico</h2>
                 <div class="space-y-8">
-                    <div class="bg-slate-900 text-white p-6 rounded-lg shadow-inner">
+                    <div class="bg-slate-900 text-white p-6 rounded-lg shadow-inner text-center">
                         <h4 class="text-blue-400 font-bold text-xs uppercase mb-2">Estrategia de Investigación</h4>
                         <p class="text-lg">Cualitativa, de tipo histórico-interpretativo y basada en el estudio de caso profundo.</p>
                     </div>
@@ -249,20 +251,16 @@
                         <div>
                             <h4 class="font-bold text-slate-800 mb-5 flex items-center gap-2 border-b border-slate-100 pb-2"><i data-lucide="settings-2" class="w-5 h-5 text-blue-600"></i> Técnicas Empleadas</h4>
                             <ul class="space-y-5 text-slate-600 text-sm">
-                                <li class="flex gap-3 items-start"><span class="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0"></span><div><strong class="text-slate-800 block">Revisión documental</strong>Examen sistemático de archivos del proceso.</div></li>
-                                <li class="flex gap-3 items-start"><span class="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0"></span><div><strong class="text-slate-800 block">Análisis del discurso</strong>Interpretación semántica de narrativas clave.</div></li>
-                                <li class="flex gap-3 items-start"><span class="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0"></span><div><strong class="text-slate-800 block">Minería de datos</strong>Método "Distancia de Levenshtein" para comparar versiones de acuerdos.</div></li>
-                                <li class="flex gap-3 items-start"><span class="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0"></span><div><strong class="text-slate-800 block">Método de crítica de fuentes</strong>Para la triangulación de información.</div></li>
+                                <li class="flex gap-3 items-start"><span class="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0"></span><div><strong class="text-slate-800 block">Revisión documental</strong>Examen sistemático de archivos oficiales del proceso de paz.</div></li>
+                                <li class="flex gap-3 items-start"><span class="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0"></span><div><strong class="text-slate-800 block">Análisis del discurso</strong>Interpretación semántica y pragmática de narrativas clave.</div></li>
+                                <li class="flex gap-3 items-start"><span class="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0"></span><div><strong class="text-slate-800 block">Minería de datos</strong>Método "Distancia de Levenshtein" para comparar técnicamente versiones de acuerdos.</div></li>
+                                <li class="flex gap-3 items-start"><span class="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0"></span><div><strong class="text-slate-800 block">Crítica de fuentes</strong>Triangulación de información para validez histórica.</div></li>
                             </ul>
                         </div>
                         <div class="space-y-6">
                             <div class="p-5 bg-slate-50 rounded-lg border border-slate-100">
-                                <h4 class="font-bold text-slate-800 text-xs uppercase mb-3 text-blue-800">Fuentes Intencionales</h4>
-                                <p class="text-xs text-slate-600 leading-relaxed">Memorias y autobiografías de Juan Manuel Santos, Humberto de la Calle y Enrique Santos.</p>
-                            </div>
-                            <div class="p-5 bg-slate-50 rounded-lg border border-slate-100">
-                                <h4 class="font-bold text-slate-800 text-xs uppercase mb-3 text-blue-800">Fuentes No Intencionales</h4>
-                                <p class="text-xs text-slate-600 leading-relaxed">Actas oficiales, comunicados conjuntos y registros de prensa.</p>
+                                <h4 class="font-bold text-slate-800 text-xs uppercase mb-3 text-blue-800">Fuentes Principales</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed italic">Memorias de Juan Manuel Santos, Humberto de la Calle y Enrique Santos. Actas y comunicados oficiales.</p>
                             </div>
                         </div>
                     </div>
@@ -270,26 +268,28 @@
             </div>
         </section>
 
+        <!-- Tab: Procesos fallidos -->
         <section id="fallidos" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Procesos de paz fallidos con las FARC-EP</h2>
                 <div class="space-y-6">
                     <div class="p-6 border rounded-lg hover:bg-slate-50 transition-colors">
                         <div class="flex justify-between items-center mb-2"><h4 class="font-bold text-lg text-slate-800">La Uribe (1982)</h4><span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded">Minimalista</span></div>
-                        <p class="text-slate-600 text-sm">Bajo Belisario Betancur. Careció de veeduría internacional y protocolos de cese al fuego.</p>
+                        <p class="text-slate-600 text-sm text-justify">Bajo Belisario Betancur. Careció de veeduría internacional y protocolos claros de cese al fuego.</p>
                     </div>
                     <div class="p-6 border rounded-lg hover:bg-slate-50 transition-colors">
                         <div class="flex justify-between items-center mb-2"><h4 class="font-bold text-lg text-slate-800">Caracas-Tlaxcala (1991-1992)</h4><span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded">Maximalista</span></div>
-                        <p class="text-slate-600 text-sm">Bajo César Gaviria. Agenda abierta y fracaso por persistencia de hostilidades.</p>
+                        <p class="text-slate-600 text-sm text-justify">Bajo César Gaviria. Agenda abierta y fracaso por persistencia de hostilidades y falta de confianza.</p>
                     </div>
                     <div class="p-6 border rounded-lg hover:bg-slate-50 transition-colors">
                         <div class="flex justify-between items-center mb-2"><h4 class="font-bold text-lg text-slate-800">El Caguán (1999)</h4><span class="px-3 py-1 bg-red-100 text-red-800 text-xs font-bold rounded">Inabarcable</span></div>
-                        <p class="text-slate-600 text-sm">Bajo Andrés Pastrana. Zona de distensión sin reglas de verificación.</p>
+                        <p class="text-slate-600 text-sm text-justify">Bajo Andrés Pastrana. Zona de distensión sin reglas de verificación y agenda inabarcable.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Tab: Resultados -->
         <section id="resultados" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Resultados</h2>
@@ -297,41 +297,40 @@
                     <div class="relative pl-8 border-l-2 border-blue-200">
                         <div class="absolute -left-2.5 top-0 w-5 h-5 bg-blue-600 rounded-full"></div>
                         <h4 class="font-bold text-slate-900 mb-2">5.1 Fase exploratoria (2010-2012)</h4>
-                        <p class="text-slate-600 text-sm">Activación de ventanas de oportunidad. Canal discreto (backchannel) y agenda acotada de seis puntos en La Habana.</p>
+                        <p class="text-slate-600 text-sm">Activación de ventanas de oportunidad. Uso de canal discreto (backchannel) y agenda de seis puntos en La Habana.</p>
                     </div>
                     <div class="relative pl-8 border-l-2 border-blue-200">
                         <div class="absolute -left-2.5 top-0 w-5 h-5 bg-blue-600 rounded-full"></div>
                         <h4 class="font-bold text-slate-900 mb-2">5.2 Fase de negociación (2012-2016)</h4>
-                        <p class="text-slate-600 text-sm">Innovación en participación de víctimas. Metodología de ciclos y apoyo de garantes y acompañantes internacionales.</p>
+                        <p class="text-slate-600 text-sm">Innovación en participación de víctimas. Apoyo de garantes (Cuba/Noruega) y acompañantes internacionales.</p>
                     </div>
                     <div class="relative pl-8 border-l-2 border-blue-200">
                         <div class="absolute -left-2.5 top-0 w-5 h-5 bg-blue-600 rounded-full"></div>
                         <h4 class="font-bold text-slate-900 mb-2">5.3 Fase de firma e implementación</h4>
-                        <p class="text-slate-600 text-sm">Culminación en el Acuerdo del Teatro Colón (2016): símbolo de la "paz imperfecta".</p>
+                        <p class="text-slate-600 text-sm">Firma en Cartagena, derrota en plebiscito y Acuerdo del Teatro Colón: símbolo de la "paz imperfecta".</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Tab: Conclusiones -->
         <section id="conclusiones" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Conclusiones</h2>
-                <div class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="p-6 bg-green-50 rounded-lg shadow-sm">
-                            <h4 class="font-bold text-green-900 mb-2">Validación de Supuestos</h4>
-                            <p class="text-sm text-green-800">Se confirman los pilares del éxito: Agenda acotada (S1), Sede neutral (S2), Participación plural (S3) y Acompañamiento internacional (S4).</p>
-                        </div>
-                        <div class="p-6 bg-slate-900 text-white rounded-lg shadow-md">
-                            <h4 class="font-bold text-blue-300 mb-2">La Paz Imperfecta</h4>
-                            <p class="text-sm">El acuerdo es su máxima expresión: un proceso dinámico donde la voluntad política fue el factor determinante.</p>
-                        </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-6 bg-green-50 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-green-900 mb-2">Validación de Supuestos</h4>
+                        <p class="text-sm text-green-800">Se confirman los pilares del éxito: Agenda acotada (S1), Sede neutral (S2), Participación plural (S3) y Acompañamiento internacional (S4).</p>
+                    </div>
+                    <div class="p-6 bg-slate-900 text-white rounded-lg shadow-md">
+                        <h4 class="font-bold text-blue-300 mb-2">La Paz Imperfecta</h4>
+                        <p class="text-sm">El acuerdo es su máxima expresión: proceso dinámico donde la voluntad política fue el factor determinante.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Tab: Difusión científica - CARRUSEL ACTUALIZADO -->
+        <!-- Tab: Difusión científica - CARRUSEL MANUAL Y AUTOMÁTICO -->
         <section id="difusion" class="tab-content">
             <div class="academic-card research-gradient">
                 <div class="flex items-center gap-6 mb-12">
@@ -342,50 +341,57 @@
                     <div class="grow h-px bg-slate-200"></div>
                 </div>
 
-                <p class="text-slate-600 italic mb-10">Productos derivados de la investigación doctoral y actividades de divulgación académica:</p>
+                <p class="text-slate-600 italic mb-10 text-center">Productos derivados de la investigación doctoral y actividades de divulgación académica:</p>
 
                 <!-- Carrusel Container -->
-                <div class="relative">
+                <div class="relative group/carousel px-12">
+                    <!-- Botones de Navegación Manual -->
+                    <button onclick="prevSlide()" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 border border-slate-200 p-2 rounded-full shadow-lg hover:bg-white hover:text-[#1152d4] transition-all text-slate-400">
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+                    
+                    <button onclick="nextSlide()" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 border border-slate-200 p-2 rounded-full shadow-lg hover:bg-white hover:text-[#1152d4] transition-all text-slate-400">
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
+
+                    <!-- Items del Carrusel -->
                     <div id="difusion-carousel" class="flex overflow-x-auto gap-8 pb-10 no-scrollbar snap-x snap-mandatory scroll-smooth">
                         
                         <!-- 1. A paso de Tesis_lkdh -->
                         <div class="flex-none w-[320px] md:w-[400px] snap-start group carousel-item">
                             <div class="flex flex-col gap-6">
                                 <div class="w-full aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-md">
-                                    <img alt="A paso de Tesis_lkdh" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="A paso de Tesis_lkdh.png" onerror="this.src='https://via.placeholder.com/400x300?text=A+paso+de+Tesis'"/>
+                                    <img alt="A paso de Tesis_lkdh" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="A paso de Tesis_lkdh.png"/>
                                 </div>
-                                <div class="flex flex-col py-2">
-                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-2">Divulgación</div>
-                                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-[#1152d4] transition-colors mb-3">A paso de Tesis</h4>
-                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 italic">Avances del proceso de investigación doctoral.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 2. eSCUELA INTERNAL VERANO 2018 -->
-                        <div class="flex-none w-[320px] md:w-[400px] snap-start group carousel-item">
-                            <div class="flex flex-col gap-6">
-                                <div class="w-full aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-md">
-                                    <img alt="ESCUELA INTERNAL VERANO 2018" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="eSCUELA INTERNAL VERANO 2018.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=Escuela+Verano+2018'"/>
-                                </div>
-                                <div class="flex flex-col py-2">
-                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-2">Formación</div>
-                                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-[#1152d4] transition-colors mb-3">Escuela Internacional de Verano</h4>
-                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 italic">Participación académica en seminarios avanzados (2018).</p>
+                                <div class="text-center">
+                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-1">Divulgación</div>
+                                    <h4 class="text-sm font-bold text-slate-900 group-hover:text-[#1152d4] transition-colors">A paso de Tesis</h4>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 3. Fil Guadalajara participación -->
+                        <!-- 2. Escuela Verano 2018 -->
                         <div class="flex-none w-[320px] md:w-[400px] snap-start group carousel-item">
                             <div class="flex flex-col gap-6">
                                 <div class="w-full aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-md">
-                                    <img alt="Fil Guadalajara participación" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Fil Guadalajara participación.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=FIL+Guadalajara'"/>
+                                    <img alt="Escuela Verano" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="eSCUELA INTERNAL VERANO 2018.jpg"/>
                                 </div>
-                                <div class="flex flex-col py-2">
-                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-2">Evento Internacional</div>
-                                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-[#1152d4] transition-colors mb-3">Participación FIL Guadalajara</h4>
-                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 italic">Intercambio científico en la Feria Internacional del Libro.</p>
+                                <div class="text-center">
+                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-1">Formación</div>
+                                    <h4 class="text-sm font-bold text-slate-900">Escuela Internacional Verano 2018</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Fil Guadalajara -->
+                        <div class="flex-none w-[320px] md:w-[400px] snap-start group carousel-item">
+                            <div class="flex flex-col gap-6">
+                                <div class="w-full aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-md">
+                                    <img alt="Fil Guadalajara" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Fil Guadalajara participación.jpg"/>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-1">Congreso</div>
+                                    <h4 class="text-sm font-bold text-slate-900">FIL Guadalajara Participación</h4>
                                 </div>
                             </div>
                         </div>
@@ -394,162 +400,138 @@
                         <div class="flex-none w-[320px] md:w-[400px] snap-start group carousel-item">
                             <div class="flex flex-col gap-6">
                                 <div class="w-full aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-md">
-                                    <img alt="CALAS 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="CALAS 2.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=CALAS+2'"/>
+                                    <img alt="CALAS 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="CALAS 2.jpg"/>
                                 </div>
-                                <div class="flex flex-col py-2">
-                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-2">Investigación</div>
-                                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-[#1152d4] transition-colors mb-3">CALAS</h4>
-                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 italic">Centro Maria Sibylla Merian de Estudios Latinoamericanos.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 5. Estancia en la rábida -->
-                        <div class="flex-none w-[320px] md:w-[400px] snap-start group carousel-item">
-                            <div class="flex flex-col gap-6">
-                                <div class="w-full aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-md">
-                                    <img alt="Estancia en la rábida" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Estancia en la rábida.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=Estancia+Rábida'"/>
-                                </div>
-                                <div class="flex flex-col py-2">
-                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-2">Estancia</div>
-                                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-[#1152d4] transition-colors mb-3">Estancia en La Rábida</h4>
-                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 italic">Movilidad doctoral y trabajo de campo.</p>
+                                <div class="text-center">
+                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-1">Investigación</div>
+                                    <h4 class="text-sm font-bold text-slate-900">CALAS 2</h4>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 6. Capítulo en Teseo -->
+                        <!-- 5. Estancia rábida -->
                         <div class="flex-none w-[320px] md:w-[400px] snap-start group carousel-item">
                             <div class="flex flex-col gap-6">
                                 <div class="w-full aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-md">
-                                    <img alt="Capítulo en Teseo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Capítulo en Teseo.png" onerror="this.src='https://via.placeholder.com/400x300?text=Capítulo+Teseo'"/>
+                                    <img alt="Estancia Rábida" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Estancia en la rábida.jpg"/>
                                 </div>
-                                <div class="flex flex-col py-2">
-                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-2">Publicación</div>
-                                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-[#1152d4] transition-colors mb-3">Capítulo en Editorial Teseo</h4>
-                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 italic">Contribución a obra colectiva especializada.</p>
+                                <div class="text-center">
+                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-1">Movilidad</div>
+                                    <h4 class="text-sm font-bold text-slate-900">Estancia en la Rábida</h4>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 7. Libro teseo_capitulo 301 -->
+                        <!-- 6. Capítulo Teseo -->
                         <div class="flex-none w-[320px] md:w-[400px] snap-start group carousel-item">
                             <div class="flex flex-col gap-6">
                                 <div class="w-full aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-md">
-                                    <img alt="Libro teseo_capitulo 301" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Libro teseo_capitulo 301.png" onerror="this.src='https://via.placeholder.com/400x300?text=Libro+Teseo+301'"/>
+                                    <img alt="Capítulo Teseo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Capítulo en Teseo.png"/>
                                 </div>
-                                <div class="flex flex-col py-2">
-                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-2">Editorial</div>
-                                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-[#1152d4] transition-colors mb-3">Libro Teseo (Cap. 301)</h4>
-                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 italic">Resultados parciales de la investigación.</p>
+                                <div class="text-center">
+                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-1">Publicación</div>
+                                    <h4 class="text-sm font-bold text-slate-900">Capítulo en Teseo</h4>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 8. Rábida -->
+                        <!-- 7. Libro teseo 301 -->
                         <div class="flex-none w-[320px] md:w-[400px] snap-start group carousel-item">
                             <div class="flex flex-col gap-6">
                                 <div class="w-full aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-md">
-                                    <img alt="Rábida" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Rábida.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=Rábida'"/>
+                                    <img alt="Libro teseo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Libro teseo_capitulo 301.png"/>
                                 </div>
-                                <div class="flex flex-col py-2">
-                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-2">Divulgación</div>
-                                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-[#1152d4] transition-colors mb-3">Foros Rábida</h4>
-                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 italic">Encuentros de investigación iberoamericana.</p>
+                                <div class="text-center">
+                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-1">Libro</div>
+                                    <h4 class="text-sm font-bold text-slate-900">Libro Teseo (Cap. 301)</h4>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 9. Congreso de paz Granada -->
+                        <!-- 8. Congreso Granada -->
                         <div class="flex-none w-[320px] md:w-[400px] snap-start group carousel-item">
                             <div class="flex flex-col gap-6">
                                 <div class="w-full aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-md">
-                                    <img alt="Congreso de paz Granada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Congreso de paz Granada.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=Congreso+Paz+Granada'"/>
+                                    <img alt="Congreso Granada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Congreso de paz Granada.jpg"/>
                                 </div>
-                                <div class="flex flex-col py-2">
-                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-2">Congreso</div>
-                                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-[#1152d4] transition-colors mb-3">Congreso de Paz - Granada</h4>
-                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 italic">Presentación en la Universidad de Granada.</p>
+                                <div class="text-center">
+                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-1">Ponencia</div>
+                                    <h4 class="text-sm font-bold text-slate-900">Congreso de Paz Granada</h4>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 10. NegociarYAcordarLaPazConLasFARCEP -->
+                        <!-- 9. Negociar y Acordar -->
                         <div class="flex-none w-[320px] md:w-[400px] snap-start group carousel-item">
                             <div class="flex flex-col gap-6">
                                 <div class="w-full aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-md">
-                                    <img alt="NegociarYAcordarLaPazConLasFARCEP" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="NegociarYAcordarLaPazConLasFARCEP.png" onerror="this.src='https://via.placeholder.com/400x300?text=Negociar+y+Acordar+la+Paz'"/>
+                                    <img alt="Negociar y Acordar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="NegociarYAcordarLaPazConLasFARCEP.png"/>
                                 </div>
-                                <div class="flex flex-col py-2">
-                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-2">Publicación</div>
-                                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-[#1152d4] transition-colors mb-3">Negociar y Acordar la Paz</h4>
-                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 italic">Estudio histórico sobre el proceso con las FARC-EP.</p>
+                                <div class="text-center">
+                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-1">Publicación</div>
+                                    <h4 class="text-sm font-bold text-slate-900">Negociar y Acordar la Paz</h4>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 11. Portugal -->
+                        <!-- 10. Portugal -->
                         <div class="flex-none w-[320px] md:w-[400px] snap-start group carousel-item">
                             <div class="flex flex-col gap-6">
                                 <div class="w-full aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-md">
-                                    <img alt="Portugal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Portugal.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=Portugal+IPRA'"/>
+                                    <img alt="Portugal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Portugal.jpg"/>
                                 </div>
-                                <div class="flex flex-col py-2">
-                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-2">Congreso</div>
-                                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-[#1152d4] transition-colors mb-3">Conferencia en Portugal</h4>
-                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 italic">Exposición de avances en redes europeas de investigación.</p>
+                                <div class="text-center">
+                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-1">Ponencia</div>
+                                    <h4 class="text-sm font-bold text-slate-900">Conferencia en Portugal</h4>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 12. Artículo Historelo -->
+                        <!-- 11. Artículo Historelo -->
                         <div class="flex-none w-[320px] md:w-[400px] snap-start group carousel-item">
                             <div class="flex flex-col gap-6">
                                 <div class="w-full aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-md">
-                                    <img alt="Artículo Historelo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Artículo Historelo.png" onerror="this.src='https://via.placeholder.com/400x300?text=Artículo+Historelo'"/>
+                                    <img alt="Historelo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Artículo Historelo.png"/>
                                 </div>
-                                <div class="flex flex-col py-2">
-                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-2">Revista</div>
-                                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-[#1152d4] transition-colors mb-3">Artículo Revista Historelo</h4>
-                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 italic">Publicación indexada sobre historia regional y local.</p>
+                                <div class="text-center">
+                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-1">Revista</div>
+                                    <h4 class="text-sm font-bold text-slate-900">Artículo Revista Historelo</h4>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 13. Claip -->
+                        <!-- 12. Claip -->
                         <div class="flex-none w-[320px] md:w-[400px] snap-start group carousel-item">
                             <div class="flex flex-col gap-6">
                                 <div class="w-full aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-md">
-                                    <img alt="Claip" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Claip.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=CLAIP'"/>
+                                    <img alt="Claip" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Claip.jpg"/>
                                 </div>
-                                <div class="flex flex-col py-2">
-                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-2">Congreso</div>
-                                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-[#1152d4] transition-colors mb-3">Consejo Latinoamericano (CLAIP)</h4>
-                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 italic">Participación en investigación para la paz en América Latina.</p>
+                                <div class="text-center">
+                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-1">Congreso</div>
+                                    <h4 class="text-sm font-bold text-slate-900">Claip</h4>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 14. Artículo más consultado del mes -->
+                        <!-- 13. Más consultado -->
                         <div class="flex-none w-[320px] md:w-[400px] snap-start group carousel-item">
                             <div class="flex flex-col gap-6">
                                 <div class="w-full aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-md">
-                                    <img alt="Artículo más consultado del mes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Artículo más consultado del mes.png" onerror="this.src='https://via.placeholder.com/400x300?text=Artículo+Consultado'"/>
+                                    <img alt="Consultado" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Artículo más consultado del mes.png"/>
                                 </div>
-                                <div class="flex flex-col py-2">
-                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-2">Impacto</div>
-                                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-[#1152d4] transition-colors mb-3">Artículo Destacado del Mes</h4>
-                                    <p class="text-sm text-slate-500 leading-relaxed mb-4 italic">Mención por alto nivel de consultas en plataforma académica.</p>
+                                <div class="text-center">
+                                    <div class="text-[10px] font-bold text-[#1152d4] uppercase tracking-widest mb-1">Impacto</div>
+                                    <h4 class="text-sm font-bold text-slate-900">Artículo más consultado del mes</h4>
                                 </div>
                             </div>
                         </div>
 
                     </div>
 
-                    <!-- Indicadores (14 puntos) -->
-                    <div id="carousel-indicators" class="absolute bottom-0 left-0 right-0 flex justify-center gap-2">
+                    <!-- Indicadores -->
+                    <div id="carousel-indicators" class="flex justify-center gap-2 mt-4">
+                        <!-- Generados por script para 13 items -->
                         <div class="indicator-dot w-2 h-2 rounded-full bg-[#1152d4]"></div>
-                        <div class="indicator-dot w-2 h-2 rounded-full bg-slate-200"></div>
                         <div class="indicator-dot w-2 h-2 rounded-full bg-slate-200"></div>
                         <div class="indicator-dot w-2 h-2 rounded-full bg-slate-200"></div>
                         <div class="indicator-dot w-2 h-2 rounded-full bg-slate-200"></div>
@@ -566,11 +548,6 @@
                 </div>
 
                 <div class="mt-12 p-8 bg-blue-50 rounded-lg text-center border border-blue-100">
-                    <div class="flex justify-center items-center gap-4 mb-4">
-                        <span class="h-px w-8 bg-[#1152d4]/30"></span>
-                        <span class="text-[#1152d4] font-bold tracking-[0.3em] uppercase text-[10px]">Impacto Científico</span>
-                        <span class="h-px w-8 bg-[#1152d4]/30"></span>
-                    </div>
                     <p class="text-blue-800 font-medium">La difusión científica garantiza que los hallazgos de esta tesis contribuyan al fortalecimiento de los estudios de paz a nivel global.</p>
                 </div>
             </div>
@@ -595,6 +572,7 @@
     <script>
         lucide.createIcons();
 
+        // Gua’i (Navegación)
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(tab => {
                 tab.classList.remove('active');
@@ -616,30 +594,20 @@
             }
 
             const navHeight = document.querySelector('nav').offsetHeight;
-            const bodyRect = document.body.getBoundingClientRect().top;
             const elementRect = targetSection.getBoundingClientRect().top;
+            const bodyRect = document.body.getBoundingClientRect().top;
             const offsetPosition = (elementRect - bodyRect) - navHeight - 30;
 
             window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
         }
 
-        // Lógica del Carrusel (Rotación cada 8 segundos)
+        // Carrusel reko (Lógica del Carrusel)
         const carousel = document.getElementById('difusion-carousel');
         const dots = document.querySelectorAll('.indicator-dot');
         const items = document.querySelectorAll('.carousel-item');
         let currentIndex = 0;
 
-        function updateCarousel() {
-            if (!carousel || items.length === 0) return;
-            
-            currentIndex = (currentIndex + 1) % items.length;
-            
-            const itemWidth = items[0].offsetWidth + 32; // Ancho + gap
-            carousel.scrollTo({
-                left: currentIndex * itemWidth,
-                behavior: 'smooth'
-            });
-
+        function updateIndicators() {
             dots.forEach((dot, idx) => {
                 if (idx === currentIndex) {
                     dot.classList.remove('bg-slate-200');
@@ -651,7 +619,45 @@
             });
         }
 
-        setInterval(updateCarousel, 8000); // 8 segundos
+        function scrollToSlide(index) {
+            if (!carousel || items.length === 0) return;
+            const itemWidth = items[0].offsetWidth + 32; // Ancho + gap
+            carousel.scrollTo({
+                left: index * itemWidth,
+                behavior: 'smooth'
+            });
+            currentIndex = index;
+            updateIndicators();
+        }
+
+        function nextSlide() {
+            let nextIndex = (currentIndex + 1) % items.length;
+            scrollToSlide(nextIndex);
+        }
+
+        function prevSlide() {
+            let prevIndex = (currentIndex - 1 + items.length) % items.length;
+            scrollToSlide(prevIndex);
+        }
+
+        // Hekópe oipuru (Rotación automática cada 8 segundos)
+        let autoPlay = setInterval(nextSlide, 8000);
+
+        // Opytu’u ha oñepyrũ jey (Resetear timer al interactuar)
+        function resetTimer() {
+            clearInterval(autoPlay);
+            autoPlay = setInterval(nextSlide, 8000);
+        }
+
+        carousel.addEventListener('scroll', () => {
+            // Detectar slide actual basado en posición de scroll si es manual
+            const itemWidth = items[0].offsetWidth + 32;
+            const newIndex = Math.round(carousel.scrollLeft / itemWidth);
+            if(newIndex !== currentIndex && newIndex >= 0 && newIndex < items.length) {
+                currentIndex = newIndex;
+                updateIndicators();
+            }
+        });
     </script>
 </body>
 </html>
