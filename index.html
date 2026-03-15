@@ -93,14 +93,12 @@
             border-radius: 0 0.5rem 0.5rem 0;
         }
 
-        /* Estilos para enfocar el rostro en tu avatar */
         .avatar-zoom-lisbeth {
             object-fit: cover;
             object-position: center 15%; 
             transform: scale(1.6); 
         }
 
-        /* Carrusel Styles */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -115,9 +113,28 @@
         .indicator-dot {
             transition: all 0.3s ease;
         }
+
+        #method-modal {
+            display: none;
+            z-index: 9999;
+            backdrop-filter: blur(8px);
+        }
+        #method-modal.active {
+            display: flex;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Modal de Técnicas Metodológicas -->
+    <div id="method-modal" class="fixed inset-0 bg-black/90 flex-col items-center justify-center p-4 md:p-10 transition-opacity duration-300">
+        <button onclick="closeModal()" class="absolute top-6 right-6 text-white hover:text-red-500 transition-colors bg-white/10 p-2 rounded-full">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <div class="max-w-6xl w-full h-full flex items-center justify-center">
+            <img id="modal-image" src="image_10363d.png" alt="Detalle Metodológico" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl">
+        </div>
+    </div>
 
     <!-- Branding Institucional -->
     <div class="bg-[#003566] text-white py-3 px-6 text-sm flex justify-between items-center shadow-sm relative z-50">
@@ -136,14 +153,11 @@
                 Historia del proceso de negociación y los Acuerdos De Paz De La Habana (2012-2016)
             </p>
             
-            <!-- Sección de Créditos: Doctoranda y Director -->
             <div class="flex flex-col items-center border-t border-slate-200 pt-10">
                 <div class="flex flex-col md:flex-row items-center justify-center gap-x-12 md:gap-x-16 gap-y-8">
                     
-                    <!-- Bloque Doctoranda -->
                     <div class="flex items-center gap-5">
                         <div class="w-16 h-16 rounded-full border-2 border-white shadow-xl overflow-hidden shrink-0 bg-slate-100">
-                            <!-- Imagen actualizada a lkdh2.png -->
                             <img src="lkdh2.png" alt="Lisbeth Katherine Duarte Herrera" class="w-full h-full avatar-zoom-lisbeth">
                         </div>
                         <div class="text-left">
@@ -155,17 +169,14 @@
                         </div>
                     </div>
 
-                    <!-- Separador vertical (solo desktop) -->
                     <div class="hidden md:block h-10 w-px bg-slate-300"></div>
 
-                    <!-- Bloque Director de Tesis (Solo texto) -->
                     <div class="text-left py-1">
                         <span class="block text-[10px] uppercase tracking-[0.2em] font-medium text-slate-500 mb-0.5">Director de Tesis</span>
                         <span class="block text-xl text-slate-800 font-normal leading-tight">Dr. Mario López Martínez</span>
                     </div>
                 </div>
 
-                <!-- Ubicación y Año -->
                 <div class="flex items-center gap-2 mt-10 px-6 py-1.5 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-full shadow-sm">
                     <i data-lucide="map-pin" class="w-4 h-4 text-blue-900"></i>
                     <span class="font-semibold text-slate-800 tracking-wide text-sm">Granada, 2026</span>
@@ -190,6 +201,7 @@
     </nav>
 
     <main class="max-w-5xl mx-auto px-6 py-12">
+        
         <!-- Tab: Introducción -->
         <section id="intro" class="tab-content active">
             <div class="academic-card">
@@ -218,7 +230,6 @@
             </div>
         </section>
 
-        <!-- Tab: Investigación para la paz -->
         <section id="paz" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">La Investigación para la paz</h2>
@@ -235,37 +246,44 @@
             </div>
         </section>
 
-        <!-- Tab: Diseño metodológico -->
+        <!-- Tab: Diseño metodológico - SIN TEXTO DE CLIC Y SIN FUENTES PRINCIPALES -->
         <section id="metodo" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Diseño Metodológico</h2>
-                <div class="space-y-8">
-                    <div class="bg-slate-900 text-white p-6 rounded-lg shadow-inner text-center">
+                <div class="space-y-12">
+                    <div class="bg-slate-900 text-white p-8 rounded-lg shadow-inner text-center max-w-4xl mx-auto">
                         <h4 class="text-blue-400 font-bold text-xs uppercase mb-2">Estrategia de Investigación</h4>
                         <p class="text-lg font-light tracking-wide">Cualitativa, de tipo histórico-interpretativo y basada en el estudio de caso profundo.</p>
                     </div>
-                    <div class="grid md:grid-cols-2 gap-10">
-                        <div>
-                            <h4 class="font-bold text-slate-800 mb-5 flex items-center gap-2 border-b border-slate-100 pb-2"><i data-lucide="settings-2" class="w-5 h-5 text-blue-600"></i> Técnicas Empleadas</h4>
-                            <ul class="space-y-5 text-slate-600 text-sm">
-                                <li class="flex gap-3 items-start"><span class="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0"></span><div><strong class="text-slate-800 block">Revisión documental</strong>Examen sistemático de archivos oficiales del proceso de paz.</div></li>
-                                <li class="flex gap-3 items-start"><span class="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0"></span><div><strong class="text-slate-800 block">Análisis del discurso</strong>Interpretación semántica y pragmática de narrativas clave.</div></li>
-                                <li class="flex gap-3 items-start"><span class="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0"></span><div><strong class="text-slate-800 block">Minería de datos</strong>Método "Distancia de Levenshtein" para comparar técnicamente versiones de acuerdos.</div></li>
-                                <li class="flex gap-3 items-start"><span class="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0"></span><div><strong class="text-slate-800 block">Crítica de fuentes</strong>Triangulación de información para validez histórica.</div></li>
-                            </ul>
-                        </div>
-                        <div class="space-y-6">
-                            <div class="p-5 bg-slate-50 rounded-lg border border-slate-100">
-                                <h4 class="font-bold text-slate-800 text-xs uppercase mb-3 text-blue-800">Fuentes Principales</h4>
-                                <p class="text-xs text-slate-600 leading-relaxed italic">Memorias de Juan Manuel Santos, Humberto de la Calle y Enrique Santos. Actas y comunicados oficiales.</p>
-                            </div>
-                        </div>
+
+                    <div class="max-w-3xl mx-auto">
+                        <!-- Título de técnicas sin el texto de instrucciones solicitado -->
+                        <h4 class="font-bold text-slate-800 mb-6 flex items-center gap-2 border-b border-slate-100 pb-2">
+                            <i data-lucide="settings-2" class="w-5 h-5 text-blue-600"></i> Técnicas Empleadas
+                        </h4>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <li onclick="openModal()" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group">
+                                <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
+                                <span class="text-sm text-slate-700 font-semibold group-hover:text-blue-600">Revisión documental</span>
+                            </li>
+                            <li onclick="openModal()" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group">
+                                <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
+                                <span class="text-sm text-slate-700 font-semibold group-hover:text-blue-600">Análisis del discurso</span>
+                            </li>
+                            <li onclick="openModal()" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group">
+                                <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
+                                <span class="text-sm text-slate-700 font-semibold group-hover:text-blue-600">Minería de datos</span>
+                            </li>
+                            <li onclick="openModal()" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group">
+                                <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
+                                <span class="text-sm text-slate-700 font-semibold group-hover:text-blue-600">Crítica de fuentes</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Tab: Procesos fallidos -->
         <section id="fallidos" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Procesos de paz fallidos con las FARC-EP</h2>
@@ -286,7 +304,6 @@
             </div>
         </section>
 
-        <!-- Tab: Resultados -->
         <section id="resultados" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Resultados</h2>
@@ -310,7 +327,6 @@
             </div>
         </section>
 
-        <!-- Tab: Conclusiones -->
         <section id="conclusiones" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Conclusiones</h2>
@@ -329,7 +345,6 @@
             </div>
         </section>
 
-        <!-- Tab: Difusión científica -->
         <section id="difusion" class="tab-content">
             <div class="academic-card research-gradient">
                 <div class="flex items-center gap-6 mb-12">
@@ -414,6 +429,24 @@
             window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
         }
 
+        // --- Modal Logic ---
+        function openModal() {
+            const modal = document.getElementById('method-modal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('method-modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.getElementById('method-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // --- Carousel Logic ---
         const carousel = document.getElementById('difusion-carousel');
         let currentIndex = 0;
 
