@@ -65,7 +65,6 @@
         .hero-header {
             position: relative;
             background-size: cover;
-            /* Se baja la foto de fondo al 98% como se solicitó */
             background-position: center 98%;
             background-color: #ffffff; 
             background-image: url('Caratula.png');
@@ -92,6 +91,13 @@
             padding: 1rem;
             margin-bottom: 1rem;
             border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        /* Estilos para enfocar el rostro en tu avatar */
+        .avatar-zoom-lisbeth {
+            object-fit: cover;
+            object-position: center 15%; 
+            transform: scale(1.6); 
         }
 
         /* Carrusel Styles */
@@ -126,23 +132,24 @@
             <h1 class="serif-font text-3xl md:text-5xl lg:text-6xl text-slate-900 mb-6 leading-tight">
                 De la guerra a la paz con ayuda de todos
             </h1>
-            <!-- Subtítulo en tono negro más oscuro solicitado -->
             <p class="text-xl md:text-2xl text-black font-light italic mb-12 max-w-4xl mx-auto">
                 Historia del proceso de negociación y los Acuerdos De Paz De La Habana (2012-2016)
             </p>
             
-            <!-- Sección de Créditos: Doctoranda y Director alineados horizontalmente al mismo nivel -->
+            <!-- Sección de Créditos: Doctoranda y Director -->
             <div class="flex flex-col items-center border-t border-slate-200 pt-10">
-                <div class="flex flex-col md:flex-row items-center justify-center gap-x-12 md:gap-x-20 gap-y-8">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-x-12 md:gap-x-16 gap-y-8">
                     
                     <!-- Bloque Doctoranda -->
                     <div class="flex items-center gap-5">
-                        <img src="lkdh2.png" alt="Lisbeth Katherine Duarte Herrera" class="w-16 h-16 rounded-full object-cover border-2 border-white shadow-xl">
+                        <div class="w-16 h-16 rounded-full border-2 border-white shadow-xl overflow-hidden shrink-0 bg-slate-100">
+                            <!-- Imagen actualizada a lkdh2.png -->
+                            <img src="lkdh2.png" alt="Lisbeth Katherine Duarte Herrera" class="w-full h-full avatar-zoom-lisbeth">
+                        </div>
                         <div class="text-left">
                             <span class="block text-[10px] uppercase tracking-[0.2em] font-medium text-blue-900 mb-0.5">Doctoranda</span>
                             <div class="flex items-center gap-2">
                                 <span class="text-xl text-slate-800 font-normal leading-tight">Lisbeth Katherine Duarte Herrera</span>
-                                <!-- Birrete al lado del nombre como se pidió -->
                                 <i data-lucide="graduation-cap" class="w-5 h-5 text-blue-900 shrink-0"></i>
                             </div>
                         </div>
@@ -151,7 +158,7 @@
                     <!-- Separador vertical (solo desktop) -->
                     <div class="hidden md:block h-10 w-px bg-slate-300"></div>
 
-                    <!-- Bloque Director de Tesis -->
+                    <!-- Bloque Director de Tesis (Solo texto) -->
                     <div class="text-left py-1">
                         <span class="block text-[10px] uppercase tracking-[0.2em] font-medium text-slate-500 mb-0.5">Director de Tesis</span>
                         <span class="block text-xl text-slate-800 font-normal leading-tight">Dr. Mario López Martínez</span>
@@ -332,7 +339,6 @@
                     <h2 class="serif-font text-3xl text-slate-800 tracking-tight">Difusión científica</h2>
                     <div class="grow h-px bg-slate-200"></div>
                 </div>
-                <!-- Carrusel -->
                 <div class="relative group/carousel px-12">
                     <button onclick="prevSlide()" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 border border-slate-200 p-2 rounded-full shadow-lg hover:bg-white hover:text-[#1152d4] transition-all text-slate-400">
                         <i data-lucide="chevron-left" class="w-6 h-6"></i>
@@ -357,7 +363,6 @@
                                 <div class="text-center"><h4 class="text-sm font-bold text-slate-900 uppercase tracking-tight">Artículo más consultado del mes</h4></div>
                             </div>
                         </div>
-                        <!-- Se pueden añadir más items aquí siguiendo el patrón -->
                     </div>
                 </div>
             </div>
