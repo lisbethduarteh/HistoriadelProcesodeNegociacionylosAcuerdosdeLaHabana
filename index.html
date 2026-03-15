@@ -246,7 +246,7 @@
             </div>
         </section>
 
-        <!-- Tab: Diseño metodológico - SIN TEXTO DE CLIC Y SIN FUENTES PRINCIPALES -->
+        <!-- Tab: Diseño metodológico - IMÁGENES ACTUALIZADAS -->
         <section id="metodo" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Diseño Metodológico</h2>
@@ -257,24 +257,23 @@
                     </div>
 
                     <div class="max-w-3xl mx-auto">
-                        <!-- Título de técnicas sin el texto de instrucciones solicitado -->
                         <h4 class="font-bold text-slate-800 mb-6 flex items-center gap-2 border-b border-slate-100 pb-2">
                             <i data-lucide="settings-2" class="w-5 h-5 text-blue-600"></i> Técnicas Empleadas
                         </h4>
                         <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <li onclick="openModal()" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group">
+                            <li onclick="openModal('image_10363d.png')" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group">
                                 <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
                                 <span class="text-sm text-slate-700 font-semibold group-hover:text-blue-600">Revisión documental</span>
                             </li>
-                            <li onclick="openModal()" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group">
+                            <li onclick="openModal('image_10363d.png')" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group">
                                 <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
                                 <span class="text-sm text-slate-700 font-semibold group-hover:text-blue-600">Análisis del discurso</span>
                             </li>
-                            <li onclick="openModal()" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group">
+                            <li onclick="openModal('Distancia de Levenshtein metodo.png')" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group">
                                 <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
                                 <span class="text-sm text-slate-700 font-semibold group-hover:text-blue-600">Minería de datos</span>
                             </li>
-                            <li onclick="openModal()" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group">
+                            <li onclick="openModal('Critica de fuentes.png')" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group">
                                 <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
                                 <span class="text-sm text-slate-700 font-semibold group-hover:text-blue-600">Crítica de fuentes</span>
                             </li>
@@ -284,6 +283,7 @@
             </div>
         </section>
 
+        <!-- Otras secciones se mantienen sin cambios -->
         <section id="fallidos" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Procesos de paz fallidos con las FARC-EP</h2>
@@ -430,8 +430,17 @@
         }
 
         // --- Modal Logic ---
-        function openModal() {
+        function openModal(imgSrc) {
             const modal = document.getElementById('method-modal');
+            const modalImg = document.getElementById('modal-image');
+            
+            // Si no se pasa imagen, usamos la por defecto
+            if (imgSrc) {
+                modalImg.src = imgSrc;
+            } else {
+                modalImg.src = 'image_10363d.png';
+            }
+            
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
