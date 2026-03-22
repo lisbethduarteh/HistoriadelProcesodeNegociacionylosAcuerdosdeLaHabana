@@ -358,43 +358,214 @@
             </div>
         </section>
 
+        <!-- SECCIÓN DE DIFUSIÓN CIENTÍFICA MODIFICADA -->
         <section id="difusion" class="tab-content">
-            <div class="academic-card research-gradient">
+            <div class="academic-card research-gradient overflow-hidden">
                 <div class="flex items-center gap-6 mb-12">
-                    <div class="flex-none">
-                        <span class="text-xs font-black text-primary/40 tracking-[0.5em] uppercase">07</span>
-                    </div>
                     <h2 class="serif-font text-3xl text-slate-800 tracking-tight">Difusión científica</h2>
                     <div class="grow h-px bg-slate-200"></div>
                 </div>
-                <div class="relative group/carousel px-12">
-                    <button onclick="prevSlide()" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 border border-slate-200 p-2 rounded-full shadow-lg hover:bg-white hover:text-[#1152d4] transition-all text-slate-400">
+                <div class="relative group/carousel px-4 md:px-8">
+                    <button onclick="prevSlide()" class="absolute -left-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 border border-slate-200 p-2 rounded-full shadow-lg hover:bg-white hover:text-[#1152d4] transition-all text-slate-500">
                         <i data-lucide="chevron-left" class="w-6 h-6"></i>
                     </button>
-                    <button onclick="nextSlide()" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 border border-slate-200 p-2 rounded-full shadow-lg hover:bg-white hover:text-[#1152d4] transition-all text-slate-400">
+                    <button onclick="nextSlide()" class="absolute -right-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 border border-slate-200 p-2 rounded-full shadow-lg hover:bg-white hover:text-[#1152d4] transition-all text-slate-500">
                         <i data-lucide="chevron-right" class="w-6 h-6"></i>
                     </button>
-                    <div id="difusion-carousel" class="flex overflow-x-auto gap-8 pb-10 no-scrollbar snap-x snap-mandatory scroll-smooth">
-                        <div class="flex-none w-[320px] md:w-[400px] snap-start group carousel-item">
-                            <div class="flex flex-col gap-6">
-                                <div class="w-full aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-md">
-                                    <img alt="A paso de Tesis" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="A paso de Tesis_lkdh.png"/>
+                    
+                    <!-- Contenedor del Carrusel (Sin gap para conectar las líneas de tiempo) -->
+                    <div id="difusion-carousel" class="flex overflow-x-auto pb-12 pt-4 no-scrollbar snap-x snap-mandatory scroll-smooth relative">
+
+                        <!-- Elemento 1 -->
+                        <div class="flex-none w-[240px] md:w-[280px] snap-center group carousel-item cursor-pointer" onclick="openModal('eSCUELA INTERNAL VERANO 2018.jpg', 'I Escuela de Verano P.U. Javeriana – U. Goethe')">
+                            <div class="flex flex-col items-center">
+                                <span class="text-sm font-bold text-blue-800 mb-2">2018</span>
+                                <!-- Línea de tiempo y punto -->
+                                <div class="w-full relative flex items-center justify-center h-4 mb-6">
+                                    <div class="absolute w-full h-[2px] bg-slate-200"></div>
+                                    <div class="w-4 h-4 rounded-full bg-blue-600 border-[3px] border-white shadow-md ring-1 ring-slate-300 z-10 transition-transform duration-300 group-hover:scale-150 group-hover:bg-blue-400"></div>
                                 </div>
-                                <div class="text-center"><h4 class="text-sm font-bold text-slate-900 uppercase tracking-tight">A paso de Tesis</h4></div>
+                                <!-- Imagen y Efecto Hover -->
+                                <div class="relative w-4/5 aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-sm group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
+                                    <img alt="I Escuela de Verano P.U. Javeriana – U. Goethe" class="w-full h-full object-cover" src="eSCUELA INTERNAL VERANO 2018.jpg"/>
+                                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <i data-lucide="zoom-in" class="text-white w-8 h-8"></i>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-5 px-4 w-full">
+                                    <h4 class="text-xs font-bold text-slate-800 uppercase tracking-tight line-clamp-3">I Escuela de Verano P.U. Javeriana – U. Goethe</h4>
+                                </div>
                             </div>
                         </div>
-                        <div class="flex-none w-[320px] md:w-[400px] snap-start group carousel-item">
-                            <div class="flex flex-col gap-6">
-                                <div class="w-full aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-md">
-                                    <img alt="Artículo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Artículo más consultado del mes.jpg"/>
+
+                        <!-- Elemento 2 -->
+                        <div class="flex-none w-[240px] md:w-[280px] snap-center group carousel-item cursor-pointer" onclick="openModal('CALAS 2.jpg', 'Beca-CALAS. Feria Internacional del Libro (FIL) de Guadalajara')">
+                            <div class="flex flex-col items-center">
+                                <span class="text-sm font-bold text-blue-800 mb-2">2019</span>
+                                <div class="w-full relative flex items-center justify-center h-4 mb-6">
+                                    <div class="absolute w-full h-[2px] bg-slate-200"></div>
+                                    <div class="w-4 h-4 rounded-full bg-blue-600 border-[3px] border-white shadow-md ring-1 ring-slate-300 z-10 transition-transform duration-300 group-hover:scale-150 group-hover:bg-blue-400"></div>
                                 </div>
-                                <div class="text-center"><h4 class="text-sm font-bold text-slate-900 uppercase tracking-tight">Artículo más consultado del mes</h4></div>
+                                <div class="relative w-4/5 aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-sm group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
+                                    <img alt="Beca-CALAS. Feria Internacional del Libro (FIL) de Guadalajara" class="w-full h-full object-cover" src="CALAS 2.jpg"/>
+                                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="zoom-in" class="text-white w-8 h-8"></i></div>
+                                </div>
+                                <div class="text-center mt-5 px-4 w-full">
+                                    <h4 class="text-xs font-bold text-slate-800 uppercase tracking-tight line-clamp-3">Beca-CALAS. Feria Internacional del Libro (FIL) de Guadalajara</h4>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- Elemento 3 -->
+                        <div class="flex-none w-[240px] md:w-[280px] snap-center group carousel-item cursor-pointer" onclick="openModal('Rábida.jpg', 'Beca-La Rábida. Estancia de investigación.')">
+                            <div class="flex flex-col items-center">
+                                <span class="text-sm font-bold text-blue-800 mb-2">2019</span>
+                                <div class="w-full relative flex items-center justify-center h-4 mb-6">
+                                    <div class="absolute w-full h-[2px] bg-slate-200"></div>
+                                    <div class="w-4 h-4 rounded-full bg-blue-600 border-[3px] border-white shadow-md ring-1 ring-slate-300 z-10 transition-transform duration-300 group-hover:scale-150 group-hover:bg-blue-400"></div>
+                                </div>
+                                <div class="relative w-4/5 aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-sm group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
+                                    <img alt="Beca-La Rábida. Estancia de investigación." class="w-full h-full object-cover" src="Rábida.jpg"/>
+                                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="zoom-in" class="text-white w-8 h-8"></i></div>
+                                </div>
+                                <div class="text-center mt-5 px-4 w-full">
+                                    <h4 class="text-xs font-bold text-slate-800 uppercase tracking-tight line-clamp-3">Beca-La Rábida. Estancia de investigación.</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Elemento 4 -->
+                        <div class="flex-none w-[240px] md:w-[280px] snap-center group carousel-item cursor-pointer" onclick="openModal('A paso de Tesis_lkdh.png', 'Entrevista en la Red NET CAPAZ')">
+                            <div class="flex flex-col items-center">
+                                <span class="text-sm font-bold text-blue-800 mb-2">2022</span>
+                                <div class="w-full relative flex items-center justify-center h-4 mb-6">
+                                    <div class="absolute w-full h-[2px] bg-slate-200"></div>
+                                    <div class="w-4 h-4 rounded-full bg-blue-600 border-[3px] border-white shadow-md ring-1 ring-slate-300 z-10 transition-transform duration-300 group-hover:scale-150 group-hover:bg-blue-400"></div>
+                                </div>
+                                <div class="relative w-4/5 aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-sm group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
+                                    <img alt="Entrevista en la Red NET CAPAZ" class="w-full h-full object-cover" src="A paso de Tesis_lkdh.png"/>
+                                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="zoom-in" class="text-white w-8 h-8"></i></div>
+                                </div>
+                                <div class="text-center mt-5 px-4 w-full">
+                                    <h4 class="text-xs font-bold text-slate-800 uppercase tracking-tight line-clamp-3">Entrevista en la Red NET CAPAZ</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Elemento 5 -->
+                        <div class="flex-none w-[240px] md:w-[280px] snap-center group carousel-item cursor-pointer" onclick="openModal('NegociarYAcordarLaPazConLasFARCEP.jpg', 'Artículo publicado en Revista científica')">
+                            <div class="flex flex-col items-center">
+                                <span class="text-sm font-bold text-blue-800 mb-2">2022</span>
+                                <div class="w-full relative flex items-center justify-center h-4 mb-6">
+                                    <div class="absolute w-full h-[2px] bg-slate-200"></div>
+                                    <div class="w-4 h-4 rounded-full bg-blue-600 border-[3px] border-white shadow-md ring-1 ring-slate-300 z-10 transition-transform duration-300 group-hover:scale-150 group-hover:bg-blue-400"></div>
+                                </div>
+                                <div class="relative w-4/5 aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-sm group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
+                                    <img alt="Artículo publicado en Revista científica" class="w-full h-full object-cover" src="NegociarYAcordarLaPazConLasFARCEP.jpg"/>
+                                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="zoom-in" class="text-white w-8 h-8"></i></div>
+                                </div>
+                                <div class="text-center mt-5 px-4 w-full">
+                                    <h4 class="text-xs font-bold text-slate-800 uppercase tracking-tight line-clamp-3">Artículo publicado en Revista científica</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Elemento 6 -->
+                        <div class="flex-none w-[240px] md:w-[280px] snap-center group carousel-item cursor-pointer" onclick="openModal('Congreso de paz Granada.jpg', 'Ponente Congreso internacional de Investigación para la paz')">
+                            <div class="flex flex-col items-center">
+                                <span class="text-sm font-bold text-blue-800 mb-2">2023</span>
+                                <div class="w-full relative flex items-center justify-center h-4 mb-6">
+                                    <div class="absolute w-full h-[2px] bg-slate-200"></div>
+                                    <div class="w-4 h-4 rounded-full bg-blue-600 border-[3px] border-white shadow-md ring-1 ring-slate-300 z-10 transition-transform duration-300 group-hover:scale-150 group-hover:bg-blue-400"></div>
+                                </div>
+                                <div class="relative w-4/5 aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-sm group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
+                                    <img alt="Ponente Congreso internacional de Investigación para la paz" class="w-full h-full object-cover" src="Congreso de paz Granada.jpg"/>
+                                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="zoom-in" class="text-white w-8 h-8"></i></div>
+                                </div>
+                                <div class="text-center mt-5 px-4 w-full">
+                                    <h4 class="text-xs font-bold text-slate-800 uppercase tracking-tight line-clamp-3">Ponente Congreso internacional de Investigación para la paz</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Elemento 7 -->
+                        <div class="flex-none w-[240px] md:w-[280px] snap-center group carousel-item cursor-pointer" onclick="openModal('Capítulo en Teseo.jpg', 'Capítulo de libro')">
+                            <div class="flex flex-col items-center">
+                                <span class="text-sm font-bold text-blue-800 mb-2">2024</span>
+                                <div class="w-full relative flex items-center justify-center h-4 mb-6">
+                                    <div class="absolute w-full h-[2px] bg-slate-200"></div>
+                                    <div class="w-4 h-4 rounded-full bg-blue-600 border-[3px] border-white shadow-md ring-1 ring-slate-300 z-10 transition-transform duration-300 group-hover:scale-150 group-hover:bg-blue-400"></div>
+                                </div>
+                                <div class="relative w-4/5 aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-sm group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
+                                    <img alt="Capítulo de libro" class="w-full h-full object-cover" src="Capítulo en Teseo.jpg"/>
+                                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="zoom-in" class="text-white w-8 h-8"></i></div>
+                                </div>
+                                <div class="text-center mt-5 px-4 w-full">
+                                    <h4 class="text-xs font-bold text-slate-800 uppercase tracking-tight line-clamp-3">Capítulo de libro</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Elemento 8 -->
+                        <div class="flex-none w-[240px] md:w-[280px] snap-center group carousel-item cursor-pointer" onclick="openModal('Portugal.jpg', 'Ponente Congreso Internacional para el Estudio de la Mediación y los conflictos')">
+                            <div class="flex flex-col items-center">
+                                <span class="text-sm font-bold text-blue-800 mb-2">2024</span>
+                                <div class="w-full relative flex items-center justify-center h-4 mb-6">
+                                    <div class="absolute w-full h-[2px] bg-slate-200"></div>
+                                    <div class="w-4 h-4 rounded-full bg-blue-600 border-[3px] border-white shadow-md ring-1 ring-slate-300 z-10 transition-transform duration-300 group-hover:scale-150 group-hover:bg-blue-400"></div>
+                                </div>
+                                <div class="relative w-4/5 aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-sm group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
+                                    <img alt="Ponente Congreso Internacional para el Estudio de la Mediación y los conflictos" class="w-full h-full object-cover" src="Portugal.jpg"/>
+                                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="zoom-in" class="text-white w-8 h-8"></i></div>
+                                </div>
+                                <div class="text-center mt-5 px-4 w-full">
+                                    <h4 class="text-xs font-bold text-slate-800 uppercase tracking-tight line-clamp-3">Ponente Congreso Internacional para el Estudio de la Mediación y los conflictos</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Elemento 9 -->
+                        <div class="flex-none w-[240px] md:w-[280px] snap-center group carousel-item cursor-pointer" onclick="openModal('Artículo más consultado del mes.jpg', 'Artículo publicado en Revista científica')">
+                            <div class="flex flex-col items-center">
+                                <span class="text-sm font-bold text-blue-800 mb-2">2024</span>
+                                <div class="w-full relative flex items-center justify-center h-4 mb-6">
+                                    <div class="absolute w-full h-[2px] bg-slate-200"></div>
+                                    <div class="w-4 h-4 rounded-full bg-blue-600 border-[3px] border-white shadow-md ring-1 ring-slate-300 z-10 transition-transform duration-300 group-hover:scale-150 group-hover:bg-blue-400"></div>
+                                </div>
+                                <div class="relative w-4/5 aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-sm group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
+                                    <img alt="Artículo publicado en Revista científica" class="w-full h-full object-cover" src="Artículo más consultado del mes.jpg"/>
+                                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="zoom-in" class="text-white w-8 h-8"></i></div>
+                                </div>
+                                <div class="text-center mt-5 px-4 w-full">
+                                    <h4 class="text-xs font-bold text-slate-800 uppercase tracking-tight line-clamp-3">Artículo publicado en Revista científica</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Elemento 10 -->
+                        <div class="flex-none w-[240px] md:w-[280px] snap-center group carousel-item cursor-pointer" onclick="openModal('Claip.jpg', 'Ponente XIV Congreso latinoamericano de investigación para la paz CLAIP')">
+                            <div class="flex flex-col items-center">
+                                <span class="text-sm font-bold text-blue-800 mb-2">2025</span>
+                                <div class="w-full relative flex items-center justify-center h-4 mb-6">
+                                    <div class="absolute w-full h-[2px] bg-slate-200"></div>
+                                    <div class="w-4 h-4 rounded-full bg-blue-600 border-[3px] border-white shadow-md ring-1 ring-slate-300 z-10 transition-transform duration-300 group-hover:scale-150 group-hover:bg-blue-400"></div>
+                                </div>
+                                <div class="relative w-4/5 aspect-[4/3] flex-none overflow-hidden rounded-xl border border-slate-200 shadow-sm group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
+                                    <img alt="Ponente XIV Congreso latinoamericano de investigación para la paz CLAIP" class="w-full h-full object-cover" src="Claip.jpg"/>
+                                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="zoom-in" class="text-white w-8 h-8"></i></div>
+                                </div>
+                                <div class="text-center mt-5 px-4 w-full">
+                                    <h4 class="text-xs font-bold text-slate-800 uppercase tracking-tight line-clamp-3">Ponente XIV Congreso latinoamericano de investigación para la paz CLAIP</h4>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
+        <!-- FIN DE LA SECCIÓN MODIFICADA -->
+
     </main>
 
     <footer class="bg-[#003566] text-slate-300 py-16">
@@ -520,7 +691,7 @@
             const items = document.querySelectorAll('.carousel-item');
             if (!carousel || items.length === 0) return;
             currentIndex = (currentIndex + 1) % items.length;
-            const itemWidth = items[0].offsetWidth + 32; 
+            const itemWidth = items[0].offsetWidth; 
             carousel.scrollTo({ left: currentIndex * itemWidth, behavior: 'smooth' });
         }
 
@@ -528,7 +699,7 @@
             const items = document.querySelectorAll('.carousel-item');
             if (!carousel || items.length === 0) return;
             currentIndex = (currentIndex - 1 + items.length) % items.length;
-            const itemWidth = items[0].offsetWidth + 32; 
+            const itemWidth = items[0].offsetWidth; 
             carousel.scrollTo({ left: currentIndex * itemWidth, behavior: 'smooth' });
         }
 
