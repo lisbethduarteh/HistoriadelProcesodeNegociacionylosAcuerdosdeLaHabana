@@ -123,6 +123,61 @@
         #method-modal.active {
             display: flex;
         }
+
+        /* Estilos para la anatomía del conflicto (Iceberg Galtung) */
+        .conflict-visualization {
+            background: linear-gradient(to bottom, #0f172a, #1e293b);
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            color: white;
+            position: relative;
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .node-box {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        .node-box:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(56, 189, 248, 0.4);
+            transform: translateY(-2px);
+        }
+        .node-tag {
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .node-content {
+            font-size: 0.75rem;
+            line-height: 1.4;
+            color: #cbd5e1;
+        }
+        .node-sub-label {
+            color: #94a3b8;
+            font-weight: 600;
+            margin-right: 0.25rem;
+        }
+        .iceberg-svg {
+            width: 100%;
+            height: auto;
+            max-width: 320px;
+            filter: drop-shadow(0 0 20px rgba(14, 165, 233, 0.2));
+        }
+        .insight-card {
+            background: linear-gradient(135deg, #064e3b, #065f46);
+            border-left: 5px solid #10b981;
+            padding: 1.25rem;
+            border-radius: 0 1rem 1rem 0;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body>
@@ -218,7 +273,6 @@
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Introducción</h2>
                 <div class="space-y-12">
-                    <!-- Pregunta Problema -->
                     <div>
                         <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-4 flex items-center gap-2">
                             <i data-lucide="help-circle" class="w-4 h-4"></i> Pregunta Problema
@@ -228,7 +282,6 @@
                         </p>
                     </div>
 
-                    <!-- Objetivos -->
                     <div class="grid md:grid-cols-2 gap-10">
                         <div class="md:pt-8 lg:pt-10">
                             <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-4">Objetivo General</h3>
@@ -247,7 +300,6 @@
                         </div>
                     </div>
 
-                    <!-- Supuestos de la Investigación -->
                     <div>
                         <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-6 border-b border-slate-100 pb-2">Supuestos de la Investigación</h3>
                         <div class="grid md:grid-cols-2 gap-6">
@@ -273,140 +325,172 @@
             </div>
         </section>
 
-        <!-- Tab: Investigación para la paz - ACTUALIZADO CON CUARTO CUADRO -->
+        <!-- Tab: Investigación para la paz -->
         <section id="paz" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">La Investigación para la paz</h2>
-                <div class="space-y-10">
+                
+                <div class="space-y-12">
                     <div>
                         <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-6">Evolución de la Disciplina</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-                            <!-- Fase Fundacional -->
                             <div class="p-5 bg-slate-50 rounded-lg border border-slate-200 flex flex-col h-full">
                                 <div class="mb-4">
                                     <span class="block font-bold text-blue-900 text-xl">Fundacional</span>
                                     <span class="text-sm font-semibold text-blue-500 uppercase tracking-tighter">1930 - 1959</span>
                                 </div>
                                 <div class="space-y-4 flex-grow">
-                                    <div>
-                                        <span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Características</span>
-                                        <ul class="text-[14px] text-slate-600 space-y-1 list-disc pl-3 leading-snug">
-                                            <li>Enfoque minimalista</li>
-                                            <li>Ausencia de violencia directa</li>
-                                            <li>Estudio de la guerra</li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Enfoque de Paz</span>
-                                        <span class="text-[15px] font-medium text-blue-700">Paz Negativa</span>
-                                    </div>
-                                    <div>
-                                        <span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Exponentes</span>
-                                        <p class="text-[14px] text-slate-700 font-semibold italic">Quincy Wright, Lewis Richardson</p>
-                                    </div>
+                                    <div><span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Características</span><ul class="text-[14px] text-slate-600 space-y-1 list-disc pl-3 leading-snug"><li>Enfoque minimalista</li><li>Ausencia de violencia directa</li><li>Estudio de la guerra</li></ul></div>
+                                    <div><span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Enfoque de Paz</span><span class="text-[15px] font-medium text-blue-700">Paz Negativa</span></div>
+                                    <div><span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Exponentes</span><p class="text-[14px] text-slate-700 font-semibold italic">Quincy Wright, Lewis Richardson</p></div>
                                 </div>
                             </div>
-
-                            <!-- Fase de Expansión -->
                             <div class="p-5 bg-blue-50/50 rounded-lg border border-blue-100 flex flex-col h-full shadow-sm">
                                 <div class="mb-4">
                                     <span class="block font-bold text-blue-900 text-xl">Expansión</span>
                                     <span class="text-sm font-semibold text-blue-500 uppercase tracking-tighter">1960 - 1990</span>
                                 </div>
                                 <div class="space-y-4 flex-grow">
-                                    <div>
-                                        <span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Características</span>
-                                        <ul class="text-[14px] text-slate-600 space-y-1 list-disc pl-3 leading-snug">
-                                            <li>Enfoque intermedio</li>
-                                            <li>Ausencia de violencia estructural</li>
-                                            <li>Realización de necesidades básicas insatisfechas</li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Enfoque de Paz</span>
-                                        <span class="text-[15px] font-medium text-blue-700">Paz Positiva</span>
-                                    </div>
-                                    <div>
-                                        <span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Exponentes</span>
-                                        <p class="text-[14px] text-slate-700 font-semibold italic">Johan Galtung, John Lederach</p>
-                                    </div>
+                                    <div><span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Características</span><ul class="text-[14px] text-slate-600 space-y-1 list-disc pl-3 leading-snug"><li>Enfoque intermedio</li><li>Ausencia de violencia estructural</li><li>Realización de necesidades básicas</li></ul></div>
+                                    <div><span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Enfoque de Paz</span><span class="text-[15px] font-medium text-blue-700">Paz Positiva</span></div>
+                                    <div><span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Exponentes</span><p class="text-[14px] text-slate-700 font-semibold italic">Johan Galtung, John Lederach</p></div>
                                 </div>
                             </div>
-
-                            <!-- Fase de Hibridación -->
                             <div class="p-5 bg-blue-50/50 rounded-lg border border-blue-100 flex flex-col h-full shadow-sm">
                                 <div class="mb-4">
                                     <span class="block font-bold text-blue-900 text-xl">Hibridación</span>
                                     <span class="text-sm font-semibold text-blue-500 uppercase tracking-tighter">1991 - Actualidad</span>
                                 </div>
                                 <div class="space-y-4 flex-grow">
-                                    <div>
-                                        <span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Características</span>
-                                        <ul class="text-[14px] text-slate-600 space-y-1 list-disc pl-3 leading-snug">
-                                            <li>Enfoque maximalista</li>
-                                            <li>Ausencia de violencia cultural</li>
-                                            <li>Énfasis en educación y comunicación para la paz</li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Enfoque de Paz</span>
-                                        <span class="text-[15px] font-medium text-blue-700">Paz Imperfecta</span>
-                                    </div>
-                                    <div>
-                                        <span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Exponentes</span>
-                                        <p class="text-[14px] text-slate-700 font-semibold italic leading-snug">Francisco Muñoz, Vicenç Fisas</p>
-                                    </div>
+                                    <div><span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Características</span><ul class="text-[14px] text-slate-600 space-y-1 list-disc pl-3 leading-snug"><li>Enfoque maximalista</li><li>Ausencia de violencia cultural</li><li>Educación para la paz</li></ul></div>
+                                    <div><span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Enfoque de Paz</span><span class="text-[15px] font-medium text-blue-700">Paz Imperfecta</span></div>
+                                    <div><span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Exponentes</span><p class="text-[14px] text-slate-700 font-semibold italic leading-snug">Francisco Muñoz, Vicenç Fisas</p></div>
                                 </div>
                             </div>
-
-                            <!-- Otros enfoques de paz - NUEVO CUADRO SOLICITADO -->
                             <div class="p-5 bg-blue-50/50 rounded-lg border border-blue-100 flex flex-col h-full shadow-sm">
                                 <div class="mb-4">
-                                    <span class="block font-bold text-blue-900 text-xl leading-tight">Otros enfoques de paz</span>
+                                    <span class="block font-bold text-blue-900 text-xl leading-tight">Otros enfoques</span>
                                     <span class="text-sm font-semibold text-blue-500 uppercase tracking-tighter opacity-0">Separator</span>
                                 </div>
                                 <div class="space-y-4 flex-grow">
-                                    <p class="text-[14px] text-slate-600 leading-snug text-justify">
-                                        Emergencia de otros enfoques que desafían y tensionan los paradigmas hegemónicos. 
-                                        Por ejemplo: <span class="text-blue-700 font-semibold">Paz feminista, Paz gaia, Paz indígena, Paz poscolonial</span>. 
-                                        Las anteriores voces desafían y amplían las miradas hacia la justicia social, la equidad de género, la ecología, la descolonización y la inclusión de voces marginadas.
+                                    <p class="text-[13px] text-slate-600 leading-snug text-justify">
+                                        Emergencia de paradigmas que desafían las hegemonías. <span class="text-blue-700 font-semibold italic">Paz feminista, Paz gaia, Paz indígena, Paz poscolonial</span>. Amplían miradas hacia la justicia social y ecología.
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Cita de Fuente -->
-                        <div class="mt-4 text-left">
-                            <p class="text-[12px] text-slate-400 italic leading-relaxed">
-                                Fuente: (Martínez, Comins, & París, 2009); (López Becerra, 2011); (Jimenéz Bautista & Jimenéz Aguilar, 2014); (Harto de Vera, 2016).
-                            </p>
-                        </div>
+                        <div class="mt-4"><p class="text-[11px] text-slate-400 italic">Fuente: (Martínez, Comins, & París, 2009); (López Becerra, 2011); (Jimenéz Bautista & Jimenéz Aguilar, 2014); (Harto de Vera, 2016).</p></div>
                     </div>
 
-                    <div class="grid md:grid-cols-2 gap-12 pt-6">
-                        <div>
-                            <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-4">Teorías de Resolución</h3>
-                            <p class="text-slate-600 mb-4 font-semibold text-sm">Triángulo del Conflicto (ABC) de Johan Galtung:</p>
-                            <ul class="space-y-2 text-slate-600 text-sm">
-                                <li class="flex items-center gap-2"><i data-lucide="triangle" class="w-4 h-4 text-blue-400"></i> Actitudes</li>
-                                <li class="flex items-center gap-2"><i data-lucide="triangle" class="w-4 h-4 text-blue-400"></i> Comportamientos</li>
-                                <li class="flex items-center gap-2"><i data-lucide="triangle" class="w-4 h-4 text-blue-400"></i> Contradicciones</li>
-                            </ul>
+                    <!-- Sección: Teorías de Resolución (ANATOMÍA DEL CONFLICTO) -->
+                    <div class="pt-6">
+                        <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-6">Teorías de Resolución</h3>
+                        <p class="text-slate-700 font-bold text-lg mb-8 border-l-4 border-blue-400 pl-4">Anatomía tridimensional del conflicto: El Triángulo de Galtung y sus raíces invisibles</p>
+                        
+                        <div class="conflict-visualization">
+                            <div class="relative grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                                
+                                <!-- Columna Izquierda: NODO A -->
+                                <div class="md:col-span-4 flex flex-col gap-12">
+                                    <div class="node-box">
+                                        <span class="node-tag text-blue-400">Nodo A: Actitudes (Presunciones)</span>
+                                        <div class="node-content">
+                                            <p class="mb-2"><span class="node-sub-label">Concepto:</span> Cómo se perciben las partes recíprocamente (odio, miedo, estereotipos).</p>
+                                            <p class="mb-2 font-bold text-blue-300 italic">Anclaje: Violencia Cultural</p>
+                                            <p><span class="node-sub-label">Colombia:</span> Polarización social y semblanza recíproca entre guerrilla y Estado.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Columna Central: ICEBERG SVG CON PUNTOS ABC -->
+                                <div class="md:col-span-4 flex flex-col items-center gap-4">
+                                    <div class="node-box border-orange-400/40 bg-orange-400/10 w-full mb-4">
+                                        <span class="node-tag text-orange-400">Nodo B: Comportamiento (Conducta)</span>
+                                        <div class="node-content">
+                                            <p class="mb-1"><span class="node-sub-label">Concepto:</span> Cooperación o confrontación, amenazas y ataques destructivos.</p>
+                                            <p class="font-bold text-orange-200 italic mb-1">Anclaje: Violencia Directa</p>
+                                            <p><span class="node-sub-label">Colombia:</span> Escalamiento y desescalamiento táctico-militar.</p>
+                                        </div>
+                                    </div>
+
+                                    <svg viewBox="0 0 200 200" class="iceberg-svg overflow-visible">
+                                        <!-- Punta (Visible) -->
+                                        <path d="M100 10 L140 70 L60 70 Z" fill="#fb923c" fill-opacity="0.8" />
+                                        <path d="M100 10 L115 70 L85 70 Z" fill="#fdba74" />
+                                        
+                                        <text x="100" y="5" fill="#fb923c" font-size="12" font-weight="900" text-anchor="middle" filter="drop-shadow(0 0 2px black)">B</text>
+                                        
+                                        <!-- Línea de Agua -->
+                                        <line x1="10" y1="75" x2="190" y2="75" stroke="white" stroke-width="1.5" stroke-dasharray="6,4" />
+                                        <text x="150" y="70" fill="white" font-size="6" font-weight="bold" opacity="0.6">NIVEL VISIBLE</text>
+                                        
+                                        <!-- Parte Sumergida (Invisible) -->
+                                        <path d="M60 80 L140 80 L170 170 L30 170 Z" fill="#0ea5e9" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1" />
+                                        <path d="M80 80 L120 80 L140 170 L60 170 Z" fill="#0ea5e9" fill-opacity="0.3" />
+                                        
+                                        <circle cx="30" cy="170" r="4" fill="#38bdf8" />
+                                        <circle cx="170" cy="170" r="4" fill="#38bdf8" />
+                                        
+                                        <text x="20" y="185" fill="#38bdf8" font-size="12" font-weight="900" text-anchor="middle" filter="drop-shadow(0 0 2px black)">A</text>
+                                        <text x="180" y="185" fill="#38bdf8" font-size="12" font-weight="900" text-anchor="middle" filter="drop-shadow(0 0 2px black)">C</text>
+
+                                        <path d="M100 10 L30 170 L170 170 Z" fill="none" stroke="white" stroke-width="0.75" stroke-dasharray="3,3" opacity="0.4" />
+                                    </svg>
+                                </div>
+
+                                <!-- Columna Derecha: NODO C -->
+                                <div class="md:col-span-4 flex flex-col gap-12">
+                                    <div class="node-box">
+                                        <span class="node-tag text-blue-400">Nodo C: Contradicción (Incompatibilidad)</span>
+                                        <div class="node-content">
+                                            <p class="mb-2"><span class="node-sub-label">Concepto:</span> Desajuste en la estructura social, necesidades básicas insatisfechas.</p>
+                                            <p class="mb-2 font-bold text-blue-300 italic">Anclaje: Violencia Estructural</p>
+                                            <p><span class="node-sub-label">Colombia:</span> Exclusión política histórica, injusticia social y control de tierras.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-12 flex justify-end">
+                                <div class="insight-card max-w-sm">
+                                    <div class="flex items-start gap-3">
+                                        <i data-lucide="lightbulb" class="w-6 h-6 text-emerald-300 shrink-0 mt-1"></i>
+                                        <div>
+                                            <span class="block font-black text-emerald-300 text-[10px] uppercase tracking-widest mb-2">Core Insight</span>
+                                            <p class="text-[11px] leading-relaxed text-emerald-50">
+                                                Centrarse solo en <span class="font-bold text-white underline decoration-blue-400">Actitudes (A)</span> genera intervenciones puramente educativas; centrarse solo en <span class="font-bold text-white underline decoration-orange-400">Comportamiento (B)</span> crea treguas frágiles; ignorar las <span class="font-bold text-white underline decoration-blue-400">Contradicciones (C)</span> perpetúa la desigualdad estructural.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="bg-blue-50/30 p-6 rounded-lg border border-blue-100/50">
-                            <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-4">Secuencia del Proceso</h3>
-                            <ol class="space-y-3 text-slate-700 font-medium text-sm">
-                                <li class="flex gap-2"><span>1.</span> Pre-negociación (Exploratoria)</li>
-                                <li class="flex gap-2"><span>2.</span> Negociación</li>
-                                <li class="flex gap-2"><span>3.</span> Firma e implementación</li>
-                            </ol>
+                        <!-- Cita de Fuente debajo de la imagen solicitada -->
+                        <div class="mt-4 text-left">
+                            <p class="text-[11px] text-slate-400 italic">
+                                Fuente: elaborado con base en(Calderón Concha, 2009); (Ramsbotham, Woodhouse, & Miall, 2011)
+                            </p>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8 mt-12">
+                            <div class="bg-blue-50/30 p-6 rounded-lg border border-blue-100/50">
+                                <h4 class="text-blue-900 font-bold uppercase text-[10px] tracking-widest mb-4">Secuencia del Proceso</h4>
+                                <ol class="space-y-3 text-slate-700 font-medium text-sm">
+                                    <li class="flex gap-2"><span>1.</span> Pre-negociación (Exploratoria)</li>
+                                    <li class="flex gap-2"><span>2.</span> Negociación</li>
+                                    <li class="flex gap-2"><span>3.</span> Firma e implementación</li>
+                                </ol>
+                            </div>
+                            <div class="p-6 flex items-center justify-center bg-slate-50 border border-slate-200 rounded-lg italic text-[14px] text-slate-500 text-center leading-relaxed">
+                                "Dominar la paz implica entender cada una de sus dimensiones y raíces invisibles para una transformación real del conflicto."
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Tab: Diseño Metodológico -->
+        <!-- Diseño Metodológico -->
         <section id="metodo" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Diseño Metodológico</h2>
@@ -443,19 +527,6 @@
             </div>
         </section>
 
-        <!-- Tab: Procesos fallidos -->
-        <section id="fallidos" class="tab-content">
-            <div class="academic-card">
-                <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Procesos de paz fallidos</h2>
-                <div class="space-y-6">
-                    <div class="p-6 border rounded-lg hover:bg-slate-50 transition-colors">
-                        <div class="flex justify-between items-center mb-2"><h4 class="font-bold text-lg text-slate-800">La Uribe (1982)</h4><span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded">Minimalista</span></div>
-                        <p class="text-slate-600 text-sm text-justify">Bajo Belisario Betancur. Careció de veeduría internacional y protocolos claros de cese al fuego.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Otros Tabs: Resultados, Conclusiones y Difusión se mantienen -->
     </main>
 
@@ -475,18 +546,14 @@
         let galleryIndex = 0;
 
         function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.nav-button').forEach(btn => {
                 btn.classList.remove('nav-active');
                 btn.classList.add('text-slate-400');
             });
 
             const targetSection = document.getElementById(tabId);
-            if (targetSection) {
-                targetSection.classList.add('active');
-            }
+            if (targetSection) targetSection.classList.add('active');
             
             const activeBtn = document.getElementById('nav-' + tabId);
             if (activeBtn) {
@@ -498,7 +565,6 @@
             const elementRect = targetSection.getBoundingClientRect().top;
             const bodyRect = document.body.getBoundingClientRect().top;
             const offsetPosition = (elementRect - bodyRect) - navHeight - 30;
-
             window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
         }
 
@@ -507,13 +573,10 @@
             const modal = document.getElementById('method-modal');
             const modalImg = document.getElementById('modal-image');
             const modalCap = document.getElementById('modal-caption');
-            
             modalImg.src = imgSrc || 'image_10363d.png';
             modalCap.innerText = caption || '';
-            
             document.getElementById('modal-prev').classList.add('hidden');
             document.getElementById('modal-next').classList.add('hidden');
-            
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -568,21 +631,6 @@
             currentIndex = (currentIndex + 1) % items.length;
             const itemWidth = items[0].offsetWidth + 32; 
             carousel.scrollTo({ left: currentIndex * itemWidth, behavior: 'smooth' });
-            updateIndicators();
-        }
-
-        function updateIndicators() {
-            const dots = document.querySelectorAll('.indicator-dot');
-            if (dots.length === 0) return;
-            dots.forEach((dot, idx) => {
-                if (idx === currentIndex) {
-                    dot.classList.remove('bg-slate-200');
-                    dot.classList.add('bg-[#1152d4]');
-                } else {
-                    dot.classList.remove('bg-[#1152d4]');
-                    dot.classList.add('bg-slate-200');
-                }
-            });
         }
 
         setInterval(nextSlide, 8000);
