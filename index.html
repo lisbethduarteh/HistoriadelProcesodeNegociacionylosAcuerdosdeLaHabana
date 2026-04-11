@@ -127,18 +127,18 @@
         /* Estilos para las visualizaciones técnicas */
         .technical-blueprint {
             background: linear-gradient(to bottom, #0f172a, #1e293b);
-            border-radius: 1.5rem;
-            padding: 3rem 2rem;
+            border-radius: 1rem;
+            padding: 2rem;
             color: white;
             position: relative;
-            box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+            box-shadow: inset 0 0 80px rgba(0,0,0,0.5);
             border: 1px solid rgba(255,255,255,0.05);
         }
         .node-box {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(4px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1rem;
+            padding: 1.25rem;
             border-radius: 0.75rem;
             transition: all 0.3s ease;
         }
@@ -148,7 +148,7 @@
             transform: translateY(-2px);
         }
         .node-tag {
-            font-size: 0.65rem;
+            font-size: 0.75rem; /* Aumentado de 0.65rem */
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.1em;
@@ -156,8 +156,8 @@
             margin-bottom: 0.5rem;
         }
         .node-content {
-            font-size: 0.75rem;
-            line-height: 1.4;
+            font-size: 0.85rem; /* Aumentado de 0.75rem */
+            line-height: 1.5;
             color: #cbd5e1;
         }
         .node-sub-label {
@@ -184,15 +184,15 @@
             height: 4px;
             background: rgba(255, 255, 255, 0.2);
             position: relative;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
         }
         .spectrum-point {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             background: white;
             border-radius: 50%;
             position: absolute;
-            top: -4px;
+            top: -3px;
             transform: translateX(-50%);
         }
         .spectrum-point.highlight {
@@ -202,7 +202,7 @@
         .technique-card {
             height: 100%;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 1rem;
+            padding: 1.25rem;
             border-radius: 0.25rem;
             display: flex;
             flex-direction: column;
@@ -218,7 +218,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto 1fr 1fr;
-            gap: 1.5rem;
+            gap: 1.25rem;
             position: relative;
         }
         .quadrant {
@@ -235,21 +235,21 @@
             border-color: rgba(255, 255, 255, 0.3);
         }
         .quadrant-icon {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             flex-shrink: 0;
             opacity: 0.8;
         }
         .quadrant-title {
-            font-size: 11px;
+            font-size: 14px; /* Aumentado de 11px */
             font-weight: 800;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
             display: block;
         }
         .quadrant-text {
-            font-size: 10px;
-            line-height: 1.5;
+            font-size: 13px; /* Aumentado de 10px */
+            line-height: 1.6;
             color: #cbd5e1;
         }
     </style>
@@ -326,7 +326,6 @@
 
     <main class="max-w-5xl mx-auto px-6 py-12">
         
-        <!-- Tab: Introducción -->
         <section id="intro" class="tab-content active">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Introducción</h2>
@@ -363,7 +362,6 @@
             </div>
         </section>
 
-        <!-- Tab: Investigación para la paz -->
         <section id="paz" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">La Investigación para la paz</h2>
@@ -407,17 +405,16 @@
                         <div class="mt-4"><p class="text-[11px] text-slate-400 italic">Fuente: (Martínez, Comins, & París, 2009); (López Becerra, 2011); (Jimenéz Bautista & Jimenéz Aguilar, 2014); (Harto de Vera, 2016).</p></div>
                     </div>
 
-                    <!-- Sección: Teorías de Resolución (ANATOMÍA DEL CONFLICTO) -->
+                    <!-- Sección: Teorías de Resolución -->
                     <div class="pt-6">
                         <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-6">Teorías de Resolución de Conflictos</h3>
                         <p class="text-slate-700 font-bold text-lg mb-8 border-l-4 border-blue-400 pl-4">Anatomía tridimensional del conflicto: El Triángulo de Galtung y sus raíces invisibles</p>
-                        
                         <div class="technical-blueprint">
                             <div class="relative grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                                 <div class="md:col-span-4 flex flex-col gap-12">
                                     <div class="node-box">
                                         <span class="node-tag text-blue-400">Nodo A: Actitudes (Presunciones)</span>
-                                        <div class="node-content"><p class="mb-2"><span class="node-sub-label">Concepto:</span> Cómo se perciben las partes recíprocamente (odio, miedo, estereotipos).</p><p class="mb-2 font-bold text-blue-300 italic">Anclaje: Violencia Cultural</p><p><span class="node-sub-label">Colombia:</span> Polarización social y semblanza recíproca entre guerrilla y Estado.</p></div>
+                                        <div class="node-content"><p class="mb-2"><span class="node-sub-label">Concepto:</span> Cómo se perciben las partes recíprocamente.</p><p class="mb-2 font-bold text-blue-300 italic">Anclaje: Violencia Cultural</p><p><span class="node-sub-label">Colombia:</span> Polarización social y semblanza recíproca entre guerrilla y Estado.</p></div>
                                     </div>
                                 </div>
                                 <div class="md:col-span-4 flex flex-col items-center gap-4">
@@ -428,8 +425,8 @@
                                     <svg viewBox="0 0 200 200" class="iceberg-svg overflow-visible">
                                         <path d="M100 10 L140 70 L60 70 Z" fill="#fb923c" fill-opacity="0.8" /><path d="M100 10 L115 70 L85 70 Z" fill="#fdba74" />
                                         <text x="100" y="5" fill="#fb923c" font-size="12" font-weight="900" text-anchor="middle" filter="drop-shadow(0 0 2px black)">B</text>
-                                        <line x1="10" y1="75" x2="190" y2="75" stroke="white" stroke-width="1.5" stroke-dasharray="6,4" /><text x="150" y="70" fill="white" font-size="6" font-weight="bold" opacity="0.6">NIVEL VISIBLE</text>
-                                        <path d="M60 80 L140 80 L170 170 L30 170 Z" fill="#0ea5e9" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1" /><path d="M80 80 L120 80 L140 170 L60 170 Z" fill="#0ea5e9" fill-opacity="0.3" />
+                                        <line x1="10" y1="75" x2="190" y2="75" stroke="white" stroke-width="1.5" stroke-dasharray="6,4" />
+                                        <path d="M60 80 L140 80 L170 170 L30 170 Z" fill="#0ea5e9" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1" />
                                         <circle cx="30" cy="170" r="4" fill="#38bdf8" /><circle cx="170" cy="170" r="4" fill="#38bdf8" />
                                         <text x="20" y="185" fill="#38bdf8" font-size="12" font-weight="900" text-anchor="middle" filter="drop-shadow(0 0 2px black)">A</text><text x="180" y="185" fill="#38bdf8" font-size="12" font-weight="900" text-anchor="middle" filter="drop-shadow(0 0 2px black)">C</text>
                                         <path d="M100 10 L30 170 L170 170 Z" fill="none" stroke="white" stroke-width="0.75" stroke-dasharray="3,3" opacity="0.4" />
@@ -438,20 +435,20 @@
                                 <div class="md:col-span-4 flex flex-col gap-12">
                                     <div class="node-box">
                                         <span class="node-tag text-blue-400">Nodo C: Contradicción (Incompatibilidad)</span>
-                                        <div class="node-content"><p class="mb-2"><span class="node-sub-label">Concepto:</span> Desajuste en la estructura social, necesidades básicas insatisfechas.</p><p class="mb-2 font-bold text-blue-300 italic">Anclaje: Violencia Estructural</p><p><span class="node-sub-label">Colombia:</span> Exclusión política histórica, injusticia social y control de tierras.</p></div>
+                                        <div class="node-content"><p class="mb-2"><span class="node-sub-label">Concepto:</span> Desajuste estructural, necesidades básicas insatisfechas.</p><p class="mb-2 font-bold text-blue-300 italic">Anclaje: Violencia Estructural</p><p><span class="node-sub-label">Colombia:</span> Exclusión política histórica, injusticia social y control de tierras.</p></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="mt-12 flex justify-end">
                                 <div class="insight-card max-w-sm">
                                     <div class="flex items-start gap-3">
-                                        <i data-lucide="lightbulb" class="w-6 h-6 text-emerald-300 shrink-0 mt-1"></i>
-                                        <div><span class="block font-black text-emerald-300 text-[10px] uppercase tracking-widest mb-2">Core Insight</span><p class="text-[11px] leading-relaxed text-emerald-50">Centrarse solo en <span class="font-bold text-white underline decoration-blue-400">Actitudes (A)</span> genera intervenciones puramente educativas; centrarse solo en <span class="font-bold text-white underline decoration-orange-400">Comportamiento (B)</span> crea treguas frágiles; ignorar las <span class="font-bold text-white underline decoration-blue-400">Contradicciones (C)</span> perpetúa la desigualdad estructural.</p></div>
+                                        <i data-lucide="lightbulb" class="w-6 h-6 text-emerald-300 shrink-0"></i>
+                                        <div><span class="block font-black text-emerald-300 text-[10px] uppercase tracking-widest mb-1">Core Insight</span><p class="text-[11px] leading-relaxed text-emerald-50">Centrarse solo en Actitudes (A) genera educación; centrarse solo en Comportamiento (B) crea treguas frágiles; ignorar Contradicciones (C) perpetúa la desigualdad estructural.</p></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-4 text-left"><p class="text-[11px] text-slate-400 italic">Fuente: elaborado con base en(Calderón Concha, 2009); (Ramsbotham, Woodhouse, & Miall, 2011)</p></div>
+                        <div class="mt-4 text-left"><p class="text-[11px] text-slate-400 italic">Fuente: (Calderón Concha, 2009); (Ramsbotham, Woodhouse, & Miall, 2011)</p></div>
 
                         <!-- Título: TÉCNICAS DE MANEJO DE CONFLICTOS -->
                         <div class="mt-14 mb-8">
@@ -460,20 +457,19 @@
 
                         <!-- ESQUEMA ESPECTRO DE INTERVENCIÓN -->
                         <div class="technical-blueprint">
-                            <div class="mb-10 text-center"><h4 class="text-lg font-bold mb-1">Espectro de Intervención</h4><p class="text-xs text-slate-400 uppercase tracking-tighter">Criterios tácticos para la selección de técnicas de gestión</p></div>
+                            <div class="mb-10 text-center"><h4 class="text-lg font-bold mb-1">Espectro de Intervención</h4><p class="text-xs text-slate-400 uppercase tracking-tighter">Criterios tácticos de gestión</p></div>
                             <div class="relative mb-12">
-                                <div class="flex justify-between text-[10px] uppercase font-bold tracking-widest mb-4"><span class="text-blue-300">← Máxima autonomía de las partes</span><span class="text-orange-300">Máximo control del tercero →</span></div>
                                 <div class="spectrum-bar"><div class="spectrum-point" style="left: 10%"></div><div class="spectrum-point" style="left: 30%"></div><div class="spectrum-point" style="left: 50%"></div><div class="spectrum-point" style="left: 70%"></div><div class="spectrum-point highlight" style="left: 90%"></div></div>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-                                <div class="technique-card"><span class="font-black text-[11px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Negociación</span><p class="text-[10px] leading-snug">Choque de intereses gestionado directamente mediante el diálogo bidireccional. Resultados por etapas.</p></div>
-                                <div class="technique-card"><span class="font-black text-[11px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Mediación</span><p class="text-[10px] leading-snug">Problema relacional. Un tercero imparcial facilita el proceso y la comunicación. Resultado no vinculante; las partes mantienen el control.</p></div>
-                                <div class="technique-card"><span class="font-black text-[11px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Conciliación</span><p class="text-[10px] leading-snug">Brecha práctica. Un tercero acerca posiciones y propone soluciones activamente. Regulada por normas jurídicas del Estado. Acuerdos ejecutivos.</p></div>
-                                <div class="technique-card"><span class="font-black text-[11px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Técnicas Mixtas</span><p class="text-[10px] leading-snug">Abordaje modular (ej. mediación primero, arbitraje si hay impasse). Combina diálogo procedimental y decisión autoritativa.</p></div>
-                                <div class="technique-card special"><span class="font-black text-[11px] uppercase tracking-wider border-b border-orange-400/40 pb-1 mb-2 text-orange-400">Arbitraje</span><p class="text-[10px] leading-snug">Controversia innegociable que exige decisión autoritativa. El tercero (árbitro) asume el control total y emite un laudo vinculante de alta exigibilidad.</p></div>
+                                <div class="technique-card"><span class="font-black text-[13px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Negociación</span><p class="text-[12px] leading-snug">Choque de intereses gestionado mediante diálogo bidireccional.</p></div>
+                                <div class="technique-card"><span class="font-black text-[13px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Mediación</span><p class="text-[12px] leading-snug">Tercero imparcial facilita el proceso. Resultado no vinculante.</p></div>
+                                <div class="technique-card"><span class="font-black text-[13px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Conciliación</span><p class="text-[12px] leading-snug">Tercero propone soluciones activamente. Regulada por normas jurídicas.</p></div>
+                                <div class="technique-card"><span class="font-black text-[13px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Técnicas Mixtas</span><p class="text-[12px] leading-snug">Abordaje modular. Combina diálogo y decisión autoritativa.</p></div>
+                                <div class="technique-card special"><span class="font-black text-[13px] uppercase tracking-wider border-b border-orange-400/40 pb-1 mb-2 text-orange-400">Arbitraje</span><p class="text-[12px] leading-snug">Tercero asume control total y emite laudo vinculante exigible.</p></div>
                             </div>
                         </div>
-                        <div class="mt-4 text-left"><p class="text-[11px] text-slate-400 italic">Fuente: elaboración propia con base en (Watzlawick, Beavin, & Jackson, 1991); (Fisas V. , 1998); (Ramsbotham, Woodhouse, & Miall, 2011).</p></div>
+                        <div class="mt-4 text-left"><p class="text-[11px] text-slate-400 italic">Fuente: (Watzlawick et al., 1991); (Fisas V., 1998); (Ramsbotham et al., 2011).</p></div>
 
                         <!-- SECCIÓN: MADUREZ DEL CONFLICTO -->
                         <div class="mt-14 mb-8">
@@ -483,73 +479,36 @@
                             </p>
                         </div>
 
-                        <!-- ESQUEMA CUADRANTES DE MADUREZ -->
-                        <div class="technical-blueprint p-10">
-                            <div class="mb-12 text-center">
+                        <!-- ESQUEMA CUADRANTES DE MADUREZ (Fuentes aumentadas) -->
+                        <div class="technical-blueprint py-8 px-6">
+                            <div class="mb-8 text-center">
                                 <h4 class="text-lg font-bold mb-1">Cuadrantes de Madurez</h4>
-                                <p class="text-xs text-slate-400 uppercase tracking-tighter">Modelos diagnósticos para identificar si un conflicto está listo para negociarse</p>
+                                <p class="text-xs text-slate-400 uppercase tracking-tighter">Modelos diagnósticos de negociación</p>
                             </div>
 
                             <div class="maturity-grid">
                                 <div class="quadrant">
-                                    <div class="quadrant-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                            <path d="M3 21h18M3 10l5-3 4 4 4-2 5 4" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <circle cx="21" cy="14" r="1" fill="currentColor"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <span class="quadrant-title text-slate-200">Catástrofe Mutua Inminente</span>
-                                        <p class="quadrant-text">Ambas partes enfrentan una amenaza grave a corto plazo con aumento dramático de costos. Requiere auto-examen urgente para evitar el precipicio.</p>
-                                    </div>
+                                    <div class="quadrant-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M3 10l5-3 4 4 4-2 5 4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="14" r="1" fill="currentColor"/></svg></div>
+                                    <div><span class="quadrant-title text-slate-200">Catástrofe Mutua Inminente</span><p class="quadrant-text">Amenaza grave a corto plazo con aumento dramático de costos. Requiere auto-examen urgente.</p></div>
                                 </div>
-
                                 <div class="quadrant border-emerald-500/30">
-                                    <div class="quadrant-icon text-emerald-400">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/><path d="m19.07 4.93-1.41 1.41M6.34 17.66l-1.41 1.41M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <span class="quadrant-title text-emerald-400">Oportunidad Tentadora (Planetas en conjunción)</span>
-                                        <p class="quadrant-text">Líderes descubren alternativas superiores (ej. reparto de poder) impulsados por cambios en apoyos externos y canales facilitadores.</p>
-                                    </div>
+                                    <div class="quadrant-icon text-emerald-400"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/><path d="m19.07 4.93-1.41 1.41M6.34 17.66l-1.41 1.41M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41"/></svg></div>
+                                    <div><span class="quadrant-title text-emerald-400">Oportunidad Tentadora</span><p class="quadrant-text">Líderes descubren alternativas superiores (ej. reparto de poder) impulsados por cambios externos.</p></div>
                                 </div>
-
                                 <div class="quadrant">
-                                    <div class="quadrant-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                            <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9M15 21V9M3 15h18"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <span class="quadrant-title text-slate-200">Estancamiento Perjudicial (Meseta)</span>
-                                        <p class="quadrant-text">Hurting stalemate. Empate absoluto en la capacidad de hacerse daño. Costos inaguantables sin ventaja a la vista.</p>
-                                    </div>
+                                    <div class="quadrant-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9M15 21V9M3 15h18"/></svg></div>
+                                    <div><span class="quadrant-title text-slate-200">Estancamiento Perjudicial (Meseta)</span><p class="quadrant-text">Hurting stalemate. Empate absoluto en capacidad de daño. Costos inaguantables sin ventaja.</p></div>
                                 </div>
-
                                 <div class="quadrant border-orange-500/30">
-                                    <div class="quadrant-icon text-orange-400">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <span class="quadrant-title text-orange-400">Trampa de Victoria</span>
-                                        <p class="quadrant-text">Atrapados en la búsqueda de victoria total. Los costos pasados se ven como "inversiones". Madura solo cuando se abandona la mentalidad de sacrificio heroico.</p>
-                                    </div>
+                                    <div class="quadrant-icon text-orange-400"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+                                    <div><span class="quadrant-title text-orange-400">Trampa de Victoria</span><p class="quadrant-text">Atrapados en búsqueda de victoria total. Madura solo cuando se abandona el sacrificio heroico.</p></div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Cita de Fuente Madurez solicitada -->
-                        <div class="mt-4 text-left">
-                            <p class="text-[11px] text-slate-400 italic">
-                                Fuente: (Zartman, 1985) (Mitchell, 1996) (Fisas V. , 2004)
-                            </p>
-                        </div>
+                        <div class="mt-4 text-left"><p class="text-[11px] text-slate-400 italic">Fuente: (Zartman, 1985) (Mitchell, 1996) (Fisas V. , 2004)</p></div>
 
-                        <div class="grid md:grid-cols-2 gap-8 mt-12">
+                        <div class="grid md:grid-cols-2 gap-8 mt-10">
                             <div class="bg-blue-50/30 p-6 rounded-lg border border-blue-100/50">
                                 <h4 class="text-blue-900 font-bold uppercase text-[10px] tracking-widest mb-4">Secuencia del Proceso</h4>
                                 <ol class="space-y-3 text-slate-700 font-medium text-sm">
