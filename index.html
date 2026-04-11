@@ -124,8 +124,8 @@
             display: flex;
         }
 
-        /* Estilos para la anatomía del conflicto (Iceberg Galtung) */
-        .conflict-visualization {
+        /* Estilos para las visualizaciones técnicas */
+        .technical-blueprint {
             background: linear-gradient(to bottom, #0f172a, #1e293b);
             border-radius: 1.5rem;
             padding: 3rem 2rem;
@@ -178,11 +178,45 @@
             border-radius: 0 1rem 1rem 0;
             box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
         }
+
+        /* Estilos específicos para el espectro de intervención */
+        .spectrum-bar {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            position: relative;
+            margin: 2rem 0;
+        }
+        .spectrum-point {
+            width: 12px;
+            height: 12px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: -4px;
+            transform: translateX(-50%);
+        }
+        .spectrum-point.highlight {
+            background: #fb923c;
+            box-shadow: 0 0 10px #fb923c;
+        }
+        .technique-card {
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 0.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .technique-card.special {
+            border-color: #fb923c;
+            color: #fb923c;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Modal de Técnicas Metodológicas con Navegación -->
+    <!-- Modal de Técnicas Metodológicas -->
     <div id="method-modal" class="fixed inset-0 bg-black/95 flex-col items-center justify-center p-4 md:p-10 transition-opacity duration-300">
         <button onclick="closeModal()" class="absolute top-6 right-6 text-white hover:text-red-500 transition-colors bg-white/10 p-2 rounded-full z-50">
             <i data-lucide="x" class="w-8 h-8"></i>
@@ -331,6 +365,7 @@
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">La Investigación para la paz</h2>
                 
                 <div class="space-y-12">
+                    <!-- Evolución de la Disciplina -->
                     <div>
                         <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-6">Evolución de la Disciplina</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
@@ -384,12 +419,11 @@
 
                     <!-- Sección: Teorías de Resolución (ANATOMÍA DEL CONFLICTO) -->
                     <div class="pt-6">
-                        <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-6">Teorías de Resolución</h3>
+                        <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-6">Teorías de Resolución de Conflictos</h3>
                         <p class="text-slate-700 font-bold text-lg mb-8 border-l-4 border-blue-400 pl-4">Anatomía tridimensional del conflicto: El Triángulo de Galtung y sus raíces invisibles</p>
                         
-                        <div class="conflict-visualization">
+                        <div class="technical-blueprint">
                             <div class="relative grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                                
                                 <!-- Columna Izquierda: NODO A -->
                                 <div class="md:col-span-4 flex flex-col gap-12">
                                     <div class="node-box">
@@ -465,10 +499,75 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Cita de Fuente debajo de la imagen solicitada -->
+
+                        <!-- Fuente Anatomía -->
                         <div class="mt-4 text-left">
                             <p class="text-[11px] text-slate-400 italic">
                                 Fuente: elaborado con base en(Calderón Concha, 2009); (Ramsbotham, Woodhouse, & Miall, 2011)
+                            </p>
+                        </div>
+
+                        <!-- Título: TÉCNICAS DE MANEJO DE CONFLICTOS -->
+                        <div class="mt-14 mb-8">
+                            <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest">TÉCNICAS DE MANEJO DE CONFLICTOS</h3>
+                        </div>
+
+                        <!-- ESQUEMA ESPECTRO DE INTERVENCIÓN -->
+                        <div class="technical-blueprint">
+                            <div class="mb-10 text-center">
+                                <h4 class="text-lg font-bold mb-1">Espectro de Intervención</h4>
+                                <p class="text-xs text-slate-400 uppercase tracking-tighter">Criterios tácticos para la selección de técnicas de gestión</p>
+                            </div>
+
+                            <!-- Barra de Escala -->
+                            <div class="relative mb-12">
+                                <div class="flex justify-between text-[10px] uppercase font-bold tracking-widest mb-4">
+                                    <span class="text-blue-300">← Máxima autonomía de las partes</span>
+                                    <span class="text-orange-300">Máximo control del tercero →</span>
+                                </div>
+                                <div class="spectrum-bar">
+                                    <div class="spectrum-point" style="left: 10%"></div>
+                                    <div class="spectrum-point" style="left: 30%"></div>
+                                    <div class="spectrum-point" style="left: 50%"></div>
+                                    <div class="spectrum-point" style="left: 70%"></div>
+                                    <div class="spectrum-point highlight" style="left: 90%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Grid de Técnicas -->
+                            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                                <!-- Negociación -->
+                                <div class="technique-card">
+                                    <span class="font-black text-[11px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Negociación</span>
+                                    <p class="text-[10px] leading-snug">Choque de intereses gestionado directamente mediante el diálogo bidireccional. Resultados por etapas.</p>
+                                </div>
+                                <!-- Mediación -->
+                                <div class="technique-card">
+                                    <span class="font-black text-[11px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Mediación</span>
+                                    <p class="text-[10px] leading-snug">Problema relacional. Un tercero imparcial facilita el proceso y la comunicación. Resultado no vinculante; las partes mantienen el control.</p>
+                                </div>
+                                <!-- Conciliación -->
+                                <div class="technique-card">
+                                    <span class="font-black text-[11px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Conciliación</span>
+                                    <p class="text-[10px] leading-snug">Brecha práctica. Un tercero acerca posiciones y propone soluciones activamente. Regulada por normas jurídicas del Estado. Acuerdos ejecutivos.</p>
+                                </div>
+                                <!-- Técnicas Mixtas -->
+                                <div class="technique-card">
+                                    <span class="font-black text-[11px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Técnicas Mixtas</span>
+                                    <p class="text-[10px] leading-snug">Abordaje modular (ej. mediación primero, arbitraje si hay impasse). Combina diálogo procedimental y decisión autoritativa.</p>
+                                </div>
+                                <!-- Arbitraje -->
+                                <div class="technique-card special">
+                                    <span class="font-black text-[11px] uppercase tracking-wider border-b border-orange-400/40 pb-1 mb-2 text-orange-400">Arbitraje</span>
+                                    <p class="text-[10px] leading-snug">Controversia innegociable que exige decisión autoritativa. El tercero (árbitro) asume el control total y emite un laudo vinculante de alta exigibilidad.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fuente Espectro -->
+                        <div class="mt-4 text-left">
+                            <p class="text-[11px] text-slate-400 italic">
+                                Fuente: elaboración propia con base en (Watzlawick, Beavin, & Jackson, 1991); (Fisas V. , 1998); (Ramsbotham, Woodhouse, & Miall, 2011).
                             </p>
                         </div>
 
