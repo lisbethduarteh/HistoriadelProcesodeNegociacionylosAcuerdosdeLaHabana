@@ -179,7 +179,7 @@
             box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
         }
 
-        /* Estilos específicos para el espectro de intervención */
+        /* Espectro de intervención */
         .spectrum-bar {
             height: 4px;
             background: rgba(255, 255, 255, 0.2);
@@ -212,6 +212,46 @@
             border-color: #fb923c;
             color: #fb923c;
         }
+
+        /* Cuadrantes de Madurez */
+        .maturity-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto 1fr 1fr;
+            gap: 1.5rem;
+            position: relative;
+        }
+        .quadrant {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 0.5rem;
+            display: flex;
+            gap: 1.25rem;
+            transition: all 0.3s ease;
+        }
+        .quadrant:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        .quadrant-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            opacity: 0.8;
+        }
+        .quadrant-title {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .quadrant-text {
+            font-size: 10px;
+            line-height: 1.5;
+            color: #cbd5e1;
+        }
     </style>
 </head>
 <body>
@@ -221,15 +261,8 @@
         <button onclick="closeModal()" class="absolute top-6 right-6 text-white hover:text-red-500 transition-colors bg-white/10 p-2 rounded-full z-50">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
-        
-        <button id="modal-prev" onclick="prevModalImg()" class="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 text-white hover:text-blue-400 transition-colors bg-white/5 p-3 rounded-full hidden">
-            <i data-lucide="chevron-left" class="w-10 h-10"></i>
-        </button>
-
-        <button id="modal-next" onclick="nextModalImg()" class="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 text-white hover:text-blue-400 transition-colors bg-white/5 p-3 rounded-full hidden">
-            <i data-lucide="chevron-right" class="w-10 h-10"></i>
-        </button>
-
+        <button id="modal-prev" onclick="prevModalImg()" class="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 text-white hover:text-blue-400 transition-colors bg-white/5 p-3 rounded-full hidden"><i data-lucide="chevron-left" class="w-10 h-10"></i></button>
+        <button id="modal-next" onclick="nextModalImg()" class="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 text-white hover:text-blue-400 transition-colors bg-white/5 p-3 rounded-full hidden"><i data-lucide="chevron-right" class="w-10 h-10"></i></button>
         <div class="max-w-6xl w-full h-full flex flex-col items-center justify-center">
             <img id="modal-image" src="" alt="Detalle Metodológico" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl transition-all duration-300">
             <p id="modal-caption" class="text-white/70 mt-6 text-sm font-medium tracking-wide uppercase"></p>
@@ -246,16 +279,10 @@
     <header class="hero-header border-b border-slate-200 py-12 md:py-20">
         <div class="hero-overlay"></div>
         <div class="hero-content max-w-5xl mx-auto px-6 text-center">
-            <h1 class="serif-font text-3xl md:text-5xl lg:text-6xl text-slate-900 mb-6 leading-tight">
-                De la guerra a la paz con ayuda de todos
-            </h1>
-            <p class="text-xl md:text-2xl text-black font-light italic mb-12 max-w-4xl mx-auto">
-                Historia del proceso de negociación y los Acuerdos De Paz De La Habana (2012-2016)
-            </p>
-            
+            <h1 class="serif-font text-3xl md:text-5xl lg:text-6xl text-slate-900 mb-6 leading-tight">De la guerra a la paz con ayuda de todos</h1>
+            <p class="text-xl md:text-2xl text-black font-light italic mb-12 max-w-4xl mx-auto">Historia del proceso de negociación y los Acuerdos De Paz De La Habana (2012-2016)</p>
             <div class="flex flex-col items-center border-t border-slate-200 pt-10">
                 <div class="flex flex-col md:flex-row items-center justify-center gap-x-12 md:gap-x-16 gap-y-8">
-                    
                     <div class="flex items-center gap-5">
                         <div class="w-16 h-16 rounded-full border-2 border-white shadow-xl overflow-hidden shrink-0 bg-slate-100">
                             <img src="lkdh2.png" alt="Lisbeth Katherine Duarte Herrera" class="w-full h-full avatar-zoom-lisbeth">
@@ -268,15 +295,12 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="hidden md:block h-10 w-px bg-slate-300"></div>
-
                     <div class="text-left py-1">
                         <span class="block text-[10px] uppercase tracking-[0.2em] font-medium text-slate-500 mb-0.5">Director de Tesis</span>
                         <span class="block text-xl text-slate-800 font-normal leading-tight">Dr. Mario López Martínez</span>
                     </div>
                 </div>
-
                 <div class="flex items-center gap-2 mt-10 px-6 py-1.5 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-full shadow-sm">
                     <i data-lucide="map-pin" class="w-4 h-4 text-blue-900"></i>
                     <span class="font-semibold text-slate-800 tracking-wide text-sm">Granada, 2026</span>
@@ -308,20 +332,13 @@
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Introducción</h2>
                 <div class="space-y-12">
                     <div>
-                        <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-4 flex items-center gap-2">
-                            <i data-lucide="help-circle" class="w-4 h-4"></i> Pregunta Problema
-                        </h3>
-                        <p class="text-xl text-slate-700 italic border-l-4 border-blue-200 pl-6 py-2">
-                            ¿Cuáles son los factores que contribuyeron y dificultaron el curso del proceso de negociación de paz entre el Estado colombiano y las FARC-EP durante el periodo 2012-2016, así como la firma del Acuerdo final de paz de La Habana?
-                        </p>
+                        <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-4 flex items-center gap-2"><i data-lucide="help-circle" class="w-4 h-4"></i> Pregunta Problema</h3>
+                        <p class="text-xl text-slate-700 italic border-l-4 border-blue-200 pl-6 py-2">¿Cuáles son los factores que contribuyeron y dificultaron el curso del proceso de negociación de paz entre el Estado colombiano y las FARC-EP durante el periodo 2012-2016, así como la firma del Acuerdo final de paz de La Habana?</p>
                     </div>
-
                     <div class="grid md:grid-cols-2 gap-10">
                         <div class="md:pt-8 lg:pt-10">
                             <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-4">Objetivo General</h3>
-                            <p class="text-slate-600 text-justify text-sm leading-relaxed">
-                                Analizar los factores que contribuyeron y dificultaron el proceso de negociación de paz entre el Estado colombiano y las FARC-EP durante el periodo 2012-2016, a la luz de las teorías de resolución de conflictos de modo que su estudio permita identificar lecciones aprendidas útiles para futuros procesos.
-                            </p>
+                            <p class="text-slate-600 text-justify text-sm leading-relaxed">Analizar los factores que contribuyeron y dificultaron el proceso de negociación de paz entre el Estado colombiano y las FARC-EP durante el periodo 2012-2016, a la luz de las teorías de resolución de conflictos de modo que su estudio permita identificar lecciones aprendidas útiles para futuros procesos.</p>
                         </div>
                         <div>
                             <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-4">Objetivos Específicos</h3>
@@ -333,26 +350,13 @@
                             </ul>
                         </div>
                     </div>
-
                     <div>
                         <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-6 border-b border-slate-100 pb-2">Supuestos de la Investigación</h3>
                         <div class="grid md:grid-cols-2 gap-6">
-                            <div class="assumption-box">
-                                <span class="block text-blue-900 font-bold text-sm mb-2">S1. “Diseño y agenda”</span>
-                                <p class="text-[13px] text-slate-600 text-justify">La existencia de una agenda previamente definida, sustantiva y procedimentalmente ordenada, orienta el desarrollo de las conversaciones, reduce ambigüedades y favorece la consecución de acuerdos durante la negociación.</p>
-                            </div>
-                            <div class="assumption-box">
-                                <span class="block text-blue-900 font-bold text-sm mb-2">S2. “Territorio neutral y reglas de juego”</span>
-                                <p class="text-[13px] text-slate-600 text-justify">La realización de las conversaciones en un territorio neutral, con reglas de funcionamiento estables, contribuye a la continuidad del diálogo y culminación de la negociación.</p>
-                            </div>
-                            <div class="assumption-box">
-                                <span class="block text-blue-900 font-bold text-sm mb-2">S3. “Dinámica de participación y legitimidad procesual”</span>
-                                <p class="text-[13px] text-slate-600 text-justify">La pluralidad y la interacción estructurada de actores relevantes (delegaciones, equipos técnicos, víctimas y representantes sociales), fortalece la legitimidad de la negociación y amplía el espacio de intercambios posibles.</p>
-                            </div>
-                            <div class="assumption-box">
-                                <span class="block text-blue-900 font-bold text-sm mb-2">S4. “Acompañamiento y garantías internacionales”</span>
-                                <p class="text-[13px] text-slate-600 text-justify">La presencia activa de países garantes y acompañantes, así como de organismos internacionales, provee incentivos de cumplimiento procesal, gestión de confianza y verificación de entendimientos durante la negociación.</p>
-                            </div>
+                            <div class="assumption-box"><span class="block text-blue-900 font-bold text-sm mb-2">S1. “Diseño y agenda”</span><p class="text-[13px] text-slate-600 text-justify">La existencia de una agenda previamente definida, sustantiva y procedimentalmente ordenada, orienta el desarrollo de las conversaciones, reduce ambigüedades y favorece la consecución de acuerdos durante la negociación.</p></div>
+                            <div class="assumption-box"><span class="block text-blue-900 font-bold text-sm mb-2">S2. “Territorio neutral y reglas de juego”</span><p class="text-[13px] text-slate-600 text-justify">La realización de las conversaciones en un territorio neutral, con reglas de funcionamiento estables, contribuye a la continuidad del diálogo y culminación de la negociación.</p></div>
+                            <div class="assumption-box"><span class="block text-blue-900 font-bold text-sm mb-2">S3. “Dinámica de participación y legitimidad procesual”</span><p class="text-[13px] text-slate-600 text-justify">La pluralidad y la interacción estructurada de actores relevantes (delegaciones, equipos técnicos, víctimas y representantes sociales), fortalece la legitimidad de la negociación y amplía el espacio de intercambios posibles.</p></div>
+                            <div class="assumption-box"><span class="block text-blue-900 font-bold text-sm mb-2">S4. “Acompañamiento y garantías internacionales”</span><p class="text-[13px] text-slate-600 text-justify">La presencia activa de países garantes y acompañantes, así como de organismos internacionales, provee incentivos de cumplimiento procesal, gestión de confianza y verificación de entendimientos durante la negociación.</p></div>
                         </div>
                     </div>
                 </div>
@@ -370,10 +374,7 @@
                         <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-6">Evolución de la Disciplina</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
                             <div class="p-5 bg-slate-50 rounded-lg border border-slate-200 flex flex-col h-full">
-                                <div class="mb-4">
-                                    <span class="block font-bold text-blue-900 text-xl">Fundacional</span>
-                                    <span class="text-sm font-semibold text-blue-500 uppercase tracking-tighter">1930 - 1959</span>
-                                </div>
+                                <div class="mb-4"><span class="block font-bold text-blue-900 text-xl">Fundacional</span><span class="text-sm font-semibold text-blue-500 uppercase tracking-tighter">1930 - 1959</span></div>
                                 <div class="space-y-4 flex-grow">
                                     <div><span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Características</span><ul class="text-[14px] text-slate-600 space-y-1 list-disc pl-3 leading-snug"><li>Enfoque minimalista</li><li>Ausencia de violencia directa</li><li>Estudio de la guerra</li></ul></div>
                                     <div><span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Enfoque de Paz</span><span class="text-[15px] font-medium text-blue-700">Paz Negativa</span></div>
@@ -381,10 +382,7 @@
                                 </div>
                             </div>
                             <div class="p-5 bg-blue-50/50 rounded-lg border border-blue-100 flex flex-col h-full shadow-sm">
-                                <div class="mb-4">
-                                    <span class="block font-bold text-blue-900 text-xl">Expansión</span>
-                                    <span class="text-sm font-semibold text-blue-500 uppercase tracking-tighter">1960 - 1990</span>
-                                </div>
+                                <div class="mb-4"><span class="block font-bold text-blue-900 text-xl">Expansión</span><span class="text-sm font-semibold text-blue-500 uppercase tracking-tighter">1960 - 1990</span></div>
                                 <div class="space-y-4 flex-grow">
                                     <div><span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Características</span><ul class="text-[14px] text-slate-600 space-y-1 list-disc pl-3 leading-snug"><li>Enfoque intermedio</li><li>Ausencia de violencia estructural</li><li>Realización de necesidades básicas</li></ul></div>
                                     <div><span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Enfoque de Paz</span><span class="text-[15px] font-medium text-blue-700">Paz Positiva</span></div>
@@ -392,10 +390,7 @@
                                 </div>
                             </div>
                             <div class="p-5 bg-blue-50/50 rounded-lg border border-blue-100 flex flex-col h-full shadow-sm">
-                                <div class="mb-4">
-                                    <span class="block font-bold text-blue-900 text-xl">Hibridación</span>
-                                    <span class="text-sm font-semibold text-blue-500 uppercase tracking-tighter">1991 - Actualidad</span>
-                                </div>
+                                <div class="mb-4"><span class="block font-bold text-blue-900 text-xl">Hibridación</span><span class="text-sm font-semibold text-blue-500 uppercase tracking-tighter">1991 - Actualidad</span></div>
                                 <div class="space-y-4 flex-grow">
                                     <div><span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Características</span><ul class="text-[14px] text-slate-600 space-y-1 list-disc pl-3 leading-snug"><li>Enfoque maximalista</li><li>Ausencia de violencia cultural</li><li>Educación para la paz</li></ul></div>
                                     <div><span class="block text-[12px] uppercase font-bold text-slate-400 mb-1">Enfoque de Paz</span><span class="text-[15px] font-medium text-blue-700">Paz Imperfecta</span></div>
@@ -403,14 +398,9 @@
                                 </div>
                             </div>
                             <div class="p-5 bg-blue-50/50 rounded-lg border border-blue-100 flex flex-col h-full shadow-sm">
-                                <div class="mb-4">
-                                    <span class="block font-bold text-blue-900 text-xl leading-tight">Otros enfoques</span>
-                                    <span class="text-sm font-semibold text-blue-500 uppercase tracking-tighter opacity-0">Separator</span>
-                                </div>
+                                <div class="mb-4"><span class="block font-bold text-blue-900 text-xl leading-tight">Otros enfoques</span><span class="text-sm font-semibold text-blue-500 uppercase tracking-tighter opacity-0">Separator</span></div>
                                 <div class="space-y-4 flex-grow">
-                                    <p class="text-[13px] text-slate-600 leading-snug text-justify">
-                                        Emergencia de paradigmas que desafían las hegemonías. <span class="text-blue-700 font-semibold italic">Paz feminista, Paz gaia, Paz indígena, Paz poscolonial</span>. Amplían miradas hacia la justicia social y ecología.
-                                    </p>
+                                    <p class="text-[13px] text-slate-600 leading-snug text-justify">Emergencia de paradigmas que desafían las hegemonías. <span class="text-blue-700 font-semibold italic">Paz feminista, Paz gaia, Paz indígena, Paz poscolonial</span>. Amplían miradas hacia la justicia social y ecología.</p>
                                 </div>
                             </div>
                         </div>
@@ -424,88 +414,44 @@
                         
                         <div class="technical-blueprint">
                             <div class="relative grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                                <!-- Columna Izquierda: NODO A -->
                                 <div class="md:col-span-4 flex flex-col gap-12">
                                     <div class="node-box">
                                         <span class="node-tag text-blue-400">Nodo A: Actitudes (Presunciones)</span>
-                                        <div class="node-content">
-                                            <p class="mb-2"><span class="node-sub-label">Concepto:</span> Cómo se perciben las partes recíprocamente (odio, miedo, estereotipos).</p>
-                                            <p class="mb-2 font-bold text-blue-300 italic">Anclaje: Violencia Cultural</p>
-                                            <p><span class="node-sub-label">Colombia:</span> Polarización social y semblanza recíproca entre guerrilla y Estado.</p>
-                                        </div>
+                                        <div class="node-content"><p class="mb-2"><span class="node-sub-label">Concepto:</span> Cómo se perciben las partes recíprocamente (odio, miedo, estereotipos).</p><p class="mb-2 font-bold text-blue-300 italic">Anclaje: Violencia Cultural</p><p><span class="node-sub-label">Colombia:</span> Polarización social y semblanza recíproca entre guerrilla y Estado.</p></div>
                                     </div>
                                 </div>
-
-                                <!-- Columna Central: ICEBERG SVG CON PUNTOS ABC -->
                                 <div class="md:col-span-4 flex flex-col items-center gap-4">
                                     <div class="node-box border-orange-400/40 bg-orange-400/10 w-full mb-4">
                                         <span class="node-tag text-orange-400">Nodo B: Comportamiento (Conducta)</span>
-                                        <div class="node-content">
-                                            <p class="mb-1"><span class="node-sub-label">Concepto:</span> Cooperación o confrontación, amenazas y ataques destructivos.</p>
-                                            <p class="font-bold text-orange-200 italic mb-1">Anclaje: Violencia Directa</p>
-                                            <p><span class="node-sub-label">Colombia:</span> Escalamiento y desescalamiento táctico-militar.</p>
-                                        </div>
+                                        <div class="node-content"><p class="mb-1"><span class="node-sub-label">Concepto:</span> Cooperación o confrontación, amenazas y ataques destructivos.</p><p class="font-bold text-orange-200 italic mb-1">Anclaje: Violencia Directa</p><p><span class="node-sub-label">Colombia:</span> Escalamiento y desescalamiento táctico-militar.</p></div>
                                     </div>
-
                                     <svg viewBox="0 0 200 200" class="iceberg-svg overflow-visible">
-                                        <!-- Punta (Visible) -->
-                                        <path d="M100 10 L140 70 L60 70 Z" fill="#fb923c" fill-opacity="0.8" />
-                                        <path d="M100 10 L115 70 L85 70 Z" fill="#fdba74" />
-                                        
+                                        <path d="M100 10 L140 70 L60 70 Z" fill="#fb923c" fill-opacity="0.8" /><path d="M100 10 L115 70 L85 70 Z" fill="#fdba74" />
                                         <text x="100" y="5" fill="#fb923c" font-size="12" font-weight="900" text-anchor="middle" filter="drop-shadow(0 0 2px black)">B</text>
-                                        
-                                        <!-- Línea de Agua -->
-                                        <line x1="10" y1="75" x2="190" y2="75" stroke="white" stroke-width="1.5" stroke-dasharray="6,4" />
-                                        <text x="150" y="70" fill="white" font-size="6" font-weight="bold" opacity="0.6">NIVEL VISIBLE</text>
-                                        
-                                        <!-- Parte Sumergida (Invisible) -->
-                                        <path d="M60 80 L140 80 L170 170 L30 170 Z" fill="#0ea5e9" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1" />
-                                        <path d="M80 80 L120 80 L140 170 L60 170 Z" fill="#0ea5e9" fill-opacity="0.3" />
-                                        
-                                        <circle cx="30" cy="170" r="4" fill="#38bdf8" />
-                                        <circle cx="170" cy="170" r="4" fill="#38bdf8" />
-                                        
-                                        <text x="20" y="185" fill="#38bdf8" font-size="12" font-weight="900" text-anchor="middle" filter="drop-shadow(0 0 2px black)">A</text>
-                                        <text x="180" y="185" fill="#38bdf8" font-size="12" font-weight="900" text-anchor="middle" filter="drop-shadow(0 0 2px black)">C</text>
-
+                                        <line x1="10" y1="75" x2="190" y2="75" stroke="white" stroke-width="1.5" stroke-dasharray="6,4" /><text x="150" y="70" fill="white" font-size="6" font-weight="bold" opacity="0.6">NIVEL VISIBLE</text>
+                                        <path d="M60 80 L140 80 L170 170 L30 170 Z" fill="#0ea5e9" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1" /><path d="M80 80 L120 80 L140 170 L60 170 Z" fill="#0ea5e9" fill-opacity="0.3" />
+                                        <circle cx="30" cy="170" r="4" fill="#38bdf8" /><circle cx="170" cy="170" r="4" fill="#38bdf8" />
+                                        <text x="20" y="185" fill="#38bdf8" font-size="12" font-weight="900" text-anchor="middle" filter="drop-shadow(0 0 2px black)">A</text><text x="180" y="185" fill="#38bdf8" font-size="12" font-weight="900" text-anchor="middle" filter="drop-shadow(0 0 2px black)">C</text>
                                         <path d="M100 10 L30 170 L170 170 Z" fill="none" stroke="white" stroke-width="0.75" stroke-dasharray="3,3" opacity="0.4" />
                                     </svg>
                                 </div>
-
-                                <!-- Columna Derecha: NODO C -->
                                 <div class="md:col-span-4 flex flex-col gap-12">
                                     <div class="node-box">
                                         <span class="node-tag text-blue-400">Nodo C: Contradicción (Incompatibilidad)</span>
-                                        <div class="node-content">
-                                            <p class="mb-2"><span class="node-sub-label">Concepto:</span> Desajuste en la estructura social, necesidades básicas insatisfechas.</p>
-                                            <p class="mb-2 font-bold text-blue-300 italic">Anclaje: Violencia Estructural</p>
-                                            <p><span class="node-sub-label">Colombia:</span> Exclusión política histórica, injusticia social y control de tierras.</p>
-                                        </div>
+                                        <div class="node-content"><p class="mb-2"><span class="node-sub-label">Concepto:</span> Desajuste en la estructura social, necesidades básicas insatisfechas.</p><p class="mb-2 font-bold text-blue-300 italic">Anclaje: Violencia Estructural</p><p><span class="node-sub-label">Colombia:</span> Exclusión política histórica, injusticia social y control de tierras.</p></div>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="mt-12 flex justify-end">
                                 <div class="insight-card max-w-sm">
                                     <div class="flex items-start gap-3">
                                         <i data-lucide="lightbulb" class="w-6 h-6 text-emerald-300 shrink-0 mt-1"></i>
-                                        <div>
-                                            <span class="block font-black text-emerald-300 text-[10px] uppercase tracking-widest mb-2">Core Insight</span>
-                                            <p class="text-[11px] leading-relaxed text-emerald-50">
-                                                Centrarse solo en <span class="font-bold text-white underline decoration-blue-400">Actitudes (A)</span> genera intervenciones puramente educativas; centrarse solo en <span class="font-bold text-white underline decoration-orange-400">Comportamiento (B)</span> crea treguas frágiles; ignorar las <span class="font-bold text-white underline decoration-blue-400">Contradicciones (C)</span> perpetúa la desigualdad estructural.
-                                            </p>
-                                        </div>
+                                        <div><span class="block font-black text-emerald-300 text-[10px] uppercase tracking-widest mb-2">Core Insight</span><p class="text-[11px] leading-relaxed text-emerald-50">Centrarse solo en <span class="font-bold text-white underline decoration-blue-400">Actitudes (A)</span> genera intervenciones puramente educativas; centrarse solo en <span class="font-bold text-white underline decoration-orange-400">Comportamiento (B)</span> crea treguas frágiles; ignorar las <span class="font-bold text-white underline decoration-blue-400">Contradicciones (C)</span> perpetúa la desigualdad estructural.</p></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Fuente Anatomía -->
-                        <div class="mt-4 text-left">
-                            <p class="text-[11px] text-slate-400 italic">
-                                Fuente: elaborado con base en(Calderón Concha, 2009); (Ramsbotham, Woodhouse, & Miall, 2011)
-                            </p>
-                        </div>
+                        <div class="mt-4 text-left"><p class="text-[11px] text-slate-400 italic">Fuente: elaborado con base en(Calderón Concha, 2009); (Ramsbotham, Woodhouse, & Miall, 2011)</p></div>
 
                         <!-- Título: TÉCNICAS DE MANEJO DE CONFLICTOS -->
                         <div class="mt-14 mb-8">
@@ -514,60 +460,92 @@
 
                         <!-- ESQUEMA ESPECTRO DE INTERVENCIÓN -->
                         <div class="technical-blueprint">
-                            <div class="mb-10 text-center">
-                                <h4 class="text-lg font-bold mb-1">Espectro de Intervención</h4>
-                                <p class="text-xs text-slate-400 uppercase tracking-tighter">Criterios tácticos para la selección de técnicas de gestión</p>
-                            </div>
-
-                            <!-- Barra de Escala -->
+                            <div class="mb-10 text-center"><h4 class="text-lg font-bold mb-1">Espectro de Intervención</h4><p class="text-xs text-slate-400 uppercase tracking-tighter">Criterios tácticos para la selección de técnicas de gestión</p></div>
                             <div class="relative mb-12">
-                                <div class="flex justify-between text-[10px] uppercase font-bold tracking-widest mb-4">
-                                    <span class="text-blue-300">← Máxima autonomía de las partes</span>
-                                    <span class="text-orange-300">Máximo control del tercero →</span>
-                                </div>
-                                <div class="spectrum-bar">
-                                    <div class="spectrum-point" style="left: 10%"></div>
-                                    <div class="spectrum-point" style="left: 30%"></div>
-                                    <div class="spectrum-point" style="left: 50%"></div>
-                                    <div class="spectrum-point" style="left: 70%"></div>
-                                    <div class="spectrum-point highlight" style="left: 90%"></div>
-                                </div>
+                                <div class="flex justify-between text-[10px] uppercase font-bold tracking-widest mb-4"><span class="text-blue-300">← Máxima autonomía de las partes</span><span class="text-orange-300">Máximo control del tercero →</span></div>
+                                <div class="spectrum-bar"><div class="spectrum-point" style="left: 10%"></div><div class="spectrum-point" style="left: 30%"></div><div class="spectrum-point" style="left: 50%"></div><div class="spectrum-point" style="left: 70%"></div><div class="spectrum-point highlight" style="left: 90%"></div></div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                                <div class="technique-card"><span class="font-black text-[11px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Negociación</span><p class="text-[10px] leading-snug">Choque de intereses gestionado directamente mediante el diálogo bidireccional. Resultados por etapas.</p></div>
+                                <div class="technique-card"><span class="font-black text-[11px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Mediación</span><p class="text-[10px] leading-snug">Problema relacional. Un tercero imparcial facilita el proceso y la comunicación. Resultado no vinculante; las partes mantienen el control.</p></div>
+                                <div class="technique-card"><span class="font-black text-[11px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Conciliación</span><p class="text-[10px] leading-snug">Brecha práctica. Un tercero acerca posiciones y propone soluciones activamente. Regulada por normas jurídicas del Estado. Acuerdos ejecutivos.</p></div>
+                                <div class="technique-card"><span class="font-black text-[11px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Técnicas Mixtas</span><p class="text-[10px] leading-snug">Abordaje modular (ej. mediación primero, arbitraje si hay impasse). Combina diálogo procedimental y decisión autoritativa.</p></div>
+                                <div class="technique-card special"><span class="font-black text-[11px] uppercase tracking-wider border-b border-orange-400/40 pb-1 mb-2 text-orange-400">Arbitraje</span><p class="text-[10px] leading-snug">Controversia innegociable que exige decisión autoritativa. El tercero (árbitro) asume el control total y emite un laudo vinculante de alta exigibilidad.</p></div>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-left"><p class="text-[11px] text-slate-400 italic">Fuente: elaboración propia con base en (Watzlawick, Beavin, & Jackson, 1991); (Fisas V. , 1998); (Ramsbotham, Woodhouse, & Miall, 2011).</p></div>
+
+                        <!-- SECCIÓN: MADUREZ DEL CONFLICTO -->
+                        <div class="mt-14 mb-8">
+                            <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest">MADUREZ DEL CONFLICTO</h3>
+                            <p class="mt-4 text-slate-600 text-[13px] text-justify leading-relaxed italic border-l-4 border-slate-200 pl-4">
+                                “(mutually hurting stalemate), refiere a la percepción de las partes en conflicto de estar en un empate en la capacidad de hacerse daño de estar estancados y de que a partir de esta percepción se vislumbra una posible salida” (Fisas V. , 2004, pág. 97)
+                            </p>
+                        </div>
+
+                        <!-- ESQUEMA CUADRANTES DE MADUREZ -->
+                        <div class="technical-blueprint p-10">
+                            <div class="mb-12 text-center">
+                                <h4 class="text-lg font-bold mb-1">Cuadrantes de Madurez</h4>
+                                <p class="text-xs text-slate-400 uppercase tracking-tighter">Modelos diagnósticos para identificar si un conflicto está listo para negociarse</p>
                             </div>
 
-                            <!-- Grid de Técnicas -->
-                            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-                                <!-- Negociación -->
-                                <div class="technique-card">
-                                    <span class="font-black text-[11px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Negociación</span>
-                                    <p class="text-[10px] leading-snug">Choque de intereses gestionado directamente mediante el diálogo bidireccional. Resultados por etapas.</p>
+                            <div class="maturity-grid">
+                                <div class="quadrant">
+                                    <div class="quadrant-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M3 21h18M3 10l5-3 4 4 4-2 5 4" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <circle cx="21" cy="14" r="1" fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <span class="quadrant-title text-slate-200">Catástrofe Mutua Inminente</span>
+                                        <p class="quadrant-text">Ambas partes enfrentan una amenaza grave a corto plazo con aumento dramático de costos. Requiere auto-examen urgente para evitar el precipicio.</p>
+                                    </div>
                                 </div>
-                                <!-- Mediación -->
-                                <div class="technique-card">
-                                    <span class="font-black text-[11px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Mediación</span>
-                                    <p class="text-[10px] leading-snug">Problema relacional. Un tercero imparcial facilita el proceso y la comunicación. Resultado no vinculante; las partes mantienen el control.</p>
+
+                                <div class="quadrant border-emerald-500/30">
+                                    <div class="quadrant-icon text-emerald-400">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/><path d="m19.07 4.93-1.41 1.41M6.34 17.66l-1.41 1.41M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <span class="quadrant-title text-emerald-400">Oportunidad Tentadora (Planetas en conjunción)</span>
+                                        <p class="quadrant-text">Líderes descubren alternativas superiores (ej. reparto de poder) impulsados por cambios en apoyos externos y canales facilitadores.</p>
+                                    </div>
                                 </div>
-                                <!-- Conciliación -->
-                                <div class="technique-card">
-                                    <span class="font-black text-[11px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Conciliación</span>
-                                    <p class="text-[10px] leading-snug">Brecha práctica. Un tercero acerca posiciones y propone soluciones activamente. Regulada por normas jurídicas del Estado. Acuerdos ejecutivos.</p>
+
+                                <div class="quadrant">
+                                    <div class="quadrant-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9M15 21V9M3 15h18"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <span class="quadrant-title text-slate-200">Estancamiento Perjudicial (Meseta)</span>
+                                        <p class="quadrant-text">Hurting stalemate. Empate absoluto en la capacidad de hacerse daño. Costos inaguantables sin ventaja a la vista.</p>
+                                    </div>
                                 </div>
-                                <!-- Técnicas Mixtas -->
-                                <div class="technique-card">
-                                    <span class="font-black text-[11px] uppercase tracking-wider border-b border-white/20 pb-1 mb-2">Técnicas Mixtas</span>
-                                    <p class="text-[10px] leading-snug">Abordaje modular (ej. mediación primero, arbitraje si hay impasse). Combina diálogo procedimental y decisión autoritativa.</p>
-                                </div>
-                                <!-- Arbitraje -->
-                                <div class="technique-card special">
-                                    <span class="font-black text-[11px] uppercase tracking-wider border-b border-orange-400/40 pb-1 mb-2 text-orange-400">Arbitraje</span>
-                                    <p class="text-[10px] leading-snug">Controversia innegociable que exige decisión autoritativa. El tercero (árbitro) asume el control total y emite un laudo vinculante de alta exigibilidad.</p>
+
+                                <div class="quadrant border-orange-500/30">
+                                    <div class="quadrant-icon text-orange-400">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <span class="quadrant-title text-orange-400">Trampa de Victoria</span>
+                                        <p class="quadrant-text">Atrapados en la búsqueda de victoria total. Los costos pasados se ven como "inversiones". Madura solo cuando se abandona la mentalidad de sacrificio heroico.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Fuente Espectro -->
+                        <!-- Cita de Fuente Madurez solicitada -->
                         <div class="mt-4 text-left">
                             <p class="text-[11px] text-slate-400 italic">
-                                Fuente: elaboración propia con base en (Watzlawick, Beavin, & Jackson, 1991); (Fisas V. , 1998); (Ramsbotham, Woodhouse, & Miall, 2011).
+                                Fuente: (Zartman, 1985) (Mitchell, 1996) (Fisas V. , 2004)
                             </p>
                         </div>
 
@@ -598,35 +576,18 @@
                         <h4 class="text-blue-400 font-bold text-xs uppercase mb-2">Estrategia de Investigación</h4>
                         <p class="text-lg font-light tracking-wide">Cualitativa, de tipo histórico-interpretativo y basada en el estudio de caso profundo.</p>
                     </div>
-
                     <div class="max-w-3xl mx-auto">
-                        <h4 class="font-bold text-slate-800 mb-6 flex items-center gap-2 border-b border-slate-100 pb-2">
-                            <i data-lucide="settings-2" class="w-5 h-5 text-blue-600"></i> Técnicas Empleadas
-                        </h4>
+                        <h4 class="font-bold text-slate-800 mb-6 flex items-center gap-2 border-b border-slate-100 pb-2"><i data-lucide="settings-2" class="w-5 h-5 text-blue-600"></i> Técnicas Empleadas</h4>
                         <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <li onclick="openGalleryModal(['Fuentes primarias intencionales 1.png', 'Fuentes primarias intencionales 2.png', 'Fuentes primarias no intencion.png', 'Codificación de la revisión documental.png'])" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group">
-                                <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
-                                <span class="text-sm text-slate-700 font-semibold group-hover:text-blue-600">Revisión documental</span>
-                            </li>
-                            <li onclick="openModal('image_10363d.png', 'Análisis del discurso')" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group">
-                                <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
-                                <span class="text-sm text-slate-700 font-semibold group-hover:text-blue-600">Análisis del discurso</span>
-                            </li>
-                            <li onclick="openModal('Distancia de Levenshtein metodo.png', 'Minería de datos')" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group">
-                                <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
-                                <span class="text-sm text-slate-700 font-semibold group-hover:text-blue-600">Minería de datos</span>
-                            </li>
-                            <li onclick="openModal('Critica de fuentes.png', 'Crítica de fuentes')" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group">
-                                <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
-                                <span class="text-sm text-slate-700 font-semibold group-hover:text-blue-600">Crítica de fuentes</span>
-                            </li>
+                            <li onclick="openGalleryModal(['Fuentes primarias intencionales 1.png', 'Fuentes primarias intencionales 2.png', 'Fuentes primarias no intencion.png', 'Codificación de la revisión documental.png'])" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group"><span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span><span class="text-sm text-slate-700 font-semibold group-hover:text-blue-600">Revisión documental</span></li>
+                            <li onclick="openModal('image_10363d.png', 'Análisis del discurso')" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group"><span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span><span class="text-sm text-slate-700 font-semibold group-hover:text-blue-600">Análisis del discurso</span></li>
+                            <li onclick="openModal('Distancia de Levenshtein metodo.png', 'Minería de datos')" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group"><span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span><span class="text-sm text-slate-700 font-semibold group-hover:text-blue-600">Minería de datos</span></li>
+                            <li onclick="openModal('Critica de fuentes.png', 'Crítica de fuentes')" class="flex gap-4 items-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group"><span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span><span class="text-sm text-slate-700 font-semibold group-hover:text-blue-600">Crítica de fuentes</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Otros Tabs: Resultados, Conclusiones y Difusión se mantienen -->
     </main>
 
     <footer class="bg-[#003566] text-slate-300 py-16">
