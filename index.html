@@ -128,7 +128,7 @@
         .technical-blueprint {
             background: linear-gradient(to bottom, #0f172a, #1e293b);
             border-radius: 1rem;
-            padding: 2rem;
+            padding: 2.5rem;
             color: white;
             position: relative;
             box-shadow: inset 0 0 80px rgba(0,0,0,0.5);
@@ -148,7 +148,7 @@
             transform: translateY(-2px);
         }
         .node-tag {
-            font-size: 0.75rem; /* Aumentado de 0.65rem */
+            font-size: 0.8rem; 
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.1em;
@@ -156,7 +156,7 @@
             margin-bottom: 0.5rem;
         }
         .node-content {
-            font-size: 0.85rem; /* Aumentado de 0.75rem */
+            font-size: 0.95rem; 
             line-height: 1.5;
             color: #cbd5e1;
         }
@@ -174,7 +174,7 @@
         .insight-card {
             background: linear-gradient(135deg, #064e3b, #065f46);
             border-left: 5px solid #10b981;
-            padding: 1.25rem;
+            padding: 1.5rem;
             border-radius: 0 1rem 1rem 0;
             box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
         }
@@ -218,16 +218,16 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto 1fr 1fr;
-            gap: 1.25rem;
+            gap: 1.5rem;
             position: relative;
         }
         .quadrant {
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
+            padding: 1.75rem;
             background: rgba(255, 255, 255, 0.02);
             border-radius: 0.5rem;
             display: flex;
-            gap: 1.25rem;
+            gap: 1.5rem;
             transition: all 0.3s ease;
         }
         .quadrant:hover {
@@ -235,20 +235,20 @@
             border-color: rgba(255, 255, 255, 0.3);
         }
         .quadrant-icon {
-            width: 44px;
-            height: 44px;
+            width: 54px;
+            height: 54px;
             flex-shrink: 0;
             opacity: 0.8;
         }
         .quadrant-title {
-            font-size: 14px; /* Aumentado de 11px */
+            font-size: 18px; 
             font-weight: 800;
             text-transform: uppercase;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             display: block;
         }
         .quadrant-text {
-            font-size: 13px; /* Aumentado de 10px */
+            font-size: 16px; 
             line-height: 1.6;
             color: #cbd5e1;
         }
@@ -479,7 +479,7 @@
                             </p>
                         </div>
 
-                        <!-- ESQUEMA CUADRANTES DE MADUREZ (Fuentes aumentadas) -->
+                        <!-- ESQUEMA CUADRANTES DE MADUREZ -->
                         <div class="technical-blueprint py-8 px-6">
                             <div class="mb-8 text-center">
                                 <h4 class="text-lg font-bold mb-1">Cuadrantes de Madurez</h4>
@@ -488,24 +488,52 @@
 
                             <div class="maturity-grid">
                                 <div class="quadrant">
-                                    <div class="quadrant-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M3 10l5-3 4 4 4-2 5 4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="14" r="1" fill="currentColor"/></svg></div>
-                                    <div><span class="quadrant-title text-slate-200">Catástrofe Mutua Inminente</span><p class="quadrant-text">Amenaza grave a corto plazo con aumento dramático de costos. Requiere auto-examen urgente.</p></div>
+                                    <div class="quadrant-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M3 21h18M3 10l5-3 4 4 4-2 5 4" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <circle cx="21" cy="14" r="1" fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <span class="quadrant-title text-slate-200">Catástrofe Mutua Inminente</span>
+                                        <p class="quadrant-text">Ambas partes enfrentan una amenaza grave a corto plazo con aumento dramático de costos. Requiere auto-examen urgente para evitar el precipicio.</p>
+                                    </div>
                                 </div>
                                 <div class="quadrant border-emerald-500/30">
-                                    <div class="quadrant-icon text-emerald-400"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/><path d="m19.07 4.93-1.41 1.41M6.34 17.66l-1.41 1.41M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41"/></svg></div>
-                                    <div><span class="quadrant-title text-emerald-400">Oportunidad Tentadora</span><p class="quadrant-text">Líderes descubren alternativas superiores (ej. reparto de poder) impulsados por cambios externos.</p></div>
+                                    <div class="quadrant-icon text-emerald-400">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/><path d="m19.07 4.93-1.41 1.41M6.34 17.66l-1.41 1.41M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <span class="quadrant-title text-emerald-400">Oportunidad Tentadora (Planetas en conjunción)</span>
+                                        <p class="quadrant-text">Líderes descubren alternativas superiores (ej. reparto de poder) impulsados por cambios en apoyos externos y canales facilitadores.</p>
+                                    </div>
                                 </div>
                                 <div class="quadrant">
-                                    <div class="quadrant-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9M15 21V9M3 15h18"/></svg></div>
-                                    <div><span class="quadrant-title text-slate-200">Estancamiento Perjudicial (Meseta)</span><p class="quadrant-text">Hurting stalemate. Empate absoluto en capacidad de daño. Costos inaguantables sin ventaja.</p></div>
+                                    <div class="quadrant-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9M15 21V9M3 15h18"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <span class="quadrant-title text-slate-200">Estancamiento Perjudicial (Meseta)</span>
+                                        <p class="quadrant-text">Hurting stalemate. Empate absoluto en la capacidad de hacerse daño. Costos inaguantables sin ventaja a la vista.</p>
+                                    </div>
                                 </div>
                                 <div class="quadrant border-orange-500/30">
-                                    <div class="quadrant-icon text-orange-400"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
-                                    <div><span class="quadrant-title text-orange-400">Trampa de Victoria</span><p class="quadrant-text">Atrapados en búsqueda de victoria total. Madura solo cuando se abandona el sacrificio heroico.</p></div>
+                                    <div class="quadrant-icon text-orange-400">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <span class="quadrant-title text-orange-400">Trampa de Victoria</span>
+                                        <p class="quadrant-text">Atrapados en la búsqueda de victoria total. Los costos pasados se ven como "inversiones". Madura solo cuando se abandona la mentalidad de sacrificio heroico.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                         <div class="mt-4 text-left"><p class="text-[11px] text-slate-400 italic">Fuente: (Zartman, 1985) (Mitchell, 1996) (Fisas V. , 2004)</p></div>
 
                         <div class="grid md:grid-cols-2 gap-8 mt-10">
