@@ -252,11 +252,66 @@
             line-height: 1.6;
             color: #cbd5e1;
         }
+
+        /* Estilos para Mito vs Realidad de Paz */
+        .peace-paradigm-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            position: relative;
+        }
+        .paradigm-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .paradigm-box.reality {
+            border-color: #0f172a;
+            background: white;
+        }
+        .paradigm-header {
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            color: #1e293b;
+        }
+        .paradigm-viz {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 1rem;
+        }
+        .paradigm-text {
+            font-size: 0.85rem;
+            color: #475569;
+            line-height: 1.5;
+            text-align: justify;
+        }
+        .closing-insight {
+            grid-column: span 2;
+            justify-self: center;
+            margin-top: -1rem;
+            z-index: 10;
+            background: #fdf6e3;
+            border: 2px solid #b58900;
+            padding: 1rem 2rem;
+            max-width: 500px;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #856404;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
 
-    <!-- Modal de Técnicas Metodológicas -->
     <div id="method-modal" class="fixed inset-0 bg-black/95 flex-col items-center justify-center p-4 md:p-10 transition-opacity duration-300">
         <button onclick="closeModal()" class="absolute top-6 right-6 text-white hover:text-red-500 transition-colors bg-white/10 p-2 rounded-full z-50">
             <i data-lucide="x" class="w-8 h-8"></i>
@@ -269,13 +324,11 @@
         </div>
     </div>
 
-    <!-- Branding Institucional -->
     <div class="bg-[#003566] text-white py-3 px-6 text-sm flex justify-between items-center shadow-sm relative z-50">
         <div class="font-semibold tracking-wider uppercase">Universidad de Granada</div>
         <div class="hidden md:block opacity-80 text-xs">Facultad de Ciencias Políticas y Sociología</div>
     </div>
 
-    <!-- Header Principal -->
     <header class="hero-header border-b border-slate-200 py-12 md:py-20">
         <div class="hero-overlay"></div>
         <div class="hero-content max-w-5xl mx-auto px-6 text-center">
@@ -309,7 +362,6 @@
         </div>
     </header>
 
-    <!-- Menú de Navegación -->
     <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 overflow-x-auto">
             <div class="flex justify-center whitespace-nowrap gap-4 md:gap-8 py-4 text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-400">
@@ -326,7 +378,6 @@
 
     <main class="max-w-5xl mx-auto px-6 py-12">
         
-        <!-- Tab: Introducción -->
         <section id="intro" class="tab-content active">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Introducción</h2>
@@ -363,13 +414,11 @@
             </div>
         </section>
 
-        <!-- Tab: Investigación para la paz -->
         <section id="paz" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">La Investigación para la paz</h2>
                 
                 <div class="space-y-12">
-                    <!-- Evolución de la Disciplina -->
                     <div>
                         <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-6">Evolución de la Disciplina</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
@@ -407,7 +456,6 @@
                         <div class="mt-4"><p class="text-[11px] text-slate-400 italic">Fuente: (Martínez, Comins, & París, 2009); (López Becerra, 2011); (Jimenéz Bautista & Jimenéz Aguilar, 2014); (Harto de Vera, 2016).</p></div>
                     </div>
 
-                    <!-- Sección: Teorías de Resolución -->
                     <div class="pt-6">
                         <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-6">Teorías de Resolución de Conflictos</h3>
                         <p class="text-slate-700 font-bold text-lg mb-8 border-l-4 border-blue-400 pl-4">Anatomía tridimensional del conflicto: El Triángulo de Galtung y sus raíces invisibles</p>
@@ -452,12 +500,10 @@
                         </div>
                         <div class="mt-4 text-left"><p class="text-[11px] text-slate-400 italic">Fuente: (Calderón Concha, 2009); (Ramsbotham, Woodhouse, & Miall, 2011)</p></div>
 
-                        <!-- Título: TÉCNICAS DE MANEJO DE CONFLICTOS -->
                         <div class="mt-14 mb-8">
                             <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest">TÉCNICAS DE MANEJO DE CONFLICTOS</h3>
                         </div>
 
-                        <!-- ESQUEMA ESPECTRO DE INTERVENCIÓN -->
                         <div class="technical-blueprint pb-8">
                             <div class="mb-10 text-center"><h4 class="text-lg font-bold mb-1">Espectro de Intervención</h4><p class="text-xs text-slate-400 uppercase tracking-tighter">Criterios tácticos de gestión</p></div>
                             <div class="relative mb-12">
@@ -473,7 +519,6 @@
                         </div>
                         <div class="mt-4 text-left"><p class="text-[11px] text-slate-400 italic">Fuente: (Watzlawick et al., 1991); (Fisas V., 1998); (Ramsbotham et al., 2011).</p></div>
 
-                        <!-- SECCIÓN: MADUREZ DEL CONFLICTO -->
                         <div class="mt-14 mb-8">
                             <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest">MADUREZ DEL CONFLICTO</h3>
                             <p class="mt-4 text-slate-600 text-[13px] text-justify leading-relaxed italic border-l-4 border-slate-200 pl-4">
@@ -481,7 +526,6 @@
                             </p>
                         </div>
 
-                        <!-- ESQUEMA CUADRANTES DE MADUREZ -->
                         <div class="technical-blueprint pt-10 pb-4 px-8"> 
                             <div class="mb-6 text-center"> 
                                 <h4 class="text-lg font-bold mb-1">Cuadrantes de Madurez</h4>
@@ -507,33 +551,84 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="mt-4 text-left"><p class="text-[11px] text-slate-400 italic">Fuente: (Zartman, 1985) (Mitchell, 1996) (Fisas V. , 2004)</p></div>
 
-                        <!-- FASES DE UN PROCESO DE PAZ -->
                         <div class="mt-14 mb-8">
                             <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest">FASES DE UN PROCESO DE PAZ</h3>
                         </div>
 
-                        <div class="grid md:grid-cols-2 gap-8 mt-10">
-                            <div class="bg-blue-50/30 p-6 rounded-lg border border-blue-100/50">
-                                <h4 class="text-blue-900 font-bold uppercase text-[10px] tracking-widest mb-4">Secuencia del Proceso</h4>
-                                <ol class="space-y-3 text-slate-700 font-medium text-sm">
-                                    <li class="flex gap-2"><span>1.</span> Pre-negociación (Exploratoria)</li>
-                                    <li class="flex gap-2"><span>2.</span> Negociación</li>
-                                    <li class="flex gap-2"><span>3.</span> Firma e implementación</li>
-                                </ol>
+                        <div class="space-y-6">
+                            <div class="peace-paradigm-container">
+                                <div class="paradigm-box">
+                                    <span class="paradigm-header">EL MITO:<br>PAZ LINEAL</span>
+                                    <div class="paradigm-viz">
+                                        <svg viewBox="0 0 200 60" class="w-full h-full relative overflow-visible">
+                                            <line x1="10" y1="30" x2="155" y2="30" stroke="#94a3b8" stroke-width="3" />
+                                            <circle cx="20" cy="30" r="4" fill="#64748b" />
+                                            <circle cx="50" cy="30" r="4" fill="#64748b" />
+                                            <circle cx="80" cy="30" r="4" fill="#64748b" />
+                                            <circle cx="110" cy="30" r="4" fill="#64748b" />
+                                            <circle cx="140" cy="30" r="4" fill="#64748b" />
+                                            
+                                            <!-- Nuevo Icono Apretón de Manos Detallado -->
+                                            <g transform="translate(155, 12) scale(0.65)">
+                                                <!-- Manga izquierda -->
+                                                <path d="M0,5 L12,5 L15,10 L15,25 L12,30 L0,30 Z" fill="#94a3b8" />
+                                                <!-- Manga derecha -->
+                                                <path d="M50,5 L38,5 L35,10 L35,25 L38,30 L50,30 Z" fill="#1e293b" />
+                                                <!-- Manos entrelazadas -->
+                                                <path d="M15,10 C20,5 30,5 35,10 L35,25 C30,30 20,30 15,25 Z" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.5" />
+                                                <line x1="25" y1="8" x2="25" y2="27" stroke="#1e293b" stroke-width="1" />
+                                                
+                                                <!-- La X de tachado sobre el acuerdo -->
+                                                <path d="M-5,-5 L55,40 M55,-5 L-5,40" stroke="#ef4444" stroke-width="5" stroke-linecap="round" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <p class="paradigm-text">
+                                        La creencia de que la paz es simplemente la ausencia de violencia directa (paz negativa) y culmina en el momento de la firma de un acuerdo.
+                                    </p>
+                                </div>
+
+                                <div class="paradigm-box reality shadow-xl">
+                                    <span class="paradigm-header">LA REALIDAD:<br>PAZ IMPERFECTA</span>
+                                    <div class="paradigm-viz">
+                                        <svg viewBox="0 0 200 100" class="w-full h-full overflow-visible">
+                                            <path d="M50,50 C50,20 80,20 100,50 C120,80 150,80 150,50 C150,20 120,20 100,50 C80,80 50,80 50,50 Z" 
+                                                  fill="none" 
+                                                  stroke="#eab308" 
+                                                  stroke-width="6" 
+                                                  stroke-linecap="round" />
+                                            <path d="M100,50 C120,80 150,80 150,50 C150,20 120,20 100,50" 
+                                                  fill="none" 
+                                                  stroke="#0f172a" 
+                                                  stroke-width="6" 
+                                                  stroke-dasharray="15, 10" 
+                                                  stroke-linecap="round" />
+                                            <rect x="95" y="45" width="10" height="10" fill="#0ea5e9" transform="rotate(45 100 50)" />
+                                            <circle cx="100" cy="50" r="15" fill="none" stroke="#0ea5e9" stroke-width="1" stroke-dasharray="2,2" />
+                                        </svg>
+                                    </div>
+                                    <p class="paradigm-text">
+                                        Un proceso inacabado que coexiste con el conflicto. Exige construir justicia social (paz positiva) y transformar violencias estructurales y culturales mediante el diseño de programas de fondo.
+                                    </p>
+                                </div>
+
+                                <div class="closing-insight">
+                                    El proceso no culmina con la foto inicial y el gesto del apretón de manos, sino con el cumplimiento continuo de lo acordado.
+                                    <div class="text-[10px] mt-1 opacity-60">(Fisas, 2004)</div>
+                                </div>
                             </div>
-                            <div class="p-6 flex items-center justify-center bg-slate-50 border border-slate-200 rounded-lg italic text-[14px] text-slate-500 text-center leading-relaxed">
-                                "Dominar la paz implica entender cada una de sus dimensiones y raíces invisibles para una transformación real del conflicto."
-                            </div>
+                        </div>
+
+                        <div class="p-6 mt-12 flex items-center justify-center bg-slate-50 border border-slate-200 rounded-lg italic text-[14px] text-slate-500 text-center leading-relaxed">
+                            "Dominar la paz implica entender cada una de sus dimensiones y raíces invisibles para una transformación real del conflicto."
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Tab: Diseño Metodológico -->
         <section id="metodo" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Diseño Metodológico</h2>
@@ -545,7 +640,6 @@
                     <div class="max-w-3xl mx-auto">
                         <h4 class="font-bold text-slate-800 mb-6 flex items-center gap-2 border-b border-slate-100 pb-2"><i data-lucide="settings-2" class="w-5 h-5 text-blue-600"></i> Técnicas Empleadas</h4>
                         <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <!-- SECCIÓN CORREGIDA: Sin viñetas azules -->
                             <li onclick="openGalleryModal(['Fuentes primarias intencionales 1.png', 'Fuentes primarias intencionales 2.png', 'Fuentes primarias no intencion.png', 'Codificación de la revisión documental.png'])" class="flex items-center justify-center p-5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all cursor-pointer group">
                                 <span class="text-sm text-slate-700 font-semibold group-hover:text-blue-600">Revisión documental</span>
                             </li>
