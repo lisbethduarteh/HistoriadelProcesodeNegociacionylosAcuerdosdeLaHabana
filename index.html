@@ -107,7 +107,14 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+        .research-gradient {
+            background: linear-gradient(180deg, rgba(17, 82, 212, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+        }
         
+        .indicator-dot {
+            transition: all 0.3s ease;
+        }
+
         #method-modal {
             display: none;
             z-index: 9999;
@@ -121,7 +128,7 @@
         .technical-blueprint {
             background: linear-gradient(to bottom, #0f172a, #1e293b);
             border-radius: 1rem;
-            padding: 2.5rem;
+            padding: 2rem;
             color: white;
             position: relative;
             box-shadow: inset 0 0 80px rgba(0,0,0,0.5);
@@ -153,11 +160,57 @@
             line-height: 1.5;
             color: #cbd5e1;
         }
+        .node-sub-label {
+            color: #94a3b8;
+            font-weight: 600;
+            margin-right: 0.25rem;
+        }
         .iceberg-svg {
             width: 100%;
             height: auto;
             max-width: 320px;
             filter: drop-shadow(0 0 20px rgba(14, 165, 233, 0.2));
+        }
+        .insight-card {
+            background: linear-gradient(135deg, #064e3b, #065f46);
+            border-left: 5px solid #10b981;
+            padding: 1.5rem;
+            border-radius: 0 1rem 1rem 0;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+        }
+
+        /* Espectro de intervención */
+        .spectrum-bar {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            position: relative;
+            margin: 1.5rem 0;
+        }
+        .spectrum-point {
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: -3px;
+            transform: translateX(-50%);
+        }
+        .spectrum-point.highlight {
+            background: #fb923c;
+            box-shadow: 0 0 10px #fb923c;
+        }
+        .technique-card {
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1.25rem;
+            border-radius: 0.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .technique-card.special {
+            border-color: #fb923c;
+            color: #fb923c;
         }
 
         /* Cuadrantes de Madurez */
@@ -234,11 +287,16 @@
             border-bottom: 1px solid #e2e8f0;
             padding-bottom: 1rem;
         }
+        .paradigm-text {
+            font-size: 0.85rem;
+            color: #475569;
+            line-height: 1.5;
+            text-align: justify;
+        }
         .closing-insight {
             grid-column: span 2;
             justify-self: center;
             margin-top: -1rem;
-            margin-bottom: 3rem;
             z-index: 10;
             background: #fdf6e3;
             border: 2px solid #b58900;
@@ -249,48 +307,6 @@
             font-weight: 600;
             color: #856404;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Estilos para "El Gran Mapa" */
-        .grand-map-container {
-            background-color: #f4f4f2;
-            background-image: radial-gradient(#d1d5db 0.5px, transparent 0.5px);
-            background-size: 20px 20px;
-            border: 1px solid #e2e8f0;
-            padding: 4rem 2rem;
-            position: relative;
-            overflow: hidden;
-            border-radius: 0.5rem;
-        }
-        .post-it {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            width: 240px;
-            background: #fff;
-            padding: 1rem;
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
-            transform: rotate(2deg);
-            z-index: 20;
-            border: 1px solid #e5e7eb;
-        }
-        .post-it-pin {
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #b45309;
-        }
-        .map-phase-label {
-            font-size: 1rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-        }
-        .map-phase-desc {
-            font-size: 0.85rem;
-            line-height: 1.5;
-            color: #4b5563;
-            max-width: 200px;
         }
     </style>
 </head>
@@ -362,13 +378,47 @@
 
     <main class="max-w-5xl mx-auto px-6 py-12">
         
-        <!-- Tab: Investigación para la paz -->
-        <section id="paz" class="tab-content active">
+        <section id="intro" class="tab-content active">
+            <div class="academic-card">
+                <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Introducción</h2>
+                <div class="space-y-12">
+                    <div>
+                        <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-4 flex items-center gap-2"><i data-lucide="help-circle" class="w-4 h-4"></i> Pregunta Problema</h3>
+                        <p class="text-xl text-slate-700 italic border-l-4 border-blue-200 pl-6 py-2">¿Cuáles son los factores que contribuyeron y dificultaron el curso del proceso de negociación de paz entre el Estado colombiano y las FARC-EP durante el periodo 2012-2016, así como la firma del Acuerdo final de paz de La Habana?</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div class="md:pt-8 lg:pt-10">
+                            <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-4">Objetivo General</h3>
+                            <p class="text-slate-600 text-justify text-sm leading-relaxed">Analizar los factores que contribuyeron y dificultaron el proceso de negociación de paz entre el Estado colombiano y las FARC-EP durante el periodo 2012-2016, a la luz de las teorías de resolución de conflictos de modo que su estudio permita identificar lecciones aprendidas útiles para futuros procesos.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-4">Objetivos Específicos</h3>
+                            <ul class="text-[13px] text-slate-600 space-y-3 list-none pl-0">
+                                <li><span class="font-bold text-blue-900">OE1.</span> Relatar el “periodo de la violencia” en Colombia desde 1964 hasta 2016 a partir de las causas, actores, demanda y dinámica del conflicto armado.</li>
+                                <li><span class="font-bold text-blue-900">OE2.</span> Describir los procesos de paz fallidos (1982, 1991 y 1999) y los factores que configuraron la madurez del conflicto in 2012.</li>
+                                <li><span class="font-bold text-blue-900">OE3.</span> Identificar ventanas de oportunidad, rol de actores, agenda y lecciones desde la teoría de resolución de conflictos (2012-2016).</li>
+                                <li><span class="font-bold text-blue-900">OE4.</span> Revisar cómo los seis puntos del Acuerdo inciden en la terminación del conflicto y en una paz estable y duradera.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-6 border-b border-slate-100 pb-2">Supuestos de la Investigación</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="assumption-box"><span class="block text-blue-900 font-bold text-sm mb-2">S1. “Diseño y agenda”</span><p class="text-[13px] text-slate-600 text-justify">La existencia de una agenda previamente definida, sustantiva y procedimentalmente ordenada, orienta el desarrollo de las conversaciones, reduce ambigüedades y favorece la consecución de acuerdos durante la negociación.</p></div>
+                            <div class="assumption-box"><span class="block text-blue-900 font-bold text-sm mb-2">S2. “Territorio neutral y reglas de juego”</span><p class="text-[13px] text-slate-600 text-justify">La realización de las conversaciones en un territorio neutral, con reglas de funcionamiento estables, contribuye a la continuidad del diálogo y culminación de la negociación.</p></div>
+                            <div class="assumption-box"><span class="block text-blue-900 font-bold text-sm mb-2">S3. “Dinámica de participación y legitimidad procesual”</span><p class="text-[13px] text-slate-600 text-justify">La pluralidad y la interacción estructurada de actores relevantes (delegaciones, equipos técnicos, víctimas y representantes sociales), fortalece la legitimidad de la negociación y amplía el espacio de intercambios posibles.</p></div>
+                            <div class="assumption-box"><span class="block text-blue-900 font-bold text-sm mb-2">S4. “Acompañamiento y garantías internacionales”</span><p class="text-[13px] text-slate-600 text-justify">La presencia activa de países garantes y acompañantes, así como de organismos internacionales, provee incentivos de cumplimiento procesal, gestión de confianza y verificación de entendimientos durante la negociación.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="paz" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">La Investigación para la paz</h2>
                 
                 <div class="space-y-12">
-                    <!-- Evolución de la Disciplina -->
                     <div>
                         <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-6">Evolución de la Disciplina</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
@@ -406,7 +456,6 @@
                         <div class="mt-4"><p class="text-[11px] text-slate-400 italic">Fuente: (Martínez, Comins, & París, 2009); (López Becerra, 2011); (Jimenéz Bautista & Jimenéz Aguilar, 2014); (Harto de Vera, 2016).</p></div>
                     </div>
 
-                    <!-- Sección: Teorías de Resolución -->
                     <div class="pt-6">
                         <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest mb-6">Teorías de Resolución de Conflictos</h3>
                         <p class="text-slate-700 font-bold text-lg mb-8 border-l-4 border-blue-400 pl-4">Anatomía tridimensional del conflicto: El Triángulo de Galtung y sus raíces invisibles</p>
@@ -451,7 +500,6 @@
                         </div>
                         <div class="mt-4 text-left"><p class="text-[11px] text-slate-400 italic">Fuente: (Calderón Concha, 2009); (Ramsbotham, Woodhouse, & Miall, 2011)</p></div>
 
-                        <!-- Técnicas de Manejo -->
                         <div class="mt-14 mb-8">
                             <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest">TÉCNICAS DE MANEJO DE CONFLICTOS</h3>
                         </div>
@@ -471,7 +519,6 @@
                         </div>
                         <div class="mt-4 text-left"><p class="text-[11px] text-slate-400 italic">Fuente: (Watzlawick et al., 1991); (Fisas V., 1998); (Ramsbotham et al., 2011).</p></div>
 
-                        <!-- Madurez del Conflicto -->
                         <div class="mt-14 mb-8">
                             <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest">MADUREZ DEL CONFLICTO</h3>
                             <p class="mt-4 text-slate-600 text-[13px] text-justify leading-relaxed italic border-l-4 border-slate-200 pl-4">
@@ -506,7 +553,6 @@
                         </div>
                         <div class="mt-4 text-left"><p class="text-[11px] text-slate-400 italic">Fuente: (Zartman, 1985) (Mitchell, 1996) (Fisas V. , 2004)</p></div>
 
-                        <!-- Fases de un Proceso de Paz -->
                         <div class="mt-14 mb-8">
                             <h3 class="text-blue-900 font-bold uppercase text-xs tracking-widest">FASES DE UN PROCESO DE PAZ</h3>
                         </div>
@@ -516,37 +562,39 @@
                                 <div class="paradigm-box">
                                     <span class="paradigm-header">EL MITO:<br>PAZ LINEAL</span>
                                     <div class="paradigm-viz">
-                                        <svg viewBox="0 0 200 60" class="w-full h-full relative overflow-visible">
-                                            <line x1="10" y1="30" x2="155" y2="30" stroke="#94a3b8" stroke-width="3" />
+                                        <svg viewBox="0 0 200 60" class="w-full h-full">
+                                            <line x1="10" y1="30" x2="160" y2="30" stroke="#94a3b8" stroke-width="3" />
                                             <circle cx="20" cy="30" r="4" fill="#64748b" />
                                             <circle cx="50" cy="30" r="4" fill="#64748b" />
                                             <circle cx="80" cy="30" r="4" fill="#64748b" />
                                             <circle cx="110" cy="30" r="4" fill="#64748b" />
                                             <circle cx="140" cy="30" r="4" fill="#64748b" />
-                                            
-                                            <g transform="translate(155, 12) scale(0.65)">
-                                                <path d="M0,5 L12,5 L15,10 L15,25 L12,30 L0,30 Z" fill="#94a3b8" />
-                                                <path d="M50,5 L38,5 L35,10 L35,25 L38,30 L50,30 Z" fill="#1e293b" />
-                                                <path d="M15,10 C20,5 30,5 35,10 L35,25 C30,30 20,30 15,25 Z" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.5" />
-                                                <line x1="25" y1="8" x2="25" y2="27" stroke="#1e293b" stroke-width="1" />
-                                                <path d="M-5,-5 L55,40 M55,-5 L-5,40" stroke="#ef4444" stroke-width="5" stroke-linecap="round" />
+                                            <g transform="translate(165, 20) scale(0.5)">
+                                                <path d="M10 20 Q 20 10 30 20 T 50 20" stroke="#1e293b" fill="none" stroke-width="2"/>
+                                                <line x1="5" y1="5" x2="45" y2="35" stroke="#ef4444" stroke-width="2" />
+                                                <line x1="45" y1="5" x2="5" y2="35" stroke="#ef4444" stroke-width="2" />
                                             </g>
                                         </svg>
                                     </div>
-                                    <p class="paradigm-text">La creencia de que la paz es simplemente la ausencia de violencia directa (paz negativa) y culmina en el momento de la firma de un acuerdo.</p>
+                                    <p class="paradigm-text">
+                                        La creencia de que la paz es simplemente la ausencia de violencia directa (paz negativa) y culmina en el momento de la firma de un acuerdo.
+                                    </p>
                                 </div>
 
                                 <div class="paradigm-box reality shadow-xl">
                                     <span class="paradigm-header">LA REALIDAD:<br>PAZ IMPERFECTA</span>
                                     <div class="paradigm-viz">
-                                        <svg viewBox="0 0 200 100" class="w-full h-full overflow-visible">
-                                            <path d="M50,50 C50,20 80,20 100,50 C120,80 150,80 150,50 C150,20 120,20 100,50 C80,80 50,80 50,50 Z" fill="none" stroke="#eab308" stroke-width="6" stroke-linecap="round" />
-                                            <path d="M100,50 C120,80 150,80 150,50 C150,20 120,20 100,50" fill="none" stroke="#0f172a" stroke-width="6" stroke-dasharray="15, 10" stroke-linecap="round" />
-                                            <rect x="95" y="45" width="10" height="10" fill="#0ea5e9" transform="rotate(45 100 50)" />
-                                            <circle cx="100" cy="50" r="15" fill="none" stroke="#0ea5e9" stroke-width="1" stroke-dasharray="2,2" />
+                                        <svg viewBox="0 0 200 80" class="w-full h-full">
+                                            <circle cx="70" cy="40" r="25" fill="none" stroke="#eab308" stroke-width="4" opacity="0.8"/>
+                                            <circle cx="100" cy="40" r="25" fill="none" stroke="#0f172a" stroke-width="4" opacity="0.8"/>
+                                            <circle cx="130" cy="40" r="25" fill="none" stroke="#eab308" stroke-width="4" opacity="0.8"/>
+                                            <path d="M100 15 L105 10 L100 5" fill="none" stroke="#0f172a" stroke-width="1"/>
+                                            <path d="M70 65 L65 70 L70 75" fill="none" stroke="#eab308" stroke-width="1"/>
                                         </svg>
                                     </div>
-                                    <p class="paradigm-text">Un proceso inacabado que coexiste con el conflicto. Exige construir justicia social (paz positiva) y transformar violencias estructurales y culturales.</p>
+                                    <p class="paradigm-text">
+                                        Un proceso inacabado que coexiste con el conflicto. Exige construir justicia social (paz positiva) y transformar violencias estructurales y culturales.
+                                    </p>
                                 </div>
 
                                 <div class="closing-insight">
@@ -554,88 +602,16 @@
                                     <div class="text-[10px] mt-1 opacity-60">(Fisas, 2004)</div>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- EL GRAN MAPA: Fases del Proceso -->
-                            <div class="grand-map-container">
-                                <h4 class="text-xl font-bold text-slate-800 mb-16">El Gran Mapa: Fases del Proceso</h4>
-                                
-                                <div class="post-it">
-                                    <i data-lucide="pin" class="post-it-pin w-4 h-4 rotate-45 fill-amber-700"></i>
-                                    <p class="text-[11px] text-slate-600 font-medium text-justify">
-                                        <span class="font-bold block mb-1">Yuxtaposición:</span> Estas fases carecen de tiempos rígidamente demarcados. Pueden superponerse; un diálogo exploratorio puede ser corto mientras la negociación dura años, o viceversa.
-                                    </p>
-                                </div>
-
-                                <div class="relative max-w-5xl mx-auto pt-10">
-                                    <svg viewBox="0 0 900 450" class="w-full h-auto overflow-visible">
-                                        <!-- Hexágono Fase 1 -->
-                                        <g transform="translate(30, 120)">
-                                            <path d="M0,90 L50,0 L210,0 L260,90 L210,180 L50,180 Z" fill="none" stroke="#64748b" stroke-width="2"/>
-                                            <path d="M50,0 L50,180 M210,0 L210,180" stroke="#cbd5e1" stroke-width="0.5"/> 
-                                            <foreignObject x="35" y="45" width="190" height="120">
-                                                <div xmlns="http://www.w3.org/1999/xhtml" class="text-center">
-                                                    <div class="map-phase-label text-slate-700">Fase 1: Exploratoria</div>
-                                                    <div class="map-phase-desc mx-auto">Pre-negociación secreta. Construcción de confianza y definición de reglas de juego.</div>
-                                                </div>
-                                            </foreignObject>
-                                        </g>
-
-                                        <!-- Hexágono Fase 2 -->
-                                        <g transform="translate(320, 120)">
-                                            <path d="M0,90 L50,0 L210,0 L260,90 L210,180 L50,180 Z" fill="none" stroke="#0f172a" stroke-width="3"/>
-                                            <path d="M50,0 L50,180 M210,0 L210,180" stroke="#cbd5e1" stroke-width="0.5"/>
-                                            <foreignObject x="35" y="45" width="190" height="120">
-                                                <div xmlns="http://www.w3.org/1999/xhtml" class="text-center">
-                                                    <div class="map-phase-label text-blue-950">Fase 2: Negociación</div>
-                                                    <div class="map-phase-desc mx-auto font-medium">El diálogo sustancial. Debate cíclico sobre el metaconflicto y las demandas de las partes.</div>
-                                                </div>
-                                            </foreignObject>
-                                        </g>
-
-                                        <!-- Hexágono Fase 3 -->
-                                        <g transform="translate(610, 120)">
-                                            <path d="M0,90 L50,0 L210,0 L260,90 L210,180 L50,180 Z" fill="none" stroke="#eab308" stroke-width="3"/>
-                                            <path d="M50,0 L50,180 M210,0 L210,180" stroke="#fde68a" stroke-width="0.5"/>
-                                            <foreignObject x="35" y="45" width="190" height="120">
-                                                <div xmlns="http://www.w3.org/1999/xhtml" class="text-center">
-                                                    <div class="map-phase-label text-amber-700">Fase 3: Implementación</div>
-                                                    <div class="map-phase-desc mx-auto">El posconflicto. Reformas estructurales y operativas para materializar lo pactado.</div>
-                                                </div>
-                                            </foreignObject>
-                                        </g>
-
-                                        <!-- Conectores y Marcadores -->
-                                        <defs>
-                                            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orientation="auto">
-                                                <polygon points="0 0, 10 3.5, 0 7" fill="#64748b" />
-                                            </marker>
-                                            <marker id="arrowhead-navy" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orientation="auto">
-                                                <polygon points="0 0, 10 3.5, 0 7" fill="#0f172a" />
-                                            </marker>
-                                            <marker id="arrowhead-gold" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orientation="auto">
-                                                <polygon points="0 0, 10 3.5, 0 7" fill="#eab308" />
-                                            </marker>
-                                        </defs>
-                                        
-                                        <line x1="295" y1="210" x2="315" y2="210" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)" />
-                                        <line x1="585" y1="210" x2="605" y2="210" stroke="#0f172a" stroke-width="2" marker-end="url(#arrowhead-navy)" />
-
-                                        <path d="M160,120 Q450,-20 740,120" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowhead)" opacity="0.6" />
-                                        <path d="M450,120 Q595,40 740,120" fill="none" stroke="#0f172a" stroke-width="1.5" marker-end="url(#arrowhead-navy)" opacity="0.8" />
-                                        <path d="M450,120 Q305,40 160,120" fill="none" stroke="#0f172a" stroke-width="1.5" marker-end="url(#arrowhead-navy)" opacity="0.8" />
-
-                                        <path d="M740,300 Q595,380 450,300" fill="none" stroke="#eab308" stroke-width="2" stroke-dasharray="8,4" marker-end="url(#arrowhead-gold)" />
-                                        <text x="595" y="375" fill="#eab308" font-size="10" font-weight="700" text-anchor="middle" class="italic">Retroalimentación / Ajuste de lo pactado</text>
-                                    </svg>
-                                </div>
-                            </div>
+                        <div class="p-6 mt-12 flex items-center justify-center bg-slate-50 border border-slate-200 rounded-lg italic text-[14px] text-slate-500 text-center leading-relaxed">
+                            "Dominar la paz implica entender cada una de sus dimensiones y raíces invisibles para una transformación real del conflicto."
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Tab: Diseño Metodológico -->
         <section id="metodo" class="tab-content">
             <div class="academic-card">
                 <h2 class="serif-font text-3xl text-slate-800 mb-8 border-b pb-4">Diseño Metodológico</h2>
@@ -678,19 +654,25 @@
     <script>
         lucide.createIcons();
 
+        let galleryImages = [];
+        let galleryIndex = 0;
+
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.nav-button').forEach(btn => {
                 btn.classList.remove('nav-active');
                 btn.classList.add('text-slate-400');
             });
+
             const targetSection = document.getElementById(tabId);
             if (targetSection) targetSection.classList.add('active');
+            
             const activeBtn = document.getElementById('nav-' + tabId);
             if (activeBtn) {
                 activeBtn.classList.add('nav-active');
                 activeBtn.classList.remove('text-slate-400');
             }
+
             const navHeight = document.querySelector('nav').offsetHeight;
             const elementRect = targetSection.getBoundingClientRect().top;
             const bodyRect = document.body.getBoundingClientRect().top;
@@ -698,11 +680,72 @@
             window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
         }
 
+        function openModal(imgSrc, caption) {
+            galleryImages = []; 
+            const modal = document.getElementById('method-modal');
+            const modalImg = document.getElementById('modal-image');
+            const modalCap = document.getElementById('modal-caption');
+            modalImg.src = imgSrc || 'image_10363d.png';
+            modalCap.innerText = caption || '';
+            document.getElementById('modal-prev').classList.add('hidden');
+            document.getElementById('modal-next').classList.add('hidden');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function openGalleryModal(images) {
+            galleryImages = images;
+            galleryIndex = 0;
+            const modal = document.getElementById('method-modal');
+            document.getElementById('modal-prev').classList.remove('hidden');
+            document.getElementById('modal-next').classList.remove('hidden');
+            updateGalleryView();
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function updateGalleryView() {
+            const modalImg = document.getElementById('modal-image');
+            const modalCap = document.getElementById('modal-caption');
+            const currentImgPath = galleryImages[galleryIndex];
+            modalImg.src = currentImgPath;
+            modalCap.innerText = currentImgPath.replace(/\.[^/.]+$/, "");
+        }
+
+        function nextModalImg() {
+            if (galleryImages.length === 0) return;
+            galleryIndex = (galleryIndex + 1) % galleryImages.length;
+            updateGalleryView();
+        }
+
+        function prevModalImg() {
+            if (galleryImages.length === 0) return;
+            galleryIndex = (galleryIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateGalleryView();
+        }
+
         function closeModal() {
             const modal = document.getElementById('method-modal');
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
+
+        document.getElementById('method-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        const carousel = document.getElementById('difusion-carousel');
+        let currentIndex = 0;
+
+        function nextSlide() {
+            const items = document.querySelectorAll('.carousel-item');
+            if (!carousel || items.length === 0) return;
+            currentIndex = (currentIndex + 1) % items.length;
+            const itemWidth = items[0].offsetWidth + 32; 
+            carousel.scrollTo({ left: currentIndex * itemWidth, behavior: 'smooth' });
+        }
+
+        setInterval(nextSlide, 8000);
     </script>
 </body>
 </html>
