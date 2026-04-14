@@ -117,7 +117,7 @@ export default function App() {
               <div className="flex items-center gap-5">
                 <div className="w-16 h-16 rounded-full border-2 border-white shadow-xl overflow-hidden shrink-0 bg-slate-100">
                   <img 
-                    src="lkdh2.png" 
+                    src="/lkdh2.png" 
                     alt="Lisbeth Katherine Duarte Herrera" 
                     className="w-full h-full object-cover object-center scale-125"
                     referrerPolicy="no-referrer"
@@ -738,7 +738,7 @@ function ScientificDiffusion({ openModal }: { openModal: (images: string[], capt
     {
       year: "2019",
       title: "Beca-La Rábida. Estancia de investigación",
-      images: ["Rábida.png"],
+      images: ["/Rábida.jpg"],
       icon: <MapPin className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
     {
@@ -769,7 +769,7 @@ function ScientificDiffusion({ openModal }: { openModal: (images: string[], capt
     {
       year: "2024",
       title: "Ponente Congreso Internacional para el Estudio de la Mediación y los conflictos",
-      images: ["Portugal.png"],
+      images: ["Portugal.jpg"],
       icon: <Mic className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
     {
