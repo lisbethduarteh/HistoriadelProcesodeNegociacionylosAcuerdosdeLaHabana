@@ -117,7 +117,7 @@ export default function App() {
               <div className="flex items-center gap-5">
                 <div className="w-16 h-16 rounded-full border-2 border-white shadow-xl overflow-hidden shrink-0 bg-slate-100">
                   <img 
-                    src="../lkdh2.png" 
+                    src="lkdh2.png" 
                     alt="Lisbeth Katherine Duarte Herrera" 
                     className="w-full h-full object-cover object-center scale-125"
                     referrerPolicy="no-referrer"
