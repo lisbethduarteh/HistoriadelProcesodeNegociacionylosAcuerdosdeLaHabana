@@ -117,7 +117,7 @@ export default function App() {
               <div className="flex items-center gap-5">
                 <div className="w-16 h-16 rounded-full border-2 border-white shadow-xl overflow-hidden shrink-0 bg-slate-100">
                   <img 
-                    src="https://picsum.photos/seed/portrait/200/200" 
+                    src="lkdh2.png" 
                     alt="Lisbeth Katherine Duarte Herrera" 
                     className="w-full h-full object-cover object-center scale-125"
                     referrerPolicy="no-referrer"
@@ -179,10 +179,10 @@ export default function App() {
             {activeTab === 'intro' && <Introduction />}
             {activeTab === 'paz' && <PeaceResearch />}
             {activeTab === 'metodo' && <Methodology openModal={openModal} />}
-            {activeTab === 'fallidos' && <SectionPlaceholder title="Procesos fallidos" />}
+            {activeTab === 'fallidos' && <FailedProcesses />}
             {activeTab === 'resultados' && <SectionPlaceholder title="Resultados" />}
-            {activeTab === 'conclusiones' && <SectionPlaceholder title="Conclusiones" />}
-            {activeTab === 'difusion' && <ScientificDiffusion />}
+            {activeTab === 'conclusiones' && <Conclusions />}
+            {activeTab === 'difusion' && <ScientificDiffusion openModal={openModal} />}
           </motion.div>
         </AnimatePresence>
       </main>
@@ -598,110 +598,6 @@ function PeaceResearch() {
               </div>
             </div>
           </div>
-
-          <div className="bg-blueprint-bg bg-[radial-gradient(#d1d5db_0.5px,transparent_0.5px)] bg-[length:20px_20px] border border-slate-200 rounded-lg p-10 relative overflow-hidden mt-8">
-            <h4 className="text-xl font-bold text-slate-800 mb-8">El Gran Mapa: Fases del Proceso</h4>
-            <div className="absolute top-6 right-6 w-60 bg-white p-4 shadow-lg rotate-2 z-20 border border-slate-200">
-              <Pin className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-4 h-4 text-amber-700 rotate-45 fill-amber-700" />
-              <p className="text-[11px] text-slate-600 font-medium text-justify">
-                <span className="font-bold block mb-1">Yuxtaposición:</span> Estas fases carecen de tiempos rígidamente demarcados. Pueden superponerse; un diálogo exploratorio puede ser corto mientras la negociación dura años, o viceversa.
-              </p>
-            </div>
-            
-            <div className="relative max-w-5xl mx-auto pt-10">
-              <svg viewBox="0 0 900 450" className="w-full h-auto overflow-visible">
-                <g transform="translate(30, 120)">
-                  <path d="M0,90 L50,0 L210,0 L260,90 L210,180 L50,180 Z" fill="none" stroke="#64748b" strokeWidth="2"/>
-                  <foreignObject x="35" y="45" width="190" height="120">
-                    <div className="text-center">
-                      <div className="text-base font-black text-slate-700 mb-1">Fase 1: Exploratoria</div>
-                      <div className="text-[11px] leading-relaxed text-slate-500 max-w-[160px] mx-auto">Pre-negociación secreta. Construcción de confianza y definición de reglas de juego.</div>
-                    </div>
-                  </foreignObject>
-                </g>
-                <g transform="translate(320, 120)">
-                  <path d="M0,90 L50,0 L210,0 L260,90 L210,180 L50,180 Z" fill="none" stroke="#0f172a" strokeWidth="3"/>
-                  <foreignObject x="35" y="45" width="190" height="120">
-                    <div className="text-center">
-                      <div className="text-base font-black text-blue-950 mb-1">Fase 2: Negociación</div>
-                      <div className="text-[11px] leading-relaxed text-slate-600 font-medium max-w-[160px] mx-auto">El diálogo sustancial. Debate cíclico sobre el metaconflicto y demandas.</div>
-                    </div>
-                  </foreignObject>
-                </g>
-                <g transform="translate(610, 120)">
-                  <path d="M0,90 L50,0 L210,0 L260,90 L210,180 L50,180 Z" fill="none" stroke="#eab308" strokeWidth="3"/>
-                  <foreignObject x="35" y="45" width="190" height="120">
-                    <div className="text-center">
-                      <div className="text-base font-black text-amber-700 mb-1">Fase 3: Implementación</div>
-                      <div className="text-[11px] leading-relaxed text-slate-500 max-w-[160px] mx-auto">El posconflicto. Reformas estructurales para materializar lo pactado.</div>
-                    </div>
-                  </foreignObject>
-                </g>
-                <defs>
-                  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orientation="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#64748b" /></marker>
-                  <marker id="arrowhead-navy" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orientation="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#0f172a" /></marker>
-                  <marker id="arrowhead-gold" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orientation="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#eab308" /></marker>
-                </defs>
-                <line x1="295" y1="210" x2="315" y2="210" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrowhead)" />
-                <line x1="585" y1="210" x2="605" y2="210" stroke="#0f172a" strokeWidth="2" markerEnd="url(#arrowhead-navy)" />
-                <path d="M740,300 Q595,380 450,300" fill="none" stroke="#eab308" strokeWidth="2" strokeDasharray="8,4" markerEnd="url(#arrowhead-gold)" />
-                <text x="595" y="375" fill="#eab308" fontSize="12" fontWeight="700" textAnchor="middle" className="italic">Retroalimentación / Ajuste de lo pactado</text>
-              </svg>
-            </div>
-            <div className="mt-6 text-left border-t border-slate-300/30 pt-2">
-              <p className="text-[11px] text-slate-500 italic">Fuente: (Fisas V. , 2004) (Valencia & Bedoya, 2014).</p>
-            </div>
-          </div>
-
-          <div className="bg-blueprint-bg bg-[radial-gradient(#d1d5db_0.5px,transparent_0.5px)] bg-[length:20px_20px] border border-slate-200 rounded-lg p-10 mt-8">
-            <h4 className="text-2xl font-bold text-slate-800 mb-4 text-center">Los tres pilares de la mesa de diálogo</h4>
-            <div className="relative max-w-full mx-auto py-4">
-              <svg viewBox="0 0 1300 550" className="w-full h-auto overflow-visible">
-                <path d="M50,20 L1250,20 L1250,50 L50,50 Z" fill="#0f172a" />
-                <path d="M60,5 L1240,5 L1240,20 L60,20 Z" fill="#1e293b" stroke="#eab308" strokeWidth="1" />
-                <g transform="translate(50, 50)"><rect x="0" y="20" width="100" height="380" fill="white" stroke="#64748b" strokeWidth="2" /><rect x="-10" y="400" width="120" height="30" fill="#0f172a" /></g>
-                <g transform="translate(450, 50)"><rect x="0" y="20" width="100" height="380" fill="white" stroke="#eab308" strokeWidth="3" /><rect x="-10" y="400" width="120" height="30" fill="#0f172a" /></g>
-                <g transform="translate(850, 50)"><rect x="0" y="20" width="100" height="380" fill="white" stroke="#64748b" strokeWidth="2" /><rect x="-10" y="400" width="120" height="30" fill="#0f172a" /></g>
-                
-                <foreignObject x="160" y="80" width="280" height="320">
-                  <div className="pillar-content-box">
-                    <span className="block font-black uppercase text-xl mb-1 text-slate-900">Lo Procedimental</span>
-                    <span className="text-[12px] block font-bold mb-3 text-slate-400 uppercase tracking-widest">(Las reglas de juego)</span>
-                    <ul className="text-base space-y-2 text-slate-600">
-                      <li className="flex gap-2"><span className="text-peace-blue font-bold">•</span> Medidas de confianza y confidencialidad.</li>
-                      <li className="flex gap-2"><span className="text-peace-blue font-bold">•</span> Mecanismos de verificación e intermediación.</li>
-                      <li className="flex gap-2"><span className="text-peace-blue font-bold">•</span> Calendarización (tiempo, lugar, simultaneidad).</li>
-                      <li className="flex gap-2"><span className="text-peace-blue font-bold">•</span> Contexto sociopolítico y gestión de recursos.</li>
-                    </ul>
-                  </div>
-                </foreignObject>
-                
-                <foreignObject x="560" y="80" width="280" height="280">
-                  <div className="pillar-content-box border-amber-300">
-                    <span className="block font-black uppercase text-xl mb-1 text-slate-900">Lo Sustantivo</span>
-                    <span className="text-[12px] block font-bold mb-3 text-amber-600 uppercase tracking-widest">(El núcleo del conflicto)</span>
-                    <ul className="text-base space-y-2 text-slate-600">
-                      <li className="flex gap-2"><span className="text-peace-blue font-bold">•</span> Naturaleza e historia del metaconflicto (sus raíces).</li>
-                      <li className="flex gap-2"><span className="text-peace-blue font-bold">•</span> Incompatibilidades básicas (ideológicas o territoriales).</li>
-                      <li className="flex gap-2"><span className="text-peace-blue font-bold">•</span> Demandas y peticiones de la insurgencia.</li>
-                    </ul>
-                  </div>
-                </foreignObject>
-                
-                <foreignObject x="960" y="80" width="280" height="280">
-                  <div className="pillar-content-box">
-                    <span className="block font-black uppercase text-xl mb-1 text-slate-900">Lo Operativo</span>
-                    <span className="text-[12px] block font-bold mb-3 text-slate-400 uppercase tracking-widest">(La mecánica en el terreno)</span>
-                    <ul className="text-base space-y-2 text-slate-600">
-                      <li className="flex gap-2"><span className="text-peace-blue font-bold">•</span> Separación de fuerzas y cese al fuego/hostilidades.</li>
-                      <li className="flex gap-2"><span className="text-peace-blue font-bold">•</span> Logística y protocolos de seguridad.</li>
-                      <li className="flex gap-2"><span className="text-peace-blue font-bold">•</span> Mecanismos de Desarme, Desmovilización y Reintegración (DDR).</li>
-                    </ul>
-                  </div>
-                </foreignObject>
-              </svg>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -744,6 +640,31 @@ function Methodology({ openModal }: { openModal: (images: string[], caption?: st
           <h4 className="text-blue-400 font-bold text-xs uppercase mb-2">Estrategia de Investigación</h4>
           <p className="text-lg font-light tracking-wide">Cualitativa, de tipo histórico-interpretativo y basada en el estudio de caso profundo.</p>
         </div>
+
+        <div className="max-w-4xl mx-auto space-y-6">
+          <div className="flex gap-4 items-start p-4 bg-slate-50 rounded-lg border border-slate-100">
+            <div className="w-1.5 h-full bg-blue-600 self-stretch rounded-full flex-shrink-0" />
+            <p className="text-base text-slate-700 text-justify leading-relaxed">
+              <span className="font-bold text-blue-900 uppercase tracking-tighter mr-2">Cualitativo:</span> 
+              por cuanto el proceso de diseño y formulación de la investigación se caracterizó por ser flexible y el grueso de los datos son de carácter soft.
+            </p>
+          </div>
+          <div className="flex gap-4 items-start p-4 bg-slate-50 rounded-lg border border-slate-100">
+            <div className="w-1.5 h-full bg-blue-600 self-stretch rounded-full flex-shrink-0" />
+            <p className="text-base text-slate-700 text-justify leading-relaxed">
+              <span className="font-bold text-blue-900 uppercase tracking-tighter mr-2">Histórico-interpretativo:</span> 
+              reconstruyó la realidad tomando en cuenta los hechos, las decisiones, los actores, la agenda, las evidencias documentales. El razonamiento es interpretativo con base en patrones narrativos que explicaran las categorías de estudio.
+            </p>
+          </div>
+          <div className="flex gap-4 items-start p-4 bg-slate-50 rounded-lg border border-slate-100">
+            <div className="w-1.5 h-full bg-blue-600 self-stretch rounded-full flex-shrink-0" />
+            <p className="text-base text-slate-700 text-justify leading-relaxed">
+              <span className="font-bold text-blue-900 uppercase tracking-tighter mr-2">Estudio de caso:</span> 
+              se definieron puntos de partida y puntos de cierre (hitos) para cada una de las fases del proceso.
+            </p>
+          </div>
+        </div>
+
         <div className="max-w-3xl mx-auto">
           <h4 className="font-bold text-slate-800 mb-6 flex items-center gap-2 border-b border-slate-100 pb-2">
             <Settings2 className="w-5 h-5 text-blue-600" /> Técnicas Empleadas
@@ -752,14 +673,14 @@ function Methodology({ openModal }: { openModal: (images: string[], caption?: st
             <MethodItem 
               label="Revisión documental" 
               onClick={() => openModal([
-                'https://picsum.photos/seed/doc1/800/600',
-                'https://picsum.photos/seed/doc2/800/600',
-                'https://picsum.photos/seed/doc3/800/600'
-              ], 'Fuentes primarias y codificación documental')}
+                'fuentes primarias intencionales 1.png',
+                'fuentes primarias intencionales 2.png',
+                'fuentes primarias no intencionales.png'
+              ], 'Revisión documental: Fuentes primarias')}
             />
             <MethodItem 
               label="Análisis del discurso" 
-              onClick={() => openModal(['https://picsum.photos/seed/discourse/800/600'], 'Análisis del discurso')}
+              onClick={() => openModal(['Codificación de la revisión documental.png'], 'Análisis del discurso: Codificación')}
             />
             <MethodItem 
               label="Minería de datos" 
@@ -767,7 +688,7 @@ function Methodology({ openModal }: { openModal: (images: string[], caption?: st
             />
             <MethodItem 
               label="Crítica de fuentes" 
-              onClick={() => openModal(['https://picsum.photos/seed/critique/800/600'], 'Crítica de fuentes')}
+              onClick={() => openModal(['Crítica de fuentes.png'], 'Crítica de fuentes')}
             />
           </ul>
         </div>
@@ -798,21 +719,70 @@ function SectionPlaceholder({ title }: { title: string }) {
   );
 }
 
-function ScientificDiffusion() {
+function ScientificDiffusion({ openModal }: { openModal: (images: string[], caption?: string) => void }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   
   const slides = [
     {
-      icon: <BookOpen className="w-10 h-10 mx-auto text-blue-800 mb-4" />,
-      title: "Artículo de Investigación Indexado",
-      desc: '"Análisis de las dinámicas del metaconflicto en el proceso de La Habana."',
-      tag: "Revista de Paz y Conflictos, 2024"
+      year: "2018",
+      title: "I Escuela de Verano P.U. Javeriana – U. Goethe",
+      images: ["eSCUELA INTERNAL VERANO 2018.png"],
+      icon: <GraduationCap className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
     {
-      icon: <Mic className="w-10 h-10 mx-auto text-blue-800 mb-4" />,
-      title: "Ponencia Internacional",
-      desc: '"Lecciones aprendidas del modelo de negociación colombiano."',
-      tag: "Congreso Latinoamericano de Sociología, 2025"
+      year: "2019",
+      title: "Beca-CALAS. Feria Internacional del Libro (FIL) de Guadalajara",
+      images: ["CALAS 2.png", "Fil Guadalajara participación.png", "Fil guadalajara_santos_timochen.png"],
+      icon: <BookOpen className="w-10 h-10 mx-auto text-blue-800 mb-4" />
+    },
+    {
+      year: "2019",
+      title: "Beca-La Rábida. Estancia de investigación",
+      images: ["Rábida.png"],
+      icon: <MapPin className="w-10 h-10 mx-auto text-blue-800 mb-4" />
+    },
+    {
+      year: "2022",
+      title: "Entrevista en la Red NET CAPAZ",
+      images: ["A paso de Tesis_lkdh.png"],
+      icon: <Mic className="w-10 h-10 mx-auto text-blue-800 mb-4" />
+    },
+    {
+      year: "2022",
+      title: "Artículo publicado en Revista científica",
+      desc: "NegociarYAcordarLaPazConLasFARCEP",
+      icon: <BookOpen className="w-10 h-10 mx-auto text-blue-800 mb-4" />
+    },
+    {
+      year: "2023",
+      title: "Ponente Congreso internacional de Investigación para la paz",
+      images: ["Congreso de paz Granada.png"],
+      icon: <Mic className="w-10 h-10 mx-auto text-blue-800 mb-4" />
+    },
+    {
+      year: "2024",
+      title: "Capítulo de libro",
+      images: ["Capítulo en Teseo"],
+      desc: "Libro teseo_capitulo 301",
+      icon: <BookOpen className="w-10 h-10 mx-auto text-blue-800 mb-4" />
+    },
+    {
+      year: "2024",
+      title: "Ponente Congreso Internacional para el Estudio de la Mediación y los conflictos",
+      images: ["Portugal.png"],
+      icon: <Mic className="w-10 h-10 mx-auto text-blue-800 mb-4" />
+    },
+    {
+      year: "2024",
+      title: "Artículo publicado en Revista científica",
+      desc: "Artículo Historelo, Artículo más consultado del mes",
+      icon: <BookOpen className="w-10 h-10 mx-auto text-blue-800 mb-4" />
+    },
+    {
+      year: "2025",
+      title: "Ponente XIV Congreso latinoamericano de investigación para la paz CLAIP",
+      images: ["Claip.png"],
+      icon: <Mic className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     }
   ];
 
@@ -825,7 +795,7 @@ function ScientificDiffusion() {
   };
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 6000);
+    const timer = setInterval(nextSlide, 8000);
     return () => clearInterval(timer);
   }, []);
 
@@ -834,7 +804,7 @@ function ScientificDiffusion() {
       <h2 className="font-serif text-3xl text-slate-800 mb-8 border-b pb-4">Difusión Científica</h2>
       
       <div className="relative overflow-hidden w-full max-w-4xl mx-auto rounded-xl border border-slate-200 bg-slate-50 p-6">
-        <div className="relative h-[300px]">
+        <div className="relative h-[350px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -844,32 +814,239 @@ function ScientificDiffusion() {
               transition={{ duration: 0.5 }}
               className="absolute inset-0 flex flex-col justify-center items-center text-center px-4"
             >
-              <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-100 w-full h-full flex flex-col justify-center">
+              <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-100 w-full h-full flex flex-col justify-center relative overflow-hidden">
+                <div className="absolute top-4 right-4 bg-blue-900 text-white px-3 py-1 rounded-full text-sm font-bold">
+                  {slides[currentIndex].year}
+                </div>
                 {slides[currentIndex].icon}
                 <h4 className="text-xl font-bold text-slate-800 mb-3">{slides[currentIndex].title}</h4>
-                <p className="text-slate-600 italic">{slides[currentIndex].desc}</p>
-                <span className="mt-4 inline-block text-xs font-bold uppercase text-blue-500 tracking-wider">
-                  {slides[currentIndex].tag}
-                </span>
+                {slides[currentIndex].desc && (
+                  <p className="text-slate-600 italic mb-4">{slides[currentIndex].desc}</p>
+                )}
+                
+                {slides[currentIndex].images && (
+                  <button 
+                    onClick={() => openModal(slides[currentIndex].images!, slides[currentIndex].title)}
+                    className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors text-sm font-semibold"
+                  >
+                    <HelpCircle className="w-4 h-4" /> Ver Evidencia ({slides[currentIndex].images.length})
+                  </button>
+                )}
               </div>
             </motion.div>
           </AnimatePresence>
         </div>
 
         {/* Controles del Carrusel */}
-        <div className="flex justify-center gap-4 mt-8">
+        <div className="flex justify-center items-center gap-6 mt-8">
           <button 
             onClick={prevSlide}
             className="p-3 bg-white border border-slate-200 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-colors shadow-sm"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
+          
+          <div className="flex gap-2">
+            {slides.map((_, idx) => (
+              <div 
+                key={idx}
+                className={`w-2 h-2 rounded-full transition-all ${idx === currentIndex ? 'bg-blue-600 w-4' : 'bg-slate-300'}`}
+              />
+            ))}
+          </div>
+
           <button 
             onClick={nextSlide}
             className="p-3 bg-white border border-slate-200 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-colors shadow-sm"
           >
             <ArrowRight className="w-5 h-5" />
           </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FailedProcesses() {
+  const data = [
+    {
+      category: "Duración",
+      uribe: "1982-1987. Alrededor de 1731 días",
+      caracas: "1991-1992. Alrededor de 353 días",
+      caguan: "1999-2002. Alrededor de 1201 días"
+    },
+    {
+      category: "Quiebre definitivo",
+      uribe: "16/06/1987",
+      caracas: "4/05/1992",
+      caguan: "20/02/2002"
+    },
+    {
+      category: "Fase en la que quedó cada proceso",
+      uribe: "Negociación",
+      caracas: "Negociación",
+      caguan: "Negociación"
+    },
+    {
+      category: "Sede del proceso de paz",
+      uribe: "Casa Verde (Colombia)",
+      caracas: "Caracas, Venezuela y Tlaxcala, México.",
+      caguan: "San Vicente del Caguán (Colombia)"
+    },
+    {
+      category: "Tipo de agenda",
+      uribe: "“Paz como ausencia de violencia” (Minimalista-Intermedia)",
+      caracas: "“Paz como ausencia de violencia cultural, estructural y simbólica” (Maximalista-abierta)",
+      caguan: "“Paz como ausencia de violencia cultural, estructural y simbólica” Maximalista, amplia y abierta (12 puntos, 48 subtemas)."
+    },
+    {
+      category: "Enfoque de la agenda",
+      uribe: "Temas sustantivos: Violencia, amnistía, reforma agraria, participación política.",
+      caracas: "Temas sustantivos: Reforma estructural del Estado, DD.HH., democratización, economía",
+      caguan: "Temas sustantivos: Reconfiguración integral del Estado, economía y conflicto, reformas para democracia, nueva Asamblea nacional constituyente relaciones internacionales."
+    },
+    {
+      category: "Acompañamiento internacional",
+      uribe: "No",
+      caracas: "Sí (Venezuela y México)",
+      caguan: "Amplio (países amigos y ONU)"
+    },
+    {
+      category: "Reglas de funcionamiento",
+      uribe: "Cese al fuego con verificación",
+      caracas: "Reglas concertadas, canales formales de comunicación. Presencia de testigo internacional.",
+      caguan: "Zona de Distensión en el Caguán. “Reglas de juego” frente a zona, participación de la sociedad civil. Manejo de comunicaciones."
+    },
+    {
+      category: "Técnica de negociación",
+      uribe: "Negociación directa con verificación (comisiones)",
+      caracas: "Negociación directa con observación/facilitación internacional",
+      caguan: "Negociación directa con facilitación y acompañamiento internacional"
+    },
+    {
+      category: "Metodología de trabajo",
+      uribe: "Diálogo directo (comisión nacional, 10 subcomisiones, comités regionales) y verificación del cese.",
+      caracas: "Rondas formales por temas en sedes neutrales con observación internacional",
+      caguan: "Mesa nacional con comité técnico, audiencias públicas y acompañamiento internacional."
+    },
+    {
+      category: "Crisis del proceso",
+      uribe: "Ruptura tregua. Paramilitares y violencia contra U.P.",
+      caracas: "Violencia, falta de acuerdos sobre cese. Secuestro y muerte en cautiverio de exministro",
+      caguan: "“Silla vacía” de Marulanda: Controversias sobre verificación y DIH; secuestro de avión."
+    },
+    {
+      category: "Participación de la sociedad civil",
+      uribe: "Alta. Diálogo nacional.",
+      caracas: "Media. Actores políticos y gremiales",
+      caguan: "Alta. Audiencias públicas (televisadas)."
+    },
+    {
+      category: "¿Hubo cese al fuego?",
+      uribe: "Sí: tregua/cese bilateral firmado en 1984.",
+      caracas: "No. El punto 1 era explorar fórmula (no se concretó)",
+      caguan: "No. Hubo propuestas de desescalamiento y protocolos DIH."
+    },
+    {
+      category: "Hitos del proceso",
+      uribe: "Acuerdos de La Uribe 28/03/1984: Cese al Fuego y Tregua",
+      caracas: "06/06/1991 Agenda de Caracas",
+      caguan: "07/01/1999: instalación de la Mesa; 06/05/1999: Agenda Común; 24/10/1999: Mesa"
+    }
+  ];
+
+  return (
+    <div className="academic-card overflow-x-auto">
+      <h2 className="font-serif text-3xl text-slate-800 mb-8 border-b pb-4">Procesos Fallidos</h2>
+      <div className="overflow-x-auto">
+        <table className="min-w-full border-collapse border border-slate-200 text-sm">
+          <thead>
+            <tr className="bg-slate-100">
+              <th className="border border-slate-300 p-3 text-left font-bold text-slate-700 w-1/4">Proceso de paz / Subcategoría</th>
+              <th className="border border-slate-300 p-3 text-center font-bold text-slate-700 w-1/4">Uribe (1982)</th>
+              <th className="border border-slate-300 p-3 text-center font-bold text-slate-700 w-1/4">Caracas-Tlaxcala (1991-1992)</th>
+              <th className="border border-slate-300 p-3 text-center font-bold text-slate-700 w-1/4">Caguán (1999)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((row, idx) => (
+              <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                <td className="border border-slate-300 p-3 font-bold text-slate-800 bg-slate-50/50">{row.category}</td>
+                <td className="border border-slate-300 p-3 text-slate-600 text-justify leading-relaxed">{row.uribe}</td>
+                <td className="border border-slate-300 p-3 text-slate-600 text-justify leading-relaxed">{row.caracas}</td>
+                <td className="border border-slate-300 p-3 text-slate-600 text-justify leading-relaxed">{row.caguan}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+function Conclusions() {
+  return (
+    <div className="academic-card">
+      <h2 className="font-serif text-3xl text-slate-800 mb-8 border-b pb-4">Conclusiones</h2>
+      <div className="space-y-8">
+        <p className="text-blue-900 text-lg font-bold italic text-center leading-relaxed max-w-4xl mx-auto mb-10">
+          "La paz es un diseño continuo. Un proceso de paz es un ejercicio de arquitectura social imperfecta. La resolución de un conflicto histórico no exige magia, sino paciencia procedimental absoluta, audacia política para aprovechar las ventanas de oportunidad y la inquebrantable convicción de que la paz real se construye todos los días después de la firma."
+        </p>
+        <p className="text-slate-600 text-sm italic mb-6">
+          A continuación se presentan las conclusiones principales de la investigación, estructuradas en torno a los supuestos iniciales:
+        </p>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="assumption-box">
+            <span className="block text-blue-900 font-bold text-sm mb-3">S1. “Diseño y agenda”</span>
+            <ul className="text-[13px] text-slate-600 space-y-2 list-disc pl-4 text-justify">
+              <li>La agenda del proceso operó como dispositivo estructurante que incidió en las tres dimensiones de la violencia: directa, estructural y cultural.</li>
+              <li>Los principios procedimentales funcionaron como herramienta de gestión de ambigüedades y garantes de coherencia metodológica.</li>
+              <li>El diseño y la agenda constituyeron la columna vertebral arquitectónica del proceso, diferenciando esta negociación de las experiencias previas (Caracas-Tlaxcala y Caguán).</li>
+            </ul>
+          </div>
+          <div className="assumption-box">
+            <span className="block text-blue-900 font-bold text-sm mb-3">S2. “Territorio neutral y reglas de juego”</span>
+            <ul className="text-[13px] text-slate-600 space-y-2 list-disc pl-4 text-justify">
+              <li>La sede en La Habana aportó neutralidad política, aislamiento geográfico y blindaje frente a presiones de spoilers y ruido mediático.</li>
+              <li>La regla "nada está acordado hasta que todo esté acordado" preservó la integridad del proceso y midió continuamente la voluntad real de las partes.</li>
+              <li>La negociación en medio del conflicto armado activó incentivos de ventaja relativa en la mesa, configurando una situación de madurez elevando los costos de prolongar las hostilidades</li>
+            </ul>
+          </div>
+          <div className="assumption-box">
+            <span className="block text-blue-900 font-bold text-sm mb-3">S3. “Dinámica de participación y legitimidad procesual”</span>
+            <ul className="text-[13px] text-slate-600 space-y-2 list-disc pl-4 text-justify">
+              <li>Los mecanismos de participación constituyeron una innovación metodológica diferenciadora frente a otras experiencias y modelos de negociación cerrada.</li>
+              <li>La participación estructurada de víctimas, mujeres, colectivos étnicos y sociedad civil incrementó la legitimidad del proceso y humanizó el diálogo.</li>
+              <li>Se amplió el espacio deliberativo de grupos subalternos históricamente excluidos de los escenarios de decisión política.</li>
+            </ul>
+          </div>
+          <div className="assumption-box">
+            <span className="block text-blue-900 font-bold text-sm mb-3">S4. “Acompañamiento y garantías internacionales”</span>
+            <ul className="text-[13px] text-slate-600 space-y-2 list-disc pl-4 text-justify">
+              <li>Los garantes y acompañantes proveyeron estabilidad, credibilidad y presión reputacional externa sobre las partes.</li>
+              <li>Los acompañantes internacionales actuaron como actores estratégicos de verificación y respaldo institucional al proceso.</li>
+              <li>El acompañamiento internacional operó como mecanismo de contención en momentos de transgresión de confianza, evitando la escalada y la ruptura del diálogo.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-8 space-y-6">
+          <div className="assumption-box border-l-orange-500 bg-orange-50/30">
+            <span className="block text-orange-900 font-bold text-sm mb-3 uppercase tracking-wider">Obstáculos identificados</span>
+            <ul className="text-[13px] text-slate-600 space-y-2 list-disc pl-4 text-justify">
+              <li>Ausencia de una estrategia integral de comunicación en los tres niveles relacionales (intraequipo, interequipos y mesa-opinión pública), que generó ruido capitalizado por los spoilers.</li>
+              <li>Instrumentalización política del proceso en la contienda electoral, que amplió los incentivos para la acción de actores saboteadores y prolongó la negociación.</li>
+              <li>Desconfianza inicial profunda y narrativas incompatibles sobre el origen del conflicto, que obligaron a priorizar los acuerdos procedimentales como condición para sostener el diálogo sustantivo.</li>
+            </ul>
+          </div>
+          
+          <div className="assumption-box border-l-emerald-600 bg-emerald-50/30">
+            <span className="block text-emerald-900 font-bold text-sm mb-3 uppercase tracking-wider">Factor transversal</span>
+            <ul className="text-[13px] text-slate-600 space-y-2 list-disc pl-4 text-justify">
+              <li>La voluntad política operó como variable determinante e intangible, transversal y visible en todo el proceso, sin la cual ningún andamiaje técnico habría sido suficiente.</li>
+              <li>El proceso de La Habana demostró que la madurez del conflicto y la voluntad política de las partes permitieron transformar los impasses en oportunidades, consolidando una paz imperfecta pero políticamente relevante.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
