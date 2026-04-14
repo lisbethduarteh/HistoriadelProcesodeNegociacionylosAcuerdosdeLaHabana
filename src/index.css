@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Public+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-public: "Public Sans", sans-serif;
+
+  --color-ugr-blue: #003566;
+  --color-peace-blue: #0ea5e9;
+  --color-text-main: #1e293b;
+  --color-primary-alt: #1152d4;
+  --color-blueprint-bg: #f4f4f2;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-[#fcfcfc] text-text-main leading-relaxed;
+  }
+}
+
+@layer components {
+  .academic-card {
+    @apply bg-white border border-slate-200 rounded-lg p-10 shadow-sm;
+  }
+
+  .assumption-box {
+    @apply border-l-4 border-ugr-blue bg-slate-50 p-5 mb-4 rounded-r-lg h-full;
+  }
+
+  .technical-blueprint {
+    @apply bg-linear-to-b from-[#0f172a] to-[#1e293b] rounded-2xl p-8 text-white relative shadow-[inset_0_0_80px_rgba(0,0,0,0.5)] border border-white/5;
+  }
+
+  .node-box {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 p-5 rounded-xl transition-all duration-300 hover:bg-white/10 hover:border-sky-400/40 hover:-translate-y-0.5;
+  }
+
+  .node-tag {
+    @apply text-[10px] font-extrabold uppercase tracking-widest block mb-2;
+  }
+
+  .node-sub-label {
+    @apply text-slate-400 font-semibold mr-1;
+  }
+
+  .spectrum-bar {
+    @apply h-1 bg-white/20 relative my-6;
+  }
+
+  .spectrum-point {
+    @apply w-2.5 h-2.5 bg-white rounded-full absolute -top-0.75 -translate-x-1/2;
+  }
+
+  .spectrum-point.highlight {
+    @apply bg-orange-400 shadow-[0_0_10px_#fb923c];
+  }
+
+  .technique-card {
+    @apply h-full border border-white/20 p-5 rounded-sm flex flex-col gap-2;
+  }
+
+  .technique-card.special {
+    @apply border-orange-400/40 text-orange-400;
+  }
+
+  .quadrant {
+    @apply border border-white/10 p-7 bg-white/2 transition-all duration-300 rounded-lg flex gap-6 hover:bg-white/5 hover:border-white/30;
+  }
+
+  .pillar-content-box {
+    @apply bg-white border border-slate-300 p-6 text-slate-700 shadow-xl rounded-sm;
+  }
+
+  .paradigm-box {
+    @apply bg-slate-50 border-2 border-slate-200 p-6 flex flex-col gap-4;
+  }
+
+  .paradigm-box.reality {
+    @apply border-slate-900 bg-white;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
