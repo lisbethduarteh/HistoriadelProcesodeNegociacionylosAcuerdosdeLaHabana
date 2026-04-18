@@ -30,6 +30,7 @@ interface ModalState {
   currentIndex: number;
   caption: string;
 }
+const base = import.meta.env.BASE_URL;
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabId>('intro');
@@ -117,7 +118,7 @@ export default function App() {
               <div className="flex items-center gap-5">
                 <div className="w-16 h-16 rounded-full border-2 border-white shadow-xl overflow-hidden shrink-0 bg-slate-100">
                   <img 
-                    src="lkdh2.png" 
+                    src={base + "lkdh2.png"}
                     alt="Lisbeth Katherine Duarte Herrera" 
                     className="w-full h-full object-cover object-center scale-125"
                     referrerPolicy="no-referrer"
@@ -673,14 +674,14 @@ function Methodology({ openModal }: { openModal: (images: string[], caption?: st
             <MethodItem 
               label="Revisión documental" 
               onClick={() => openModal([
-                'fuentes primarias intencionales 1.png',
-                'fuentes primarias intencionales 2.png',
-                'fuentes primarias no intencionales.png'
-              ], 'Revisión documental: Fuentes primarias')}
+              base + "fuentes primarias intencionales 1.png",
+              base + "fuentes primarias intencionales 2.png",
+              base + "fuentes primarias no intencionales.png"
+            ], "Revisión documental: Fuentes primarias")}
             />
             <MethodItem 
               label="Análisis del discurso" 
-              onClick={() => openModal(['Codificación de la revisión documental.png'], 'Análisis del discurso: Codificación')}
+              onClick={() => openModal([base + "Codificación de la revisión documental.png"], 'Análisis del discurso: Codificación')}
             />
             <MethodItem 
               label="Minería de datos" 
@@ -688,7 +689,7 @@ function Methodology({ openModal }: { openModal: (images: string[], caption?: st
             />
             <MethodItem 
               label="Crítica de fuentes" 
-              onClick={() => openModal(['Crítica de fuentes.png'], 'Crítica de fuentes')}
+              onClick={() => openModal([base + "Crítica de fuentes.png"], 'Crítica de fuentes')}
             />
           </ul>
         </div>
@@ -726,25 +727,25 @@ function ScientificDiffusion({ openModal }: { openModal: (images: string[], capt
     {
       year: "2018",
       title: "I Escuela de Verano P.U. Javeriana – U. Goethe",
-      images: ["eSCUELA INTERNAL VERANO 2018.png"],
+      images:  [base + "eSCUELA INTERNAL VERANO 2018.png"],
       icon: <GraduationCap className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
     {
       year: "2019",
       title: "Beca-CALAS. Feria Internacional del Libro (FIL) de Guadalajara",
-      images: ["CALAS 2.png", "Fil Guadalajara participación.png", "Fil guadalajara_santos_timochen.png"],
+      images:  [base + "CALAS 2.png", "Fil Guadalajara participación.png", "Fil guadalajara_santos_timochen.png"],
       icon: <BookOpen className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
     {
       year: "2019",
       title: "Beca-La Rábida. Estancia de investigación",
-      images: ["/Rábida.jpg"],
+      images:  [base + "Rábida.jpg"],
       icon: <MapPin className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
     {
       year: "2022",
       title: "Entrevista en la Red NET CAPAZ",
-      images: ["A paso de Tesis_lkdh.png"],
+      images:  [base + "A paso de Tesis_lkdh.png"],
       icon: <Mic className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
     {
@@ -756,20 +757,20 @@ function ScientificDiffusion({ openModal }: { openModal: (images: string[], capt
     {
       year: "2023",
       title: "Ponente Congreso internacional de Investigación para la paz",
-      images: ["Congreso de paz Granada.png"],
+      images:  [base + "Congreso de paz Granada.png"],
       icon: <Mic className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
     {
       year: "2024",
       title: "Capítulo de libro",
-      images: ["Capítulo en Teseo"],
+      images:  [base + "Capítulo en Teseo"],
       desc: "Libro teseo_capitulo 301",
       icon: <BookOpen className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
     {
       year: "2024",
       title: "Ponente Congreso Internacional para el Estudio de la Mediación y los conflictos",
-      images: ["Portugal.jpg"],
+      images:  [base + "Portugal.jpg"],
       icon: <Mic className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
     {
@@ -781,7 +782,7 @@ function ScientificDiffusion({ openModal }: { openModal: (images: string[], capt
     {
       year: "2025",
       title: "Ponente XIV Congreso latinoamericano de investigación para la paz CLAIP",
-      images: ["Claip.png"],
+      images:  [base + "Claip.png"],
       icon: <Mic className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     }
   ];
