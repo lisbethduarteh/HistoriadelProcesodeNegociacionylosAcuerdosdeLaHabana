@@ -676,7 +676,7 @@ function Methodology({ openModal }: { openModal: (images: string[], caption?: st
               onClick={() => openModal([
               base + "Fuentes primarias intencionales 1.png",
               base + "Fuentes primarias intencionales 2.png",
-              base + "Fuentes primarias no intencionales.png"
+              base + "Fuentes primarias no intencion.png"
             ], "Revisión documental: Fuentes primarias")}
             />
             <MethodItem 
@@ -685,11 +685,11 @@ function Methodology({ openModal }: { openModal: (images: string[], caption?: st
             />
             <MethodItem 
               label="Minería de datos" 
-              onClick={() => openModal(['https://picsum.photos/seed/data/800/600'], 'Minería de datos y Distancia de Levenshtein')}
+              onClick={() => openModal([base + "Distancia de Levenshtein metodo.png"], 'Minería de datos y Distancia de Levenshtein')}
             />
             <MethodItem 
               label="Crítica de fuentes" 
-              onClick={() => openModal([base + "Crítica de fuentes.png"], 'Crítica de fuentes')}
+              onClick={() => openModal([base + "Critica de fuentes.png"], 'Crítica de fuentes')}
             />
           </ul>
         </div>
