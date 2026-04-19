@@ -94,8 +94,8 @@ export default function App() {
   className="absolute inset-0 bg-cover bg-no-repeat"
   style={{ 
     backgroundImage: "url('" + base + "Caratula.png')",
-    opacity: 0.12,
-    backgroundPosition: "center calc(98% + 30px)"
+    opacity: 2.5,
+    backgroundPosition: "center calc(98% + 100px)"
   }}
 />
         <div className="absolute inset-0 bg-white/90 z-1" />
