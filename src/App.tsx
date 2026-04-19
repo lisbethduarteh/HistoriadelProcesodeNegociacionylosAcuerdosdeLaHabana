@@ -185,7 +185,7 @@ export default function App() {
             {activeTab === 'paz' && <PeaceResearch />}
             {activeTab === 'metodo' && <Methodology openModal={openModal} />}
             {activeTab === 'fallidos' && <FailedProcesses />}
-            {activeTab === 'resultados' && <SectionPlaceholder title="Resultados" />}
+            {activeTab === 'resultados' && <Results openModal={openModal} />}
             {activeTab === 'conclusiones' && <Conclusions />}
             {activeTab === 'difusion' && <ScientificDiffusion openModal={openModal} />}
           </motion.div>
@@ -236,15 +236,24 @@ export default function App() {
             )}
 
             <div className="max-w-6xl w-full h-full flex flex-col items-center justify-center">
-              <motion.img 
-                key={modal.currentIndex}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                src={modal.images[modal.currentIndex]} 
-                alt="Detalle Metodológico" 
-                className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
-                referrerPolicy="no-referrer"
-              />
+              {modal.images[modal.currentIndex].toLowerCase().endsWith('.pdf') ? (
+                <iframe 
+                  src={modal.images[modal.currentIndex]} 
+                  className="w-full h-[80vh] md:h-[85vh] rounded-lg shadow-2xl border-none bg-white"
+                  style={{ width: '90vw', maxWidth: '1000px' }}
+                  title="PDF Preview"
+                />
+              ) : (
+                <motion.img 
+                  key={modal.currentIndex}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  src={modal.images[modal.currentIndex]} 
+                  alt="Detalle" 
+                  className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+                  referrerPolicy="no-referrer"
+                />
+              )}
               <p className="text-white/70 mt-6 text-sm font-medium tracking-wide uppercase">
                 {modal.caption} {modal.images.length > 1 ? `(${modal.currentIndex + 1}/${modal.images.length})` : ''}
               </p>
@@ -602,6 +611,16 @@ function PeaceResearch() {
                 <div className="text-[10px] mt-1 opacity-60">(Fisas, 2004)</div>
               </div>
             </div>
+
+            <div className="md:col-span-2 flex flex-col items-center gap-4 mt-4">
+              <img 
+                src={base + "Matriz de síntesis.png"} 
+                alt="Matriz de síntesis" 
+                className="max-w-full h-auto rounded-lg shadow-xl border border-slate-200"
+                referrerPolicy="no-referrer"
+              />
+              <p className="text-[11px] text-slate-400 italic uppercase tracking-widest font-bold">Matriz de síntesis de la investigación</p>
+            </div>
           </div>
         </div>
       </div>
@@ -685,15 +704,46 @@ function Methodology({ openModal }: { openModal: (images: string[], caption?: st
             />
             <MethodItem 
               label="Análisis del discurso" 
-              onClick={() => openModal([base + "Codificación de la revisión documental.png"], 'Análisis del discurso: Codificación')}
+              onClick={() => openModal([base + "Codificación de la revisión documental.pdf"], 'Análisis del discurso: Codificación')}
             />
             <MethodItem 
               label="Minería de datos" 
-              onClick={() => openModal([base + "Distancia de Levenshtein metodo.png"], 'Minería de datos y Distancia de Levenshtein')}
+              onClick={() => openModal([base + "Minería de datos.pdf"], 'Minería de datos y Distancia de Levenshtein')}
             />
             <MethodItem 
               label="Crítica de fuentes" 
-              onClick={() => openModal([base + "Critica de fuentes.png"], 'Crítica de fuentes')}
+              onClick={() => openModal([base + "Crítica de fuentes.pdf"], 'Crítica de fuentes')}
+            />
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Results({ openModal }: { openModal: (images: string[], caption?: string) => void }) {
+  return (
+    <div className="academic-card">
+      <h2 className="font-serif text-3xl text-slate-800 mb-8 border-b pb-4">Resultados</h2>
+      <div className="space-y-12">
+        <div className="bg-slate-900 text-white p-8 rounded-lg shadow-inner text-center max-w-4xl mx-auto">
+          <h4 className="text-blue-400 font-bold text-xs uppercase mb-2">Análisis de Resultados</h4>
+          <p className="text-lg font-light tracking-wide">Hallazgos principales divididos por las fases críticas del proceso de negociación.</p>
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <MethodItem 
+              label="Fase exploratoria" 
+              onClick={() => openModal([base + 'Fase exploratoria 1.png', base + 'Fase exploratoria 2.png'], 'Resultados: Fase Exploratoria')}
+            />
+            <MethodItem 
+              label="Fase negociación" 
+              onClick={() => openModal([base + 'Fase negociación 1.png', base + 'Fase negociación 2.png'], 'Resultados: Fase de Negociación')}
+            />
+            <MethodItem 
+              label="Fase implementación" 
+              onClick={() => openModal([base + 'Fase implementación 1.png', base + 'Fase implementación 2.png'], 'Resultados: Fase de Implementación')}
             />
           </ul>
         </div>
@@ -756,6 +806,7 @@ function ScientificDiffusion({ openModal }: { openModal: (images: string[], capt
       year: "2022",
       title: "Artículo publicado en Revista científica",
       desc: "NegociarYAcordarLaPazConLasFARCEP",
+      images: [base + "NegociarYAcordarLaPazConLasFARCEP.pdf"],
       icon: <BookOpen className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
     {
@@ -767,7 +818,7 @@ function ScientificDiffusion({ openModal }: { openModal: (images: string[], capt
     {
       year: "2024",
       title: "Capítulo de libro",
-      images:  [base + "Capítulo en Teseo.jpg"],
+      images:  [base + "Capítulo en Teseo.jpg", base + "Libro teseo_capitulo 301.pdf"],
       desc: "Libro teseo_capitulo 301",
       icon: <BookOpen className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
@@ -780,7 +831,8 @@ function ScientificDiffusion({ openModal }: { openModal: (images: string[], capt
     {
       year: "2024",
       title: "Artículo publicado en Revista científica",
-      desc: "Artículo Historelo, Artículo más consultado del mes",
+      desc: "Artículo Historelo / Artículo más consultado del mes",
+      images: [base + "Artículo Historelo.pdf", base + "Artículo más consultado del mes.pdf"],
       icon: <BookOpen className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
     {
