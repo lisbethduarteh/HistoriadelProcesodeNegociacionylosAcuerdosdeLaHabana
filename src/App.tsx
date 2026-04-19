@@ -92,7 +92,7 @@ export default function App() {
       <header className="relative border-b border-slate-200 py-12 md:py-20 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-[center_98%] bg-no-repeat opacity-10"
-          style={{ backgroundImage: 'url("https://picsum.photos/seed/academic/1920/1080")' }}
+          style={{ backgroundImage: "url(" + base + "Caratula.png)" }}
         />
         <div className="absolute inset-0 bg-white/90 z-1" />
         
@@ -727,13 +727,13 @@ function ScientificDiffusion({ openModal }: { openModal: (images: string[], capt
     {
       year: "2018",
       title: "I Escuela de Verano P.U. Javeriana – U. Goethe",
-      images:  [base + "eSCUELA INTERNAL VERANO 2018.png"],
+      images:  [base + "eSCUELA INTERNAL VERANO 2018.jpg"],
       icon: <GraduationCap className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
     {
       year: "2019",
       title: "Beca-CALAS. Feria Internacional del Libro (FIL) de Guadalajara",
-      images:  [base + "CALAS 2.png", "Fil Guadalajara participación.png", "Fil guadalajara_santos_timochen.png"],
+      images:  [base + "CALAS 2.jpeg", "Fil Guadalajara participación.jpg", "Fil guadalajara_santos_timochen.png"],
       icon: <BookOpen className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
     {
@@ -757,13 +757,13 @@ function ScientificDiffusion({ openModal }: { openModal: (images: string[], capt
     {
       year: "2023",
       title: "Ponente Congreso internacional de Investigación para la paz",
-      images:  [base + "Congreso de paz Granada.png"],
+      images:  [base + "Congreso de paz Granada.jpg"],
       icon: <Mic className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
     {
       year: "2024",
       title: "Capítulo de libro",
-      images:  [base + "Capítulo en Teseo"],
+      images:  [base + "Capítulo en Teseo.jpg"],
       desc: "Libro teseo_capitulo 301",
       icon: <BookOpen className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
@@ -782,7 +782,7 @@ function ScientificDiffusion({ openModal }: { openModal: (images: string[], capt
     {
       year: "2025",
       title: "Ponente XIV Congreso latinoamericano de investigación para la paz CLAIP",
-      images:  [base + "Claip.png"],
+      images:  [base + "Claip.jpg"],
       icon: <Mic className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     }
   ];
