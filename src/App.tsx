@@ -95,7 +95,7 @@ export default function App() {
   style={{ 
     backgroundImage: "url('" + base + "Caratula.png')",
     opacity: 2.5,
-    backgroundPosition: "center calc(98% + 100px)"
+    backgroundPosition: "center calc(98% + 650px)"
   }}
 />
         <div className="absolute inset-0 bg-white/90 z-1" />
