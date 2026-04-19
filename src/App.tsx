@@ -674,9 +674,9 @@ function Methodology({ openModal }: { openModal: (images: string[], caption?: st
             <MethodItem 
               label="Revisión documental" 
               onClick={() => openModal([
-              base + "fuentes primarias intencionales 1.png",
-              base + "fuentes primarias intencionales 2.png",
-              base + "fuentes primarias no intencionales.png"
+              base + "Fuentes primarias intencionales 1.png",
+              base + "Fuentes primarias intencionales 2.png",
+              base + "Fuentes primarias no intencionales.png"
             ], "Revisión documental: Fuentes primarias")}
             />
             <MethodItem 
