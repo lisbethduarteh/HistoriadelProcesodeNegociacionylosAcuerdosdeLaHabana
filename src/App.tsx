@@ -91,9 +91,13 @@ export default function App() {
       {/* Hero Header */}
       <header className="relative border-b border-slate-200 py-12 md:py-20 overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-[center_98%] bg-no-repeat opacity-25"
-          style={{ backgroundImage: "url('" + base + "Caratula.png')" }}
-        />
+  className="absolute inset-0 bg-cover bg-no-repeat"
+  style={{ 
+    backgroundImage: "url('" + base + "Caratula.png')",
+    opacity: 0.12,
+    backgroundPosition: "center calc(98% + 30px)"
+  }}
+/>
         <div className="absolute inset-0 bg-white/90 z-1" />
         
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
