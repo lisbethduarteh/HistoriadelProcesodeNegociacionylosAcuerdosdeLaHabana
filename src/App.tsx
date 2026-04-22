@@ -739,7 +739,7 @@ function Results({ openModal }: { openModal: (images: string[], caption?: string
             />
             <MethodItem 
               label="Fase negociación" 
-              onClick={() => openModal([base + 'Fase negociación 1.png', base + 'Fase negociacion 2.png'], 'Resultados: Fase de Negociación')}
+              onClick={() => openModal([base + 'Fase negociacion 1.png', base + 'Fase negociacion 2.png'], 'Resultados: Fase de Negociación')}
             />
             <MethodItem 
               label="Fase implementación" 
