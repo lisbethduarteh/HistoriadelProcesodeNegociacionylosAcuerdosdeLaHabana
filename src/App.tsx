@@ -1056,33 +1056,33 @@ function Conclusions() {
           <div className="assumption-box">
             <span className="block text-blue-900 font-bold text-sm mb-3">S1. “Diseño y agenda”</span>
             <ul className="text-[13px] text-slate-600 space-y-2 list-disc pl-4 text-justify">
-              <li>La agenda del proceso operó como dispositivo estructurante que incidió en las tres dimensiones de la violencia: directa, estructural y cultural.</li>
-              <li>Los principios procedimentales funcionaron como herramienta de gestión de ambigüedades y garantes de coherencia metodológica.</li>
-              <li>El diseño y la agenda constituyeron la columna vertebral arquitectónica del proceso, diferenciando esta negociación de las experiencias previas (Caracas-Tlaxcala y Caguán).</li>
+              <li>Diseño y la agenda fueron la columna vertebral arquitectónica del proceso.</li>
+              <li>Agenda concreta y clara que le apuntaba a las tres dimensiones de la violencia.</li>
+              <li>Principios procedimentales funcionaron como herramienta de gestión.</li>
             </ul>
           </div>
           <div className="assumption-box">
             <span className="block text-blue-900 font-bold text-sm mb-3">S2. “Territorio neutral y reglas de juego”</span>
             <ul className="text-[13px] text-slate-600 space-y-2 list-disc pl-4 text-justify">
-              <li>La sede en La Habana aportó neutralidad política, aislamiento geográfico y blindaje frente a presiones de spoilers y ruido mediático.</li>
-              <li>La regla "nada está acordado hasta que todo esté acordado" preservó la integridad del proceso y midió continuamente la voluntad real de las partes.</li>
-              <li>La negociación en medio del conflicto armado activó incentivos de ventaja relativa en la mesa, configurando una situación de madurez elevando los costos de prolongar las hostilidades</li>
+              <li>La sede en La Habana aportó neutralidad, aislamiento geográfico y blindaje.</li>
+              <li>Nada está acordado hasta que todo esté acordado" preservó el proceso y midió voluntad.</li>
+              <li>Negociación en medio del conflicto armado (sinónimo de madurez) y elevó costos del conflicto.</li>
             </ul>
           </div>
           <div className="assumption-box">
             <span className="block text-blue-900 font-bold text-sm mb-3">S3. “Dinámica de participación y legitimidad procesual”</span>
             <ul className="text-[13px] text-slate-600 space-y-2 list-disc pl-4 text-justify">
-              <li>Los mecanismos de participación constituyeron una innovación metodológica diferenciadora frente a otras experiencias y modelos de negociación cerrada.</li>
-              <li>La participación estructurada de víctimas, mujeres, colectivos étnicos y sociedad civil incrementó la legitimidad del proceso y humanizó el diálogo.</li>
-              <li>Se amplió el espacio deliberativo de grupos subalternos históricamente excluidos de los escenarios de decisión política.</li>
+              <li>Los mecanismos de participación constituyeron una innovación metodológica.</li>
+              <li>Participación de víctimas, mujeres y grupos étnicos humanizó y legitimó diálogo.</li>
+              <li>Se amplió el espacio deliberativo de grupos subalternos históricamente excluidos.</li>
             </ul>
           </div>
           <div className="assumption-box">
             <span className="block text-blue-900 font-bold text-sm mb-3">S4. “Acompañamiento y garantías internacionales”</span>
             <ul className="text-[13px] text-slate-600 space-y-2 list-disc pl-4 text-justify">
-              <li>Los garantes y acompañantes proveyeron estabilidad, credibilidad y presión reputacional externa sobre las partes.</li>
-              <li>Los acompañantes internacionales actuaron como actores estratégicos de verificación y respaldo institucional al proceso.</li>
-              <li>El acompañamiento internacional operó como mecanismo de contención en momentos de transgresión de confianza, evitando la escalada y la ruptura del diálogo.</li>
+              <li>Los garantes y acompañantes proveyeron estabilidad y presión reputacional.</li>
+              <li>Los acompañantes internacionales actuaron estratégicamente con roles claros.</li>
+              <li>El acompañamiento internacional operó como mecanismo de contención en crisis.</li>
             </ul>
           </div>
         </div>
@@ -1091,17 +1091,17 @@ function Conclusions() {
           <div className="assumption-box border-l-orange-500 bg-orange-50/30">
             <span className="block text-orange-900 font-bold text-sm mb-3 uppercase tracking-wider">Obstáculos identificados</span>
             <ul className="text-[13px] text-slate-600 space-y-2 list-disc pl-4 text-justify">
-              <li>Ausencia de una estrategia integral de comunicación en los tres niveles relacionales (intraequipo, interequipos y mesa-opinión pública), que generó ruido capitalizado por los spoilers.</li>
-              <li>Instrumentalización política del proceso en la contienda electoral, que amplió los incentivos para la acción de actores saboteadores y prolongó la negociación.</li>
-              <li>Desconfianza inicial profunda y narrativas incompatibles sobre el origen del conflicto, que obligaron a priorizar los acuerdos procedimentales como condición para sostener el diálogo sustantivo.</li>
+              <li>Desconfianza inicial profunda.</li>
+              <li>Ausencia de estrategia de comunicación (intramesa, intermesa y mesa-opinión pública).</li>
+              <li>Instrumentalización del proceso en la contienda electoral que prolongó los diálogos.</li>
             </ul>
           </div>
           
           <div className="assumption-box border-l-emerald-600 bg-emerald-50/30">
             <span className="block text-emerald-900 font-bold text-sm mb-3 uppercase tracking-wider">Factor transversal</span>
             <ul className="text-[13px] text-slate-600 space-y-2 list-disc pl-4 text-justify">
-              <li>La voluntad política operó como variable determinante e intangible, transversal y visible en todo el proceso, sin la cual ningún andamiaje técnico habría sido suficiente.</li>
-              <li>El proceso de La Habana demostró que la madurez del conflicto y la voluntad política de las partes permitieron transformar los impasses en oportunidades, consolidando una paz imperfecta pero políticamente relevante.</li>
+              <li>Voluntad política.</li>
+              <li>Madurez del conflicto.</li>
             </ul>
           </div>
         </div>
