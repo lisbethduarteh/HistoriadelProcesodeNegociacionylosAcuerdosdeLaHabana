@@ -18,7 +18,8 @@ import {
   BookOpen,
   Mic,
   ArrowLeft,
-  ArrowRight
+  ArrowRight,
+  FileText
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -776,72 +777,65 @@ function SectionPlaceholder({ title }: { title: string }) {
 
 function ScientificDiffusion({ openModal }: { openModal: (images: string[], caption?: string) => void }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [innerImageIndex, setInnerImageIndex] = useState(0);
   
   const slides = [
     {
       year: "2018",
       title: "I Escuela de Verano P.U. Javeriana – U. Goethe",
-      images:  [base + "eSCUELA INTERNAL VERANO 2018.jpg"],
-      icon: <GraduationCap className="w-10 h-10 mx-auto text-blue-800 mb-4" />
+      images: [base + "eSCUELA INTERNAL VERANO 2018.jpg"],
     },
     {
       year: "2019",
       title: "Beca-CALAS. Feria Internacional del Libro (FIL) de Guadalajara",
-      images:  [base + "CALAS 2.jpeg", "Fil Guadalajara participación.jpg", "Fil guadalajara_santos_timochen.png"],
-      icon: <BookOpen className="w-10 h-10 mx-auto text-blue-800 mb-4" />
+      images: [base + "CALAS 2.jpeg", base + "Fil Guadalajara participación.jpg", base + "Fil guadalajara_santos_timochen.png"],
     },
     {
       year: "2019",
       title: "Beca-La Rábida. Estancia de investigación",
-      images:  [base + "Rábida.jpg"],
-      icon: <MapPin className="w-10 h-10 mx-auto text-blue-800 mb-4" />
+      images: [base + "Rábida.jpg"],
     },
     {
       year: "2022",
       title: "Entrevista en la Red NET CAPAZ",
-      images:  [base + "A paso de Tesis_lkdh.png"],
-      icon: <Mic className="w-10 h-10 mx-auto text-blue-800 mb-4" />
+      images: [base + "A paso de Tesis_lkdh.png"],
     },
     {
       year: "2022",
       title: "Artículo publicado en Revista científica",
       desc: "NegociarYAcordarLaPazConLasFARCEP",
       images: [base + "NegociarYAcordarLaPazConLasFARCEP.pdf"],
-      icon: <BookOpen className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
     {
       year: "2023",
       title: "Ponente Congreso internacional de Investigación para la paz",
-      images:  [base + "Congreso de paz Granada.jpg"],
-      icon: <Mic className="w-10 h-10 mx-auto text-blue-800 mb-4" />
+      images: [base + "Congreso de paz Granada.jpg"],
     },
     {
       year: "2024",
       title: "Capítulo de libro",
-      images:  [base + "Capítulo en Teseo.jpg", base + "Libro teseo_capitulo 301.pdf"],
       desc: "Libro teseo_capitulo 301",
-      icon: <BookOpen className="w-10 h-10 mx-auto text-blue-800 mb-4" />
+      images: [base + "Capítulo en Teseo.jpg", base + "Libro teseo_capitulo 301.pdf"],
     },
     {
       year: "2024",
       title: "Ponente Congreso Internacional para el Estudio de la Mediación y los conflictos",
-      images:  [base + "Portugal.jpg"],
-      icon: <Mic className="w-10 h-10 mx-auto text-blue-800 mb-4" />
+      images: [base + "Portugal.jpg"],
     },
     {
       year: "2024",
       title: "Artículo publicado en Revista científica",
       desc: "Artículo Historelo / Artículo más consultado del mes",
       images: [base + "Artículo Historelo.pdf", base + "Artículo más consultado del mes.pdf"],
-      icon: <BookOpen className="w-10 h-10 mx-auto text-blue-800 mb-4" />
     },
     {
       year: "2025",
       title: "Ponente XIV Congreso latinoamericano de investigación para la paz CLAIP",
-      images:  [base + "Claip.jpg"],
-      icon: <Mic className="w-10 h-10 mx-auto text-blue-800 mb-4" />
+      images: [base + "Claip.jpg"],
     }
   ];
+
+  const isPdf = (path: string) => path.toLowerCase().endsWith('.pdf');
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % slides.length);
@@ -851,17 +845,31 @@ function ScientificDiffusion({ openModal }: { openModal: (images: string[], capt
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  const goToInnerImage = (offset: number) => {
+    const count = slides[currentIndex].images.length;
+    setInnerImageIndex((prev) => (prev + offset + count) % count);
+  };
+
+  // Reset inner image index when slide changes
+  useEffect(() => {
+    setInnerImageIndex(0);
+  }, [currentIndex]);
+
   useEffect(() => {
     const timer = setInterval(nextSlide, 8000);
     return () => clearInterval(timer);
   }, []);
+
+  const currentSlide = slides[currentIndex];
+  const currentMedia = currentSlide.images[innerImageIndex];
+  const hasMultipleImages = currentSlide.images.length > 1;
 
   return (
     <div className="academic-card">
       <h2 className="font-serif text-3xl text-slate-800 mb-8 border-b pb-4">Difusión Científica</h2>
       
       <div className="relative overflow-hidden w-full max-w-4xl mx-auto rounded-xl border border-slate-200 bg-slate-50 p-6">
-        <div className="relative h-[350px]">
+        <div className="relative h-[540px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -869,26 +877,72 @@ function ScientificDiffusion({ openModal }: { openModal: (images: string[], capt
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.5 }}
-              className="absolute inset-0 flex flex-col justify-center items-center text-center px-4"
+              className="absolute inset-0"
             >
-              <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-100 w-full h-full flex flex-col justify-center relative overflow-hidden">
-                <div className="absolute top-4 right-4 bg-blue-900 text-white px-3 py-1 rounded-full text-sm font-bold">
-                  {slides[currentIndex].year}
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-100 w-full h-full flex flex-col relative overflow-hidden">
+                {/* Year badge */}
+                <div className="absolute top-4 right-4 bg-blue-900 text-white px-3 py-1 rounded-full text-sm font-bold z-10">
+                  {currentSlide.year}
                 </div>
-                {slides[currentIndex].icon}
-                <h4 className="text-xl font-bold text-slate-800 mb-3">{slides[currentIndex].title}</h4>
-                {slides[currentIndex].desc && (
-                  <p className="text-slate-600 italic mb-4">{slides[currentIndex].desc}</p>
-                )}
                 
-                {slides[currentIndex].images && (
-                  <button 
-                    onClick={() => openModal(slides[currentIndex].images!, slides[currentIndex].title)}
-                    className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors text-sm font-semibold"
-                  >
-                    <HelpCircle className="w-4 h-4" /> Ver Evidencia ({slides[currentIndex].images.length})
-                  </button>
-                )}
+                {/* Media area (image or PDF card) */}
+                <div className="relative flex-1 flex items-center justify-center mb-4 min-h-0">
+                  {isPdf(currentMedia) ? (
+                    <button
+                      onClick={() => openModal(currentSlide.images, currentSlide.title)}
+                      className="w-full h-full flex flex-col items-center justify-center gap-4 rounded-lg bg-linear-to-br from-blue-50 via-slate-50 to-blue-100 border border-blue-100 hover:border-blue-300 hover:shadow-md transition-all group p-8"
+                    >
+                      <div className="w-20 h-20 rounded-full bg-white shadow-inner flex items-center justify-center border border-blue-100 group-hover:scale-105 transition-transform">
+                        <FileText className="w-10 h-10 text-blue-700" strokeWidth={1.5} />
+                      </div>
+                      <div className="text-center">
+                        <span className="block text-[10px] uppercase tracking-[0.2em] font-bold text-blue-900 mb-1">Documento PDF</span>
+                        <span className="block text-sm text-slate-600 font-medium">Clic para abrir</span>
+                      </div>
+                    </button>
+                  ) : (
+                    <img
+                      src={currentMedia}
+                      alt={currentSlide.title}
+                      onClick={() => openModal(currentSlide.images, currentSlide.title)}
+                      className="max-w-full max-h-full object-contain rounded-lg cursor-pointer hover:opacity-95 transition-opacity shadow-sm"
+                      referrerPolicy="no-referrer"
+                    />
+                  )}
+
+                  {/* Inner navigation arrows for multi-image slides */}
+                  {hasMultipleImages && (
+                    <>
+                      <button
+                        onClick={() => goToInnerImage(-1)}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm hover:bg-white border border-slate-200 shadow-sm rounded-full p-2 transition-colors z-10"
+                        aria-label="Imagen anterior"
+                      >
+                        <ChevronLeft className="w-4 h-4 text-slate-700" />
+                      </button>
+                      <button
+                        onClick={() => goToInnerImage(1)}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm hover:bg-white border border-slate-200 shadow-sm rounded-full p-2 transition-colors z-10"
+                        aria-label="Siguiente imagen"
+                      >
+                        <ChevronRight className="w-4 h-4 text-slate-700" />
+                      </button>
+                      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-slate-900/70 text-white text-[11px] font-semibold px-2.5 py-0.5 rounded-full">
+                        {innerImageIndex + 1} / {currentSlide.images.length}
+                      </div>
+                    </>
+                  )}
+                </div>
+
+                {/* Title + optional description */}
+                <div className="text-center pt-3 border-t border-slate-100">
+                  <h4 className="text-base md:text-lg font-bold text-slate-800 leading-snug px-4">
+                    {currentSlide.title}
+                  </h4>
+                  {currentSlide.desc && (
+                    <p className="text-xs text-slate-500 italic mt-1 px-4">{currentSlide.desc}</p>
+                  )}
+                </div>
               </div>
             </motion.div>
           </AnimatePresence>
