@@ -96,7 +96,7 @@ export default function App() {
   style={{ 
     backgroundImage: "url('" + base + "Caratula.png')",
     opacity: 2.5,
-    backgroundPosition: "center calc(98% + 30%)"
+    backgroundPosition: "center calc(98% + 10%)"
   }}
 />
         <div className="absolute inset-0 bg-white/90 z-1" />
@@ -856,7 +856,7 @@ function ScientificDiffusion({ openModal }: { openModal: (images: string[], capt
   }, [currentIndex]);
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 8000);
+    const timer = setInterval(nextSlide, 16000);
     return () => clearInterval(timer);
   }, []);
 
