@@ -861,7 +861,8 @@ function ScientificDiffusion({ openModal }: { openModal: (images: string[], capt
   }, []);
 
   const currentSlide = slides[currentIndex];
-  const currentMedia = currentSlide.images[innerImageIndex];
+  const safeInnerIndex = Math.min(innerImageIndex, currentSlide.images.length - 1);
+  const currentMedia = currentSlide.images[safeInnerIndex];
   const hasMultipleImages = currentSlide.images.length > 1;
 
   return (
@@ -928,7 +929,7 @@ function ScientificDiffusion({ openModal }: { openModal: (images: string[], capt
                         <ChevronRight className="w-4 h-4 text-slate-700" />
                       </button>
                       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-slate-900/70 text-white text-[11px] font-semibold px-2.5 py-0.5 rounded-full">
-                        {innerImageIndex + 1} / {currentSlide.images.length}
+                        {safeInnerIndex + 1} / {currentSlide.images.length}
                       </div>
                     </>
                   )}
