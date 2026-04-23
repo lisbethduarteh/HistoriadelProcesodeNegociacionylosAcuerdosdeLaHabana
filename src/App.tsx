@@ -704,7 +704,7 @@ function Methodology({ openModal }: { openModal: (images: string[], caption?: st
             />
             <MethodItem 
               label="Análisis del discurso" 
-              onClick={() => openModal([base + "Codificación de la revisión documental.pdf"], 'Análisis del discurso: Codificación')}
+              onClick={() => openModal([base + "Codificación de la revisión documental.png"], 'Análisis del discurso: Codificación')}
             />
             <MethodItem 
               label="Minería de datos" 
@@ -712,7 +712,7 @@ function Methodology({ openModal }: { openModal: (images: string[], caption?: st
             />
             <MethodItem 
               label="Crítica de fuentes" 
-              onClick={() => openModal([base + "Crítica de fuentes.pdf"], 'Crítica de fuentes')}
+              onClick={() => openModal([base + "Critica de fuentes.png"], 'Crítica de fuentes')}
             />
           </ul>
         </div>
