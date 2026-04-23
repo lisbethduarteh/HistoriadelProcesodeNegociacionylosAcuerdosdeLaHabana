@@ -96,7 +96,7 @@ export default function App() {
   style={{ 
     backgroundImage: "url('" + base + "Caratula.png')",
     opacity: 2.5,
-    backgroundPosition: "center calc(98% + 650px)"
+    backgroundPosition: "center calc(98% + 30%)"
   }}
 />
         <div className="absolute inset-0 bg-white/90 z-1" />
@@ -291,7 +291,7 @@ function Introduction() {
             <h3 className="text-blue-900 font-bold uppercase text-xs tracking-widest mb-4">Objetivos Específicos</h3>
             <ul className="text-[13px] text-slate-600 space-y-3 list-none pl-0">
               <li><span className="font-bold text-blue-900">OE1.</span> Relatar el “periodo de la violencia” en Colombia desde 1964 hasta 2016 a partir de las causas, actores, demanda y dinámica del conflicto armado.</li>
-              <li><span className="font-bold text-blue-900">OE2.</span> Describir los procesos de paz fallidos (1982, 1991 y 1999) y los factores que configuraron la madurez del conflicto in 2012.</li>
+              <li><span className="font-bold text-blue-900">OE2.</span> Describir los procesos de paz fallidos (1982, 1991 y 1999) y los factores que configuraron la madurez del conflicto en 2012.</li>
               <li><span className="font-bold text-blue-900">OE3.</span> Identificar ventanas de oportunidad, rol de actores, agenda y lecciones desde la teoría de resolución de conflictos (2012-2016).</li>
               <li><span className="font-bold text-blue-900">OE4.</span> Revisar cómo los seis puntos del Acuerdo inciden en la terminación del conflicto y en una paz estable y duradera.</li>
             </ul>
@@ -709,7 +709,7 @@ function Methodology({ openModal }: { openModal: (images: string[], caption?: st
             />
             <MethodItem 
               label="Minería de datos" 
-              onClick={() => openModal([base + "Minería de datos.pdf"], 'Minería de datos y Distancia de Levenshtein')}
+              onClick={() => openModal([base + "Mineria de datos_distancia.png"], 'Minería de datos y Distancia de Levenshtein')}
             />
             <MethodItem 
               label="Crítica de fuentes" 
@@ -826,7 +826,7 @@ function ScientificDiffusion({ openModal }: { openModal: (images: string[], capt
       year: "2024",
       title: "Artículo publicado en Revista científica",
       desc: "Artículo Historelo / Artículo más consultado del mes",
-      images: [base + "Artículo Historelo.pdf", base + "Artículo más consultado del mes.pdf"],
+      images: [base + "Artículo Historelo.pdf", base + "Artículo más consultado del mes.jpg"],
     },
     {
       year: "2025",
